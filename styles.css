@@ -1,12 +1,34 @@
 /* styles.css */
-
+/* Main */
 /* Add your styles here */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
     color: #0066cc;
+}
+
+
+.navbar {
+    background-color: #333; /* Set your desired background color */
+    overflow: hidden;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd; /* Set your desired hover background color */
+    color: #whitesmoke;
 }
