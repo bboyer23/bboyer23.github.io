@@ -1,21 +1,22 @@
 /* styles.css */
 /* Main */
 /* Add your styles here */
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
+    font-family: 'Arial', sans-serif;
+    background-color: #2b2b2b;
+    color: #e0e0e0;
     margin: 0;
     padding: 0;
 }
 
 h1 {
-    color: #0066cc;
+    color: #3498db;
 }
 
-
+/* Navbar Styles */
 .navbar {
-    background-color: #333; /* Set your desired background color */
+    background: linear-gradient(90deg, #2c3e50, #3498db);
     overflow: hidden;
 }
 
@@ -26,9 +27,59 @@ h1 {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    transition: background-color 0.3s;
 }
 
 .navbar a:hover {
-    background-color: #ddd; /* Set your desired hover background color */
-    color: #whitesmoke;
+    background-color: #ddd;
+    color: #2c3e50;
+}
+
+/* Content Styles */
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.intro,
+.about-me,
+.contact {
+    width: 30%;
+}
+
+.intro,
+.about-me {
+    background-color: #2c3e50;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.intro p,
+.about-me p,
+.contact p {
+    line-height: 1.6;
+}
+
+/* Contact Section Styles */
+.contact {
+    background-color: #3498db;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact li {
+    margin-bottom: 10px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #2c3e50;
+    padding: 10px;
+    text-align: center;
 }
