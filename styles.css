@@ -117,3 +117,45 @@ footer {
         margin-bottom: 10px;
     }
 }
+
+/* Add these styles for the Code Library Section */
+.code-library {
+    margin: 20px;
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.tabs button:hover {
+    background-color: #2c3e50;
+}
+
+.code-section {
+    display: none;
+    background-color: #2c3e50;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.code-section h2 {
+    color: #3498db;
+}
+
+.active {
+    display: block;
+}
