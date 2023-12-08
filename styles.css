@@ -172,41 +172,29 @@ footer {
 .header {
     text-align: center;
     margin-bottom: 30px;
+    position: relative;
     background-image: url('img1.webp'); /* Updated path to your image */
     background-size: cover;
     background-position: center;
     padding: 50px; /* Adjust as needed */
+    color: #ecf0f1; /* Text color */
 }
 
-.header-content {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    padding: 20px;
-    border-radius: 10px;
-    animation: fadeIn 1s ease; /* Example of fade-in animation */
+.header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: -1;
 }
 
 .main-title,
 .subtitle {
-    color: #ecf0f1; /* Adjust text color for better readability */
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-.main-title {
-    color: #3498db;
-    font-size: 36px;
-}
-
-.subtitle {
-    color: #ecf0f1;
-    font-size: 18px;
-    margin-top: 10px;
+    color: #ffffff; /* Adjust text color for better readability */
+    z-index: 1;
 }
 
 /* Responsive Styles */
