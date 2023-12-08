@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework #1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Start Navbar & Div -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="index.html">About Me</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html">Projects & Misc.</a>
+        <a href="ca.html">Certifications & Achievements</a>
+        <a href="blogs.html">Personal Blog</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+<div class="java-code-section">
+        <h2>Java Program - Assignment 1</h2>
+        <pre>
+            <code>
+    // import scanner
+import java.util.Scanner;
+
+// Author: Benjamin Boyer
+// Date: December 4th, 2023
+
+public class a2 {
+    // main method
+    public static void main(String[] args) {
+        // Your Java code goes here
+
+        // Declare variables for user input var1..var2..var5
+        int var1;
+        int var2;
+        int var3;
+        int var4;
+        int var5;
+
+        // Create scanner object
+        Scanner scn = new Scanner(System.in);
+
+        // Print welcome message
+        System.out.println("Hello! This program determines the largest -> smallest numbers in the set.");
+
+        // Get user input
+        System.out.println("Please enter the first #: ");
+        var1 = scn.nextInt();
+        System.out.println("Second #: ");
+        var2 = scn.nextInt();
+        System.out.println("Third  #: ");
+        var3 = scn.nextInt();
+        System.out.println("Fourth #: ");
+        var4 = scn.nextInt();
+        System.out.println("Fifth  #: ");
+        var5 = scn.nextInt();
+
+        // Determine the largest number in the set
+        if (var1 > var2 && var1 > var3 && var1 > var4 && var1 > var5) {
+            System.out.println(var1 + " is the largest number in the set");
+        } else if (var2 > var1 && var2 > var3 && var2 > var4 && var2 > var5) {
+            System.out.println(var2 + " is the largest number in the set");
+        } else if (var3 > var2 && var3 > var1 && var3 > var4 && var3 > var5) {
+            System.out.println(var3 + " is the largest number in the set");
+        } else if (var4 > var2 && var4 > var3 && var4 > var1 && var4 > var5) {
+            System.out.println(var4 + " is the largest number in the set");
+        } else if (var5 > var2 && var5 > var3 && var5 > var4 && var5 > var1) {
+            System.out.println(var5 + " is the largest number in the set");
+        } else {
+            System.out.println("An error has occurred. Please do not break my program. HAHA =D");
+            System.exit(0);
+        }
+
+        // Determine the smallest number in the set
+        if (var1 < var2 && var1 < var3 && var1 < var4 && var1 < var5) {
+            System.out.println(var1 + " is the smallest number in the set");
+        } else if (var2 < var1 && var2 < var3 && var2 < var4 && var2 < var5) {
+            System.out.println(var2 + " is the smallest number in the set");
+        } else if (var3 < var2 && var3 < var1 && var3 < var4 && var3 < var5) {
+            System.out.println(var3 + " is the smallest number in the set");
+        } else if (var4 < var2 && var4 < var3 && var4 < var1 && var4 < var5) {
+            System.out.println(var4 + " is the smallest number in the set");
+        } else if (var5 < var2 && var5 < var3 && var5 < var4 && var5 < var1) {
+            System.out.println(var5 + " is the smallest number in the set");
+        } else {
+            System.out.println("An error has occurred. Please do not break my program. HAHA =D");
+            System.exit(0);
+        }
+    }
+}
+
+            </code>
+         </pre>
+        </div>
+
+    </body>
+
+</html>

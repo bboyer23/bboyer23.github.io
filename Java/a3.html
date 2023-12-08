@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework #3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Start Navbar & Div -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="index.html">About Me</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html">Projects & Misc.</a>
+        <a href="ca.html">Certifications & Achievements</a>
+        <a href="blogs.html">Personal Blog</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Program - Assignment 2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Start Navbar & Div -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="index.html">About Me</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html">Projects & Misc.</a>
+        <a href="ca.html">Certifications & Achievements</a>
+        <a href="blogs.html">Personal Blog</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <!-- End Navbar & Div -->
+
+    <!-- Start Java Code Section -->
+    <div class="java-code-section">
+        <h2>Java Program - Assignment 2</h2>
+        <pre>
+            <code>
+import java.util.Scanner;
+import java.util.*;
+
+public class A3 {
+	
+	public static void main(String[] args){
+
+		// declare variables
+		double bmi;
+		double weight;
+		double height;
+
+		// end variable decleration
+
+		// Create scanner object
+
+		Scanner scn = new Scanner(System.in);
+		System.out.println("Welcome to my program!\nPlease enter your weight: ");
+		weight = scn.nextDouble();
+		System.out.println("Please enter your height: ");
+		height = scn.nextDouble();
+
+		bmi = ((weight * 703) / (height * height));
+
+		System.out.println("Your body mass index (BMI) is: " + bmi);
+
+		if(bmi <= 25 && bmi >= 18.5){
+
+			System.out.println("Your weight is optimal.");
+		} else if(bmi < 18.5 ){
+
+			System.out.println("Your weight is under-weight. Time to bulk.");
+		} else{
+
+			System.out.println("Your weight is over-weight. Time to cut.");
+		}
+
+
+	}
+}
+</code>
+        </pre>
+    </div>
+    <!-- End Java Code Section -->
+
+
+</body>
+
+</html>
