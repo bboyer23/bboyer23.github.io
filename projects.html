@@ -1,28 +1,107 @@
-<!DOCTYPE html> <!-- MAIN -->
+<!DOCTYPE html> <!-- Main -->
 <html lang="en">
 
-	<head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add your styles here */
+        .code-section {
+            display: none;
+        }
 
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title> Projects </title>
-		<link rel="stylesheet" href="styles.css">
-	</head>
+        .active {
+            display: block;
+        }
+    </style>
+</head>
 
 <body>
 
-		<div class="navbar">  
+    <!-- Start Navbar & Div -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="index.html">About Me</a>
+        <a href="resume.html">Resume</a>
+        <a href="projects.html">Projects & Misc.</a>
+        <a href="ca.html">Certifications & Achievements</a>
+        <a href="blogs.html">Personal Blog</a>
+        <a href="#contact">Contact</a>
+    </div>
+    <!-- End Navbar & Div -->
 
-		<a href="index.html">Home</a>
-		<a href="index.html">About Me</a>
-		<a href="resume.html"> Resume </a>
-		<a href="projects.html"> Projects & Misc.</a>
-		<a href="ca.html"> Certifcations & Achievements </a>
-		<a href="blogs.html"> Personal Blog </a>
-		<a href="#contact">Contact</a>
+    <!-- Start Code Library Section -->
+    <div class="code-library">
+
+        <!-- Start Language Tabs -->
+        <div class="tabs">
+            <button onclick="showCode('java')">Java</button>
+            <button onclick="showCode('python')">Python</button>
+            <button onclick="showCode('cpp')">C++</button>
+        </div>
+        <!-- End Language Tabs -->
+
+        <!-- Start Java Code Section -->
+        <div id="java" class="code-section">
+            <h2>Java Projects</h2>
+            <pre>
+                <code>
+// Your Java code goes here
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+                </code>
+            </pre>
+        </div>
+        <!-- End Java Code Section -->
+
+        <!-- Start Python Code Section -->
+        <div id="python" class="code-section">
+            <h2>Python Projects</h2>
+            <pre>
+                <code>
+# Your Python code goes here
+print("Hello, World!")
+                </code>
+            </pre>
+        </div>
+        <!-- End Python Code Section -->
+
+        <!-- Start C++ Code Section -->
+        <div id="cpp" class="code-section">
+            <h2>C++ Projects</h2>
+            <pre>
+                <code>
+// Your C++ code goes here
+#include <iostream>
+
+int main() {
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
+}
+                </code>
+            </pre>
+        </div>
+        <!-- End C++ Code Section -->
 
     </div>
-	
+    <!-- End Code Library Section -->
+
+    <script>
+        function showCode(language) {
+            // Hide all code sections
+            document.querySelectorAll('.code-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show the selected code section
+            document.getElementById(language).classList.add('active');
+        }
+    </script>
 
 </body>
 
