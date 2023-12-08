@@ -172,8 +172,27 @@ footer {
 .header {
     text-align: center;
     margin-bottom: 30px;
+    background-image: url('img1.webp'); /* Updated path to your image */
+    background-size: cover;
+    background-position: center;
+    padding: 50px; /* Adjust as needed */
 }
 
+.header-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    animation: fadeIn 1s ease; /* Example of fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 .main-title {
     color: #3498db;
     font-size: 36px;
