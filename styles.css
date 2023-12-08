@@ -118,6 +118,8 @@ footer {
     }
 }
 
+/* ... (existing styles) ... */
+
 /* Code Library Styles */
 .code-library {
     margin: 20px;
@@ -130,16 +132,21 @@ footer {
 }
 
 .tabs button {
-    background-color: #2c3e50;
+    background-color: #3498db;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     margin: 0 10px;
     cursor: pointer;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 
 .tabs button:hover {
-    background-color: #3498db;
+    background-color: #2980b9; /* Darker color on hover */
+    transform: scale(1.05); /* Slight scale on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow on hover */
 }
 
 .code-section {
@@ -152,6 +159,8 @@ footer {
 
 .code-section h2 {
     color: #3498db;
+    font-size: 24px;
+    margin-bottom: 15px;
 }
 
 .code-section ul {
@@ -160,14 +169,19 @@ footer {
 }
 
 .code-section li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .code-section a {
     color: #3498db;
     text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s;
 }
 
 .code-section a:hover {
+    color: #e74c3c; /* Change color on hover */
     text-decoration: underline;
 }
+
+/* Add more styles as needed */
