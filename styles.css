@@ -121,6 +121,9 @@ footer {
 /* Add these styles for the Code Library Section */
 .code-library {
     margin: 20px;
+    background-color: #2c3e50;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .tabs {
@@ -145,17 +148,10 @@ footer {
 
 .code-section {
     display: none;
-    background-color: #2c3e50;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    color: white;
-}
-
-.code-section h2 {
-    color: #3498db;
 }
 
 .active {
     display: block;
 }
+
+/* Add more styles as needed */
