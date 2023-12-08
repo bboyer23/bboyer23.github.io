@@ -185,6 +185,11 @@ footer {
     animation: fadeIn 1s ease; /* Example of fade-in animation */
 }
 
+.main-title,
+.subtitle {
+    color: #ecf0f1; /* Adjust text color for better readability */
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
