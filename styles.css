@@ -197,6 +197,12 @@ footer {
     z-index: 1;
 }
 
+.header h1,
+.header p {
+    position: relative;
+    z-index: 2;
+}
+
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
     .navbar {
