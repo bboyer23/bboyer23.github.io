@@ -4,70 +4,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WELCOME TO MY WEBSITE</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Link to the external JavaScript file -->
-    <script src="script.js" defer></script>
+    <title>Benjamin Boyer Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
+<div id="particles-js"></div>
 
-    <!-- Start Navbar & Div -->
-   <div class="navbar">  
+<!-- Navbar -->
+<nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="resume.html">Resume</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+    <button id="dark-mode-toggle" class="btn-toggle"><i class="fas fa-moon"></i></button>
+</nav>
 
-        <a href="index.html">Home</a>
-        <a href="index.html">About Me</a>
-        <a href="resume.html"> Resume </a>
-        <a href="projects.html"> Projects & Misc.</a>
-        <a href="ca.html"> Certifcations & Achievements </a>
-        <a href="blogs.html"> Personal Blog </a>
-        <a href="#contact">Contact</a>
-
+<!-- Header Section -->
+<header id="home" class="header">
+    <div class="header-content">
+        <h1 class="main-title">Hi, I'm Benjamin Boyer</h1>
+        <p class="subtitle">Exploring the intersection of technology, creativity, and ambition</p>
+        <a href="#about" class="btn">Learn More</a>
     </div>
-    <!-- End Navbar & Div -->
+</header>
 
-    <!-- Start H1 Section -->
- <div class="header">
-    <h1 class="main-title">Welcome to My Portfolio</h1>
-    <p class="subtitle">Exploring the intersection of technology, creativity, and ambition</p>
-</div>
-    <!-- End H1 Section -->
+<!-- About Me Section -->
+<section id="about" class="section about">
+    <h2>About Me</h2>
+    <p>Hello, I'm Benjamin Boyer (or just Ben), a dedicated and passionate student at Framingham State University, pursuing a major in Business Information Technology with a minor in Computer Science. I balance my academic journey with multiple roles outside the classroom, including a manager at a local grocery store and a Remote Network Technician for a Microsoft MSP. My love for technology extends beyond work and academics, and I enjoy coding during my spare time. I aim to carve a path into DevOps and cybersecurity, combining my technical skills with a passion for securing digital landscapes.</p>
+</section>
 
-    <!-- Start Content Section -->
-    <div class="content">
-        <!-- Introduction Section -->
-        <div class="intro">
-            <h2>Introduction</h2>
-            <p>This portfolio is a canvas of my journey—a fusion of academia, work experiences, and the code that brings ideas to life. From managing a grocery store to navigating network complexities, every experience has left an indelible mark on my path. Join me in this exploration of technology, where code meets creativity, and aspirations unfold. From my managerial role to the realms of DevOps and cybersecurity, each pixel on this screen encapsulates my commitment to excellence and relentless pursuit of knowledge. Let's embark on this digital adventure together—welcome to a glimpse of my world.</p>
-        </div>
-
-        <!-- About Me Section -->
-        <div class="about-me">
-            <h2>About Me</h2>
-            <p>Welcome to My Portfolio! Hello, I'm Benjamin Boyer (or just Ben), a dedicated and passionate student at Framingham State, pursuing a major in Business Information Technology with a minor in Computer Science. Currently balancing my academic journey, I also wear multiple hats outside the classroom. On weekends, I lead as a manager at a local grocery store, overseeing operations and ensuring a seamless customer experience. Simultaneously, I serve as a Remote Network Technician for a Microsoft MSP, delving into the realm of IT support and troubleshooting. My love for technology extends beyond the confines of work and academics. I find joy in coding during my spare time, constantly exploring new technologies and enhancing my skills. I firmly believe in the power of technology to transform lives and create meaningful solutions. Away from the screen, I cherish moments with my loved ones and indulge in my passion for music. I find solace in helping others, and it's this drive that fuels my aspirations. Looking ahead, I aim to carve a path into the dynamic fields of DevOps and cybersecurity, combining my technical skills with a passion for securing digital landscapes. Let's connect and explore the boundless possibilities that technology brings!</p>
-        </div>
-
-        <!-- Contact Section -->
-        <div class="contact">
-            <h2>Contact</h2>
-            <p>Feel free to reach out to me through the following channels:</p>
-            <ul>
-                <li>Email: benboyer47@outlook.com</li>
-                <li>LinkedIn: Currently In Recovery</li>
-                <li>X: @curtainrod47</li>
-            </ul>
-        </div>
+<!-- Experience Section -->
+<section id="experience" class="section experience">
+    <h2>Professional Experience</h2>
+    <div class="experience-item">
+        <h3>Customer Service Representative - Shaws Supermarket, Milford</h3>
+        <p><strong>July 2019 – Present</strong></p>
+        <ul>
+            <li>Utilize five steps of retail selling to connect with customers, qualify their needs, present solutions, close sales, and foster lifelong customer relationships.</li>
+            <li>Supervise and mentor a team of 10-25 associates ensuring efficient operations in a fast-paced environment.</li>
+            <li>Manage and approve the work of baggers, checkers, and service desk clerks, maintaining high standards of customer service.</li>
+            <li>Achieve operational goals related to labor costs, productivity, supply expenses, and cash management.</li>
+        </ul>
     </div>
-    <!-- End Content Section -->
-
-    <!-- Start Footer -->
-    <div class="footer">
-        <footer>
-            <!-- Footer content goes here -->
-        </footer>
+    <div class="experience-item">
+        <h3>Microsoft Managed Service Provider Technician - Cloud Solved IT, Milford</h3>
+        <p><strong>June 2023 – February 2024</strong></p>
+        <ul>
+            <li>Provided comprehensive support for non-hybrid and hybrid client environments.</li>
+            <li>Managed Windows and Windows Server systems ensuring optimal performance and security.</li>
+            <li>Oversaw cloud services including Azure and Microsoft portal management aligning with best practices in cloud security.</li>
+            <li>Managed over 40 clients deploying projects such as FIDO key rollouts.</li>
+            <li>Helped clients meet governmental compliance standards.</li>
+        </ul>
     </div>
-    <!-- End Footer -->
+</section>
 
+<!-- Projects Section -->
+<section id="projects" class="section projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+        <h3>Worth-It! Volunteer Matching Application</h3>
+        <p>The Worth-It! Volunteer Matching Application aims to connect volunteers with organizations. Currently, the project includes basic functionalities such as profile creation and matching.</p>
+        <ul>
+            <li><strong>Technologies Used:</strong> Spring Boot, React, PostgreSQL, Docker</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="section skills">
+    <h2>Skills</h2>
+    <p>Here are some of the skills I have acquired over my academic and professional journey:</p>
+    <div class="skill-bar">
+        <div class="skill-bar-title">Java</div>
+        <div class="skill-bar-fill" style="width: 90%;"></div>
+    </div>
+    <div class="skill-bar">
+        <div class="skill-bar-title">Python</div>
+        <div class="skill-bar-fill" style="width: 85%;"></div>
+    </div>
+    <div class="skill-bar">
+        <div class="skill-bar-title">JavaScript</div>
+        <div class="skill-bar-fill" style="width: 80%;"></div>
+    </div>
+    <div class="skill-bar">
+        <div class="skill-bar-title">Spring Boot</div>
+        <div class="skill-bar-fill" style="width: 75%;"></div>
+    </div>
+    <div class="skill-bar">
+        <div class="skill-bar-title">React</div>
+        <div class="skill-bar-fill" style="width: 70%;"></div>
+    </div>
+</section>
+
+<!-- Education Section -->
+<section id="education" class="section education">
+    <h2>Education</h2>
+    <p><strong>Framingham State University, Massachusetts</strong></p>
+    <p>Bachelor of Science in Business Information Technology, Expected Graduation: May 2025</p>
+    <p>Minor in Computer Science</p>
+</section>
+
+<!-- Activities Section -->
+<section id="activities" class="section activities">
+    <h2>Activities</h2>
+    <p><strong>Student Government Association (SGA), Framingham State University</strong></p>
+    <p>Senator, Financial Committee, May 2022 – Fall 2023</p>
+    <ul>
+        <li>Assisted in managing and allocating funds for student organizations, working closely with the Treasurer to ensure responsible budgeting and spending.</li>
+        <li>Participated in policy development and performed weekly administrative tasks to maintain operational efficiency.</li>
+    </ul>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section contact">
+    <h2>Contact</h2>
+    <p>Feel free to reach out to me through the following channels:</p>
+    <ul>
+        <li><i class="fas fa-envelope"></i> Email: benboyer47@outlook.com</li>
+        <li><i class="fab fa-linkedin"></i> LinkedIn: Currently In Recovery</li>
+        <li><i class="fab fa-twitter"></i> X: @curtainrod47</li>
+    </ul>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2024 Benjamin Boyer. All Rights Reserved.</p>
+</footer>
 </body>
 
 </html>
