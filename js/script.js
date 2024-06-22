@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const toggleBtn = document.getElementById('dark-mode-toggle');
     const body = document.body;
+    const navbarToggle = document.getElementById('navbar-toggle');
+    const fullscreenMenu = document.getElementById('fullscreen-menu');
+    const closeMenuBtn = document.getElementById('close-menu');
 
     // Dark mode toggle functionality
     toggleBtn.addEventListener('click', () => {
@@ -8,9 +11,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const icon = toggleBtn.querySelector('i');
         if (body.classList.contains('dark-mode')) {
             icon.classList.replace('fa-moon', 'fa-sun');
+            document.getElementById('particles-js').style.backgroundColor = '#1e1e1e'; // Dark background for particles
         } else {
             icon.classList.replace('fa-sun', 'fa-moon');
+            document.getElementById('particles-js').style.backgroundColor = '#ffffff'; // Light background for particles
         }
+    });
+
+    // Navbar toggle functionality for smaller screens
+    navbarToggle.addEventListener('click', () => {
+        fullscreenMenu.classList.toggle('active');
+        const navbarLinks = document.querySelectorAll('.navbar a');
+        navbarLinks.forEach(link => {
+            link.classList.toggle('show');
+        });
+    });
+
+    // Close menu functionality
+    closeMenuBtn.addEventListener('click', () => {
+        fullscreenMenu.classList.remove('active');
     });
 
     // Initialize particles.js

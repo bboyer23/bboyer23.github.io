@@ -31,14 +31,17 @@ body {
     line-height: 1.6;
     scroll-behavior: smooth;
     transition: background-color var(--transition-speed), color var(--transition-speed);
-    cursor: url('assets/custom-cursor.png') 16 16, auto;
+    /* cursor: url('assets/custom-cursor.png') 16 16, auto; */ /* Comment out or remove this line */
 }
 
 body.dark-mode {
-    background-color: var(--dark-background-color);
+    background-color: var(--dark-background-color) !important;
     color: var(--dark-text-color);
 }
 
+#particles-js.dark-mode {
+    background-color: var(--dark-background-color);
+}
 
 ul {
     list-style-position: inside;
@@ -62,6 +65,7 @@ a:hover {
     color: var(--link-hover-color);
 }
 
+/* Navbar styles */
 .navbar {
     display: flex;
     justify-content: center;
@@ -69,8 +73,15 @@ a:hover {
     padding: 1rem;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1000; /* Ensure navbar is above other content */
     transition: background-color var(--transition-speed);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .navbar a {
@@ -79,6 +90,7 @@ a:hover {
     padding: 10px 15px;
     border-radius: var(--border-radius);
     transition: background-color var(--transition-speed), color var(--transition-speed);
+    display: inline-block; /* Ensure the links are shown by default */
 }
 
 .navbar a:hover {
@@ -101,6 +113,74 @@ a:hover {
 .btn-toggle:hover {
     background-color: var(--accent-color);
     color: var(--secondary-color);
+}
+
+.navbar-toggle {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navbar-toggle {
+        display: block; /* Show the hamburger menu on smaller screens */
+    }
+
+    .navbar a {
+        display: none; /* Hide the links on smaller screens */
+    }
+
+    .navbar a.show {
+        display: block; /* Show the links when toggled */
+    }
+}
+
+/* Fullscreen Menu Styles */
+.fullscreen-menu {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999; /* Ensure fullscreen menu is above all content */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease-in-out;
+}
+
+.fullscreen-menu a {
+    color: #ffffff;
+    font-size: 2em;
+    margin: 15px 0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block; /* Ensure the links are shown */
+}
+
+.fullscreen-menu a:hover {
+    color: var(--accent-color);
+}
+
+.fullscreen-menu .close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/* Show menu when active */
+.fullscreen-menu.active {
+    display: flex;
 }
 
 .header {
@@ -242,7 +322,6 @@ a:hover {
     margin-right: 10px;
 }
 
-
 .footer {
     background-color: var(--secondary-color);
     color: #ffffff;
@@ -321,6 +400,11 @@ a:hover {
 
     .navbar a {
         margin: 10px 0;
+        display: none; /* Hide the links on smaller screens */
+    }
+
+    .navbar a.show {
+        display: block; /* Show the links when toggled */
     }
 
     .header-content {
