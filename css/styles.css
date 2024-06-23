@@ -1,5 +1,3 @@
-/* styles.css */
-
 /* Global Styles */
 :root {
     --primary-color: #3498db;
@@ -31,7 +29,6 @@ body {
     line-height: 1.6;
     scroll-behavior: smooth;
     transition: background-color var(--transition-speed), color var(--transition-speed);
-    /* cursor: url('assets/custom-cursor.png') 16 16, auto; */ /* Comment out or remove this line */
 }
 
 body.dark-mode {
@@ -129,57 +126,64 @@ a:hover {
         display: block; /* Show the hamburger menu on smaller screens */
     }
 
-    .navbar a {
+    .navbar-links {
         display: none; /* Hide the links on smaller screens */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
-    .navbar a.show {
-        display: block; /* Show the links when toggled */
+    .navbar-links.show {
+        display: flex; /* Show the links when toggled */
+    }
+
+    .navbar a {
+        display: block;
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
     }
 }
 
-/* Fullscreen Menu Styles */
-.fullscreen-menu {
+/* Side Menu Styles */
+.side-menu {
     display: none;
     position: fixed;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 9999; /* Ensure fullscreen menu is above all content */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44, 62, 80, 0.95);
+    z-index: 9999;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: 0.3s ease-in-out;
 }
 
-.fullscreen-menu a {
+.side-menu a {
     color: #ffffff;
-    font-size: 2em;
+    font-size: 1.5rem;
     margin: 15px 0;
     text-decoration: none;
     transition: color 0.3s ease;
-    display: block; /* Ensure the links are shown */
 }
 
-.fullscreen-menu a:hover {
+.side-menu a:hover {
     color: var(--accent-color);
 }
 
-.fullscreen-menu .close-menu {
+.close-side-menu {
     position: absolute;
     top: 20px;
     right: 20px;
     background: none;
     border: none;
     color: #ffffff;
-    font-size: 2em;
+    font-size: 2rem;
     cursor: pointer;
 }
 
-/* Show menu when active */
-.fullscreen-menu.active {
+.side-menu.show {
     display: flex;
 }
 
@@ -197,6 +201,7 @@ a:hover {
 
 .header-content {
     max-width: 800px;
+    text-align: center;
 }
 
 .main-title {
@@ -398,13 +403,16 @@ a:hover {
         flex-direction: column;
     }
 
-    .navbar a {
-        margin: 10px 0;
+    .navbar-links {
         display: none; /* Hide the links on smaller screens */
     }
 
-    .navbar a.show {
-        display: block; /* Show the links when toggled */
+    .navbar a {
+        display: none; /* Hide the links on smaller screens */
+    }
+
+    .side-menu.show {
+        display: flex; /* Show side menu when toggled */
     }
 
     .header-content {
