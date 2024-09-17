@@ -11,10 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const icon = toggleBtn.querySelector('i');
         if (body.classList.contains('dark-mode')) {
             icon.classList.replace('fa-moon', 'fa-sun');
-            document.getElementById('particles-js').style.backgroundColor = '#1e1e1e'; // Dark background for particles
         } else {
             icon.classList.replace('fa-sun', 'fa-moon');
-            document.getElementById('particles-js').style.backgroundColor = '#ffffff'; // Light background for particles
         }
     });
 
@@ -29,19 +27,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Initialize Typed.js
-    if (window.Typed) {
-        const typed = new Typed('.main-title', {
+    try {
+        const typed = new Typed('.typed-text', {
             strings: ["Hi, I'm Benjamin Boyer", "Exploring the intersection of technology, creativity, and ambition"],
             typeSpeed: 50,
             backSpeed: 25,
-            loop: true
+            loop: true,
+            showCursor: true,
+            cursorChar: '|',
+            smartBackspace: true,
+            autoInsertCss: true
         });
-    } else {
-        console.error("Typed.js is not loaded");
+    } catch (error) {
+        console.error("Typed.js initialization error:", error);
     }
 
     // Initialize Particles.js
-    if (window.particlesJS) {
+    try {
         particlesJS('particles-js', {
             particles: {
                 number: {
@@ -56,33 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 shape: {
                     type: 'circle',
-                    stroke: {
-                        width: 0,
-                        color: '#000000'
-                    },
-                    polygon: {
-                        nb_sides: 5
-                    }
                 },
                 opacity: {
                     value: 0.5,
-                    random: false,
-                    anim: {
-                        enable: false,
-                        speed: 1,
-                        opacity_min: 0.1,
-                        sync: false
-                    }
                 },
                 size: {
                     value: 3,
                     random: true,
-                    anim: {
-                        enable: false,
-                        speed: 40,
-                        size_min: 0.1,
-                        sync: false
-                    }
                 },
                 line_linked: {
                     enable: true,
@@ -94,16 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 move: {
                     enable: true,
                     speed: 6,
-                    direction: 'none',
-                    random: false,
-                    straight: false,
                     out_mode: 'out',
-                    bounce: false,
-                    attract: {
-                        enable: false,
-                        rotateX: 600,
-                        rotateY: 1200
-                    }
                 }
             },
             interactivity: {
@@ -117,38 +90,21 @@ document.addEventListener('DOMContentLoaded', () => {
                         enable: true,
                         mode: 'push'
                     },
-                    resize: true
                 },
                 modes: {
-                    grab: {
-                        distance: 400,
-                        line_linked: {
-                            opacity: 1
-                        }
-                    },
-                    bubble: {
-                        distance: 400,
-                        size: 40,
-                        duration: 2,
-                        opacity: 8,
-                        speed: 3
-                    },
                     repulse: {
                         distance: 200,
                         duration: 0.4
                     },
                     push: {
                         particles_nb: 4
-                    },
-                    remove: {
-                        particles_nb: 2
                     }
                 }
             },
             retina_detect: true
         });
-    } else {
-        console.error("Particles.js is not loaded");
+    } catch (error) {
+        console.error("Particles.js initialization error:", error);
     }
 
     // Initialize Canvas Game

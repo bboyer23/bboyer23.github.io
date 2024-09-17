@@ -13,43 +13,27 @@
     --dark-text-color: #f5f5f5;
 }
 
-/* Ensure a responsive layout using CSS Grid */
-.container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+/* Global Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
+/* Base Styles */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
-    margin: 0;
-    padding: 0;
     line-height: 1.6;
     scroll-behavior: smooth;
     transition: background-color var(--transition-speed), color var(--transition-speed);
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 body.dark-mode {
     background-color: var(--dark-background-color) !important;
     color: var(--dark-text-color);
-}
-
-#particles-js.dark-mode {
-    background-color: var(--dark-background-color);
-}
-
-ul {
-    list-style-position: inside;
-    padding-left: 20px;
-}
-
-.experience-item ul,
-.project-card ul,
-.activities ul {
-    list-style-position: inside;
-    padding-left: 20px;
 }
 
 a {
@@ -62,7 +46,7 @@ a:hover {
     color: var(--link-hover-color);
 }
 
-/* Navbar styles */
+/* Navbar Styles */
 .navbar {
     display: flex;
     justify-content: center;
@@ -70,8 +54,9 @@ a:hover {
     padding: 1rem;
     position: sticky;
     top: 0;
-    z-index: 1000; /* Ensure navbar is above other content */
+    z-index: 1000;
     transition: background-color var(--transition-speed);
+    width: 100%; /* Ensure navbar takes full width */
 }
 
 .navbar-container {
@@ -79,6 +64,7 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: 1200px; /* Limit max width for better alignment */
 }
 
 .navbar a {
@@ -87,7 +73,6 @@ a:hover {
     padding: 10px 15px;
     border-radius: var(--border-radius);
     transition: background-color var(--transition-speed), color var(--transition-speed);
-    display: inline-block; /* Ensure the links are shown by default */
 }
 
 .navbar a:hover {
@@ -113,36 +98,12 @@ a:hover {
 }
 
 .navbar-toggle {
-    display: none; /* Hidden by default */
+    display: none;
     background: none;
     border: none;
     color: #ffffff;
     font-size: 1.5rem;
     cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .navbar-toggle {
-        display: block; /* Show the hamburger menu on smaller screens */
-    }
-
-    .navbar-links {
-        display: none; /* Hide the links on smaller screens */
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .navbar-links.show {
-        display: flex; /* Show the links when toggled */
-    }
-
-    .navbar a {
-        display: block;
-        margin: 10px 0;
-        width: 100%;
-        text-align: center;
-    }
 }
 
 /* Side Menu Styles */
@@ -153,6 +114,7 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
+    overflow-y: auto; /* Allow vertical scrolling */
     background-color: rgba(44, 62, 80, 0.95);
     z-index: 9999;
     flex-direction: column;
@@ -187,11 +149,12 @@ a:hover {
     display: flex;
 }
 
+/* Header Styles */
 .header {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(135deg, var(--primary-color) 50%, var(--secondary-color) 50%);
     color: #ffffff;
     text-align: center;
@@ -207,6 +170,10 @@ a:hover {
 .main-title {
     font-size: 3em;
     margin-bottom: 20px;
+}
+
+.typed-text {
+    display: inline;
 }
 
 .subtitle {
@@ -229,10 +196,10 @@ a:hover {
     animation: pulse 0.6s ease-in-out;
 }
 
+/* Section Styles */
 .section {
     padding: 60px 20px;
     text-align: center;
-    background-attachment: fixed;
 }
 
 .section h2 {
@@ -256,13 +223,21 @@ a:hover {
     margin: 0 auto 30px;
 }
 
+/* Projects Section */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
 .project-card {
     background-color: var(--secondary-color);
     color: #ffffff;
     padding: 20px;
     border-radius: var(--border-radius);
-    width: 300px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 300px;
     transition: transform var(--transition-speed), box-shadow var(--transition-speed);
     animation: fadeInUp 1.5s ease-in-out;
 }
@@ -278,7 +253,8 @@ a:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.skills {
+/* Skills Section */
+.skills-container {
     max-width: 800px;
     margin: 0 auto;
 }
@@ -304,29 +280,31 @@ a:hover {
 .skill-bar-fill {
     height: 100%;
     background-color: var(--primary-color);
-    width: 0;
+    width: inherit; /* Use inline style width */
     transition: width 1s ease-in-out;
 }
 
+/* Contact Section */
 .contact ul {
     list-style: none;
     padding: 0;
     max-width: 800px;
     margin: 0 auto;
-    text-align: center; /* Center align the text */
+    text-align: center;
 }
 
 .contact li {
     margin-bottom: 10px;
     font-size: 1.2em;
-    display: inline-block; /* Inline-block for better alignment */
-    width: auto; /* Ensure width auto to avoid line breaks */
+    display: inline-block;
+    width: auto;
 }
 
 .contact i {
     margin-right: 10px;
 }
 
+/* Footer Styles */
 .footer {
     background-color: var(--secondary-color);
     color: #ffffff;
@@ -334,18 +312,7 @@ a:hover {
     padding: 20px;
 }
 
-.experience-item ul {
-    list-style-type: disc;
-    margin: 10px 0 0 20px;
-    padding: 0;
-}
-
-.activities ul {
-    list-style-type: disc;
-    margin: 10px 0 0 20px;
-    padding: 0;
-}
-
+/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -378,41 +345,33 @@ a:hover {
     }
 }
 
-@keyframes parallax {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 0 -100%;
-    }
-}
-
+/* Particles.js Background */
 #particles-js {
     position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    z-index: -1; /* Ensure it is behind all other elements */
-    background: #ffffff; /* Optional: Set a fallback background color */
+    z-index: -1;
+    background: #ffffff;
+}
+
+body.dark-mode #particles-js {
+    background-color: var(--dark-background-color);
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
+    .navbar-toggle {
+        display: block;
     }
 
     .navbar-links {
-        display: none; /* Hide the links on smaller screens */
-    }
-
-    .navbar a {
-        display: none; /* Hide the links on smaller screens */
+        display: none;
     }
 
     .side-menu.show {
-        display: flex; /* Show side menu when toggled */
+        display: flex;
     }
 
     .header-content {
@@ -429,5 +388,22 @@ a:hover {
 
     .project-card {
         width: 100%;
+    }
+}
+
+/* Typed.js Cursor */
+.typed-cursor {
+    font-size: inherit;
+    color: inherit;
+    animation: blink 0.7s infinite;
+    display: inline; /* Ensure cursor is inline with text */
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
     }
 }

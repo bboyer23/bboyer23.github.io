@@ -2,15 +2,26 @@
 <html lang="en">
 
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Benjamin Boyer Portfolio</title>
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <!-- Typed.js -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -43,9 +54,10 @@
     <a href="#contact">Contact</a>
 </div>
 
+<!-- Header Section -->
 <header id="home" class="header">
     <div class="header-content">
-        <h1 class="main-title">IS THAT A BUG?</h1>
+        <h1 class="main-title"><span class="typed-text"></span></h1>
         <p class="subtitle">Let's get things connected!</p>
         <a href="#about" class="btn">Learn More</a>
     </div>
@@ -54,11 +66,19 @@
 <!-- About Me Section -->
 <section id="about" class="section about">
     <h2>About Me</h2>
-    <p>Hello, I’m Ben, and welcome to my portfolio website. I’m currently pursuing a bachelor's degree in Business Information Technology & Systems, with a minor in Computer Science at Framingham State University.
+    <p>
+        Hello, I’m Ben, and welcome to my portfolio website. I’m currently pursuing a bachelor's degree in Business
+        Information Technology & Systems, with a minor in Computer Science at Framingham State University.
 
-        Outside of academics, I work part-time at a grocery store, honing my technical and customer service skills. This balance helped me secure an internship with a Microsoft Managed Service Provider (MSP), where I gained experience in on-premise network assistance, firewall and switch swapouts, hybrid and cloud-only Azure joins, and client support. I also managed Microsoft Azure environments, handling Entra portal configurations, end-user management, virtual machine support, and remote tech assistance for various issues.
+        Outside of academics, I work part-time at a grocery store, honing my technical and customer service skills.
+        This balance helped me secure an internship with a Microsoft Managed Service Provider (MSP), where I gained
+        experience in on-premise network assistance, firewall and switch swap-outs, hybrid and cloud-only Azure
+        joins, and client support. I also managed Microsoft Azure environments, handling Entra portal configurations,
+        end-user management, virtual machine support, and remote tech assistance for various issues.
 
-        I’m passionate about technology and exploring different career paths within it, including technical sales, DevOps, cybersecurity, and software engineering. My goal is to focus my interests and achieve significant milestones in the tech field.
+        I’m passionate about technology and exploring different career paths within it, including technical sales,
+        DevOps, cybersecurity, and software engineering. My goal is to focus my interests and achieve significant
+        milestones in the tech field.
     </p>
 </section>
 
@@ -69,10 +89,14 @@
         <h3>Customer Service Representative - Shaws Supermarket, Milford</h3>
         <p><strong>July 2019 – Present</strong></p>
         <ul>
-            <li>Utilize five steps of retail selling to connect with customers, qualify their needs, present solutions, close sales, and foster lifelong customer relationships.</li>
-            <li>Supervise and mentor a team of 10-25 associates ensuring efficient operations in a fast-paced environment.</li>
-            <li>Manage and approve the work of baggers, checkers, and service desk clerks, maintaining high standards of customer service.</li>
-            <li>Achieve operational goals related to labor costs, productivity, supply expenses, and cash management.</li>
+            <li>Utilize five steps of retail selling to connect with customers, qualify their needs, present
+                solutions, close sales, and foster lifelong customer relationships.</li>
+            <li>Supervise and mentor a team of 10-25 associates ensuring efficient operations in a fast-paced
+                environment.</li>
+            <li>Manage and approve the work of baggers, checkers, and service desk clerks, maintaining high
+                standards of customer service.</li>
+            <li>Achieve operational goals related to labor costs, productivity, supply expenses, and cash
+                management.</li>
         </ul>
     </div>
     <div class="experience-item">
@@ -81,7 +105,8 @@
         <ul>
             <li>Provided comprehensive support for non-hybrid and hybrid client environments.</li>
             <li>Managed Windows and Windows Server systems ensuring optimal performance and security.</li>
-            <li>Oversaw cloud services including Azure and Microsoft portal management aligning with best practices in cloud security.</li>
+            <li>Oversaw cloud services including Azure and Microsoft portal management aligning with best practices
+                in cloud security.</li>
             <li>Managed over 40 clients deploying projects such as FIDO key rollouts.</li>
             <li>Helped clients meet governmental compliance standards.</li>
         </ul>
@@ -91,12 +116,19 @@
 <!-- Projects Section -->
 <section id="projects" class="section projects">
     <h2>Projects</h2>
-    <div class="project-card">
-        <h3>Worth-It! Volunteer Matching Application</h3>
-        <p>The Worth-It! Volunteer Matching Application aims to connect volunteers with organizations. The project has the base components in place and operates through a Docker file. Currently, it includes basic functionalities such as profile creation and matching. The integration between the PostgreSQL database, the back end, and the front end is still being evaluated to ensure seamless communication.</p>
-        <ul>
-            <li><strong>Technologies Used:</strong> Spring Boot, React, PostgreSQL, Docker</li>
-        </ul>
+    <div class="projects-container">
+        <div class="project-card">
+            <h3>Worth-It! Volunteer Matching Application</h3>
+            <p>The Worth-It! Volunteer Matching Application aims to connect volunteers with organizations. The
+                project has the base components in place and operates through a Docker file. Currently, it includes
+                basic functionalities such as profile creation and matching. The integration between the PostgreSQL
+                database, the back end, and the front end is still being evaluated to ensure seamless
+                communication.</p>
+            <ul>
+                <li><strong>Technologies Used:</strong> Spring Boot, React, PostgreSQL, Docker</li>
+            </ul>
+        </div>
+        <!-- You can add more project cards here -->
     </div>
 </section>
 
@@ -104,29 +136,31 @@
 <section id="skills" class="section skills">
     <h2>Skills</h2>
     <p>Here are some of the skills I have acquired over my academic and professional journey:</p>
-    <div class="skill-bar">
-        <div class="skill-bar-title">Java</div>
-        <div class="skill-bar-fill" style="width:75%;"></div>
-    </div>
-    <div class="skill-bar">
-        <div class="skill-bar-title">Spring Boot</div>
-        <div class="skill-bar-fill" style="width: 45%;"></div>
-    </div>
-    <div class="skill-bar">
-        <div class="skill-bar-title">Project Management</div>
-        <div class="skill-bar-fill" style="width: 70%;"></div>
-    </div>
-    <div class="skill-bar">
-        <div class="skill-bar-title">Customer Experience</div>
-        <div class="skill-bar-fill" style="width: 77%;"></div>
-    </div>
-    <div class="skill-bar">
-        <div class="skill-bar-title">Docker</div>
-        <div class="skill-bar-fill" style="width: 30%;"></div>
-    </div>
-    <div class="skill-bar">
-        <div class="skill-bar-title">SQL</div>
-        <div class="skill-bar-fill" style="width: 50%;"></div>
+    <div class="skills-container">
+        <div class="skill-bar">
+            <div class="skill-bar-title">Java</div>
+            <div class="skill-bar-fill" style="width:75%;"></div>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-bar-title">Spring Boot</div>
+            <div class="skill-bar-fill" style="width:45%;"></div>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-bar-title">Project Management</div>
+            <div class="skill-bar-fill" style="width:70%;"></div>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-bar-title">Customer Experience</div>
+            <div class="skill-bar-fill" style="width:77%;"></div>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-bar-title">Docker</div>
+            <div class="skill-bar-fill" style="width:30%;"></div>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-bar-title">SQL</div>
+            <div class="skill-bar-fill" style="width:50%;"></div>
+        </div>
     </div>
 </section>
 
@@ -144,8 +178,10 @@
     <p><strong>Student Government Association (SGA), Framingham State University</strong></p>
     <p>Senator, Financial Committee, May 2022 – Fall 2023</p>
     <ul>
-        <li>Assisted in managing and allocating funds for student organizations, working closely with the Treasurer to ensure responsible budgeting and spending.</li>
-        <li>Participated in policy development and performed weekly administrative tasks to maintain operational efficiency.</li>
+        <li>Assisted in managing and allocating funds for student organizations, working closely with the Treasurer
+            to ensure responsible budgeting and spending.</li>
+        <li>Participated in policy development and performed weekly administrative tasks to maintain operational
+            efficiency.</li>
     </ul>
 </section>
 
@@ -155,7 +191,8 @@
     <p>Feel free to reach out to me through the following channels:</p>
     <ul>
         <li><i class="fas fa-envelope"></i> benboyer47@outlook.com </li>
-        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/benjamin-boyer-it/" target="_blank">Benjamin Boyer</a></li>
+        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/benjamin-boyer-it/" target="_blank"
+                                               rel="noopener noreferrer">Benjamin Boyer</a></li>
         <li><i class="fab fa-twitter"></i> X: @curtainrod47</li>
     </ul>
 </section>
@@ -168,6 +205,8 @@
 <!-- Canvas for Game -->
 <canvas id="gameCanvas" width="800" height="600"></canvas>
 
+<!-- Custom Script -->
+<script src="js/script.js"></script>
 </body>
 
 </html>
