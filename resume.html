@@ -1,50 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume - Benjamin Boyer</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Benjamin Boyer - Resume</title>
+
+    <!-- Shared Global Styles -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Font Awesome (Icons) -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
-<div id="particles-js"></div>
-
 <!-- Navbar -->
 <nav class="navbar">
     <div class="navbar-container">
-        <button id="navbar-toggle" class="navbar-toggle"><i class="fas fa-bars"></i></button>
-        <div class="navbar-links">
-            <a href="index.html#home">Home</a>
-            <a href="index.html#about">About Me</a>
-            <a href="resume.html">Resume</a>
-            <a href="index.html#projects">Projects</a>
-            <a href="index.html#skills">Skills</a>
-            <a href="index.html#contact">Contact</a>
+        <!-- Left side: Brand/Logo -->
+        <a href="index.html" class="nav-logo">BBoyer</a>
+
+        <!-- Right side: Dark Mode Toggle + Hamburger -->
+        <div class="navbar-right">
+            <!-- Dark Mode Toggle -->
+            <button id="dark-mode-toggle" class="btn-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+
+            <!-- Hamburger (mobile) -->
+            <button id="navbar-toggle" class="navbar-toggle">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </button>
         </div>
-        <button id="dark-mode-toggle" class="btn-toggle"><i class="fas fa-moon"></i></button>
+
+        <!-- Side Menu (mobile) -->
+        <div id="side-menu" class="side-menu">
+            <button id="close-side-menu" class="close-side-menu">&times;</button>
+            <a href="index.html">Home</a>
+            <a href="fun.html">Fun Zone</a>
+        </div>
+
+        <!-- Desktop nav links -->
+        <div class="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="fun.html">Fun Zone</a>
+        </div>
     </div>
 </nav>
-
-<!-- Side Menu for Mobile -->
-<div id="side-menu" class="side-menu">
-    <button id="close-side-menu" class="close-side-menu"><i class="fas fa-times"></i></button>
-    <a href="index.html#home">Home</a>
-    <a href="index.html#about">About Me</a>
-    <a href="resume.html">Resume</a>
-    <a href="index.html#projects">Projects</a>
-    <a href="index.html#skills">Skills</a>
-    <a href="index.html#contact">Contact</a>
-</div>
 
 <!-- Resume Section -->
 <section id="resume" class="section resume">
     <h2>Resume</h2>
     <div class="resume-content">
-        <iframe src="BBoyer2024-Resume.pdf" width="100%" height="800px" style="border:none;"></iframe>
+        <!-- Replace BBoyer2024-Resume.pdf with your actual PDF file name if different -->
+        <iframe src="BBoyer2024-Resume.pdf"
+                width="100%"
+                height="800px"
+                style="border:none;">
+        </iframe>
     </div>
 </section>
 
@@ -53,7 +67,7 @@
     <p>&copy; 2024 Benjamin Boyer. All Rights Reserved.</p>
 </footer>
 
-<script src="js/script.js" defer></script>
+<!-- Single Script Reference as a Module -->
+<script type="module" src="js/script.js"></script>
 </body>
-
 </html>

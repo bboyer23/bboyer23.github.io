@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Benjamin Boyer - Fun Zone</title>
+
+  <!-- Shared + Fun Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/fun.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Optional Particles on Fun Page -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+</head>
+<body>
+<div id="particles-js"></div>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="index.html" class="nav-logo">BBoyer</a>
+
+    <!-- Right side: toggle + hamburger -->
+    <div class="navbar-right">
+      <!-- Dark Mode Toggle (left of hamburger) -->
+      <button id="dark-mode-toggle" class="btn-toggle">
+        <i class="fas fa-moon"></i>
+      </button>
+
+      <!-- Hamburger (mobile) -->
+      <button id="navbar-toggle" class="navbar-toggle">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </button>
+    </div>
+
+    <!-- Side Menu -->
+    <div id="side-menu" class="side-menu">
+      <button id="close-side-menu" class="close-side-menu">&times;</button>
+      <a href="index.html">Home</a>
+      <a href="resume.html">Resume</a>
+    </div>
+
+    <!-- Desktop nav links -->
+    <div class="navbar-links">
+      <a href="index.html">Home</a>
+      <a href="resume.html">Resume</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Quiz Section -->
+<section id="quiz" class="section fun-section">
+  <h2>What Type of Tech Role Suits You?</h2>
+  <p>Answer a few quick questions for a fun suggestion!</p>
+  <button id="start-quiz" class="btn">Start Quiz</button>
+
+  <div id="quiz-container" class="quiz-box" style="display: none;">
+    <p id="quiz-question"></p>
+    <div class="quiz-options">
+      <!-- Options are dynamically generated in fun.js -->
+    </div>
+  </div>
+  <p id="quiz-result" class="quiz-result" style="display: none;"></p>
+</section>
+
+<!-- Chatbot Password Modal -->
+<div id="password-modal" class="password-modal">
+  <div class="password-box">
+    <h2>With great power comes great responsibility… and also a password 🔑</h2>
+    <input type="password" id="chat-password" placeholder="Enter Password">
+    <button id="chat-password-submit" class="btn">Submit</button>
+    <p id="password-error" class="password-error"></p>
+  </div>
+</div>
+
+<!-- AI Chatbot Section (Hidden by Default) -->
+<section id="mini-chatbot" class="section fun-section" style="display: none;">
+  <h2>Ask the AI Anything</h2>
+  <div class="chat-box">
+    <input type="text" id="chat-input" class="chat-input" placeholder="Type your question...">
+    <button id="chat-submit" class="btn">Ask</button>
+  </div>
+  <div id="chat-output" class="chat-output"></div>
+</section>
+
+
+<!-- Mini Game Section -->
+<section id="game-section" class="section fun-section">
+  <h2>Bouncing Ball Mini-Game</h2>
+  <canvas id="gameCanvas" width="400" height="300"></canvas>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2024 Benjamin Boyer. All Rights Reserved.</p>
+</footer>
+
+<!-- Single Script Reference as a Module -->
+<script type="module" src="js/script.js"></script>
+</body>
+</html>

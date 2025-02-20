@@ -1,208 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Meta Tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benjamin Boyer Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Benjamin Boyer - Home</title>
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="css/styles.css" />
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Font Awesome (Icons) -->
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    >
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
-    <!-- Typed.js -->
+    <!-- Particles.js (Background Animation) -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <!-- Typed.js (Hero Text Animation) -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
-
 <body>
+<!-- Particles Background -->
 <div id="particles-js"></div>
 
 <!-- Navbar -->
 <nav class="navbar">
     <div class="navbar-container">
-        <button id="navbar-toggle" class="navbar-toggle"><i class="fas fa-bars"></i></button>
-        <div class="navbar-links">
-            <a href="#home">Home</a>
-            <a href="#about">About Me</a>
-            <a href="resume.html">Resume</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
+        <a href="index.html" class="nav-logo">BBoyer</a>
+
+        <div class="navbar-right">
+            <button id="dark-mode-toggle" class="btn-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+
+            <button id="navbar-toggle" class="navbar-toggle">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </button>
         </div>
-        <button id="dark-mode-toggle" class="btn-toggle"><i class="fas fa-moon"></i></button>
+
+        <!-- Side Menu (mobile) -->
+        <div id="side-menu" class="side-menu">
+            <button id="close-side-menu" class="close-side-menu">&times;</button>
+            <a href="index.html">Home</a>
+            <a href="resume.html">Resume</a>
+            <a href="fun.html">Fun Zone</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#skills">Skills</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+
+        <!-- Desktop Navbar Links -->
+        <div class="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="resume.html">Resume</a>
+            <a href="fun.html">Fun Zone</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#skills">Skills</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
     </div>
 </nav>
 
-<!-- Side Menu for Mobile -->
-<div id="side-menu" class="side-menu">
-    <button id="close-side-menu" class="close-side-menu"><i class="fas fa-times"></i></button>
-    <a href="#home">Home</a>
-    <a href="#about">About Me</a>
-    <a href="resume.html">Resume</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-</div>
-
-<!-- Header Section -->
-<header id="home" class="header">
-    <div class="header-content">
-        <h1 class="main-title"><span class="typed-text"></span></h1>
-        <p class="subtitle">Let's get things connected!</p>
-        <a href="#about" class="btn">Learn More</a>
-    </div>
+<!-- Hero Section -->
+<header class="hero" id="home">
+    <h1 class="typed-text"></h1>
+    <p class="subtitle">
+        Coding, exploring, and learning—one project at a time.
+    </p>
 </header>
 
-<!-- About Me Section -->
-<section id="about" class="section about">
+<!-- About Section -->
+<section id="about" class="section">
     <h2>About Me</h2>
     <p>
-        Hello, I’m Ben, and welcome to my portfolio website. I’m currently pursuing a bachelor's degree in Business
-        Information Technology & Systems, with a minor in Computer Science at Framingham State University.
-
-        Outside of academics, I work part-time at a grocery store, honing my technical and customer service skills.
-        This balance helped me secure an internship with a Microsoft Managed Service Provider (MSP), where I gained
-        experience in on-premise network assistance, firewall and switch swap-outs, hybrid and cloud-only Azure
-        joins, and client support. I also managed Microsoft Azure environments, handling Entra portal configurations,
-        end-user management, virtual machine support, and remote tech assistance for various issues.
-
-        I’m passionate about technology and exploring different career paths within it, including technical sales,
-        DevOps, cybersecurity, and software engineering. My goal is to focus my interests and achieve significant
-        milestones in the tech field.
+        Hey there, I’m <strong>Benjamin Boyer</strong>. I’ve been learning and building
+        solutions that combine reliable coding practices with a genuine interest in
+        emerging technology. Over the years, I’ve delved into <em>web development</em> and
+        gradually moved into <em>network monitoring</em>, then explored <em>IBM WatsonX</em> for
+        basic NLP pipelines and <em>cybersecurity fundamentals</em> with Kali Linux.
+    </p>
+    <p>
+        I’m currently preparing a talk at <strong>UMass Amherst</strong> on local cloud
+        structures, an area I find challenging yet rewarding. This site itself is a
+        small experiment in blending <em>my own coding skills</em> with some <em>AI assistance</em>.
+        I hope it shows how much there is still to discover in tech.
     </p>
 </section>
 
-<!-- Experience Section -->
-<section id="experience" class="section experience">
-    <h2>Professional Experience</h2>
-    <div class="experience-item">
-        <h3>Customer Service Representative - Shaws Supermarket, Milford</h3>
-        <p><strong>July 2019 – Present</strong></p>
-        <ul>
-            <li>Utilize five steps of retail selling to connect with customers, qualify their needs, present
-                solutions, close sales, and foster lifelong customer relationships.</li>
-            <li>Supervise and mentor a team of 10-25 associates ensuring efficient operations in a fast-paced
-                environment.</li>
-            <li>Manage and approve the work of baggers, checkers, and service desk clerks, maintaining high
-                standards of customer service.</li>
-            <li>Achieve operational goals related to labor costs, productivity, supply expenses, and cash
-                management.</li>
-        </ul>
-    </div>
-    <div class="experience-item">
-        <h3>Microsoft Managed Service Provider Technician - Cloud Solved IT, Milford</h3>
-        <p><strong>June 2023 – February 2024</strong></p>
-        <ul>
-            <li>Provided comprehensive support for non-hybrid and hybrid client environments.</li>
-            <li>Managed Windows and Windows Server systems ensuring optimal performance and security.</li>
-            <li>Oversaw cloud services including Azure and Microsoft portal management aligning with best practices
-                in cloud security.</li>
-            <li>Managed over 40 clients deploying projects such as FIDO key rollouts.</li>
-            <li>Helped clients meet governmental compliance standards.</li>
-        </ul>
-    </div>
+<!-- Notable Courses Section -->
+<section id="courses" class="section">
+    <h2>Notable Courses</h2>
+    <ul>
+        <li>Computer Science I using Java</li>
+        <li>Computer Science II using Java</li>
+        <li>Intro to Operating Systems w/ UNIX</li>
+        <li>Networking Technologies</li>
+        <li>Database Management</li>
+        <li>Quantitative Modeling for Business & Economics</li>
+        <li>Statistical Analysis for Business & Economics</li>
+        <li>Managerial Finance</li>
+        <li>Marketing Principles</li>
+        <li>Information Systems Research</li>
+        <li>Operations Management</li>
+        <li>Legal Environment of Business</li>
+    </ul>
 </section>
 
 <!-- Projects Section -->
-<section id="projects" class="section projects">
+<section id="projects" class="section">
     <h2>Projects</h2>
     <div class="projects-container">
         <div class="project-card">
-            <h3>Worth-It! Volunteer Matching Application</h3>
-            <p>In Development</p>
-            <ul>
-                <li><strong>Technologies Used:</strong> Spring Boot, React, PostgreSQL, Docker</li>
-            </ul>
+            <h3>IBM WatsonX Basics</h3>
+            <p>
+                Experimented with NLP pipelines for handling unstructured text,
+                learning how WatsonX can uncover meaningful patterns in large
+                datasets.
+            </p>
         </div>
-        <!-- You can add more project cards here -->
+        <div class="project-card">
+            <h3>Network Monitoring (WIP)</h3>
+            <p>
+                Building a React-based interface (still in progress) to visualize
+                SNMP metrics in real time, aiming to reduce network downtime
+                and keep data flowing smoothly.
+            </p>
+        </div>
+        <div class="project-card">
+            <h3>Kali Linux Research</h3>
+            <p>
+                Explored basic penetration testing methodologies, focusing on
+                responsible practices and foundational security principles.
+            </p>
+        </div>
+        <div class="project-card">
+            <h3>Local Cloud Structures</h3>
+            <p>
+                Preparing a talk on how smaller cloud setups can improve latency
+                and lower overhead for everyday business tasks—especially in
+                edge environments.
+            </p>
+        </div>
     </div>
 </section>
 
 <!-- Skills Section -->
-<section id="skills" class="section skills">
+<section id="skills" class="section">
     <h2>Skills</h2>
-    <p>Here are some of the skills I have acquired over my academic and professional journey:</p>
     <div class="skills-container">
-        <div class="skill-bar">
-            <div class="skill-bar-title">Java</div>
-            <div class="skill-bar-fill" style="width:75%;"></div>
-        </div>
-        <div class="skill-bar">
-            <div class="skill-bar-title">Spring Boot</div>
-            <div class="skill-bar-fill" style="width:45%;"></div>
-        </div>
-        <div class="skill-bar">
-            <div class="skill-bar-title">Project Management</div>
-            <div class="skill-bar-fill" style="width:70%;"></div>
-        </div>
-        <div class="skill-bar">
-            <div class="skill-bar-title">Customer Experience</div>
-            <div class="skill-bar-fill" style="width:77%;"></div>
-        </div>
-        <div class="skill-bar">
-            <div class="skill-bar-title">Docker</div>
-            <div class="skill-bar-fill" style="width:30%;"></div>
-        </div>
-        <div class="skill-bar">
-            <div class="skill-bar-title">SQL</div>
-            <div class="skill-bar-fill" style="width:50%;"></div>
-        </div>
+        <h3>Technical Skills</h3>
+        <ul>
+            <li>Programming Languages: Java, HTML, JavaScript, SQL</li>
+            <li>Web Development: Frontend & Backend Technologies</li>
+            <li>Networking: SNMP Monitoring, Infrastructure Management</li>
+            <li>Cybersecurity: Penetration Testing, Kali Linux, Security Analysis</li>
+            <li>Data Analysis: Quantitative Modeling, Statistical Analysis</li>
+            <li>Cloud Computing: IBM Cloud, WatsonX Assistant</li>
+        </ul>
+
+        <h3>Professional Skills</h3>
+        <ul>
+            <li>Project Management: Agile, Team Coordination, Deadline Management</li>
+            <li>Customer Service: Client Interaction & Support</li>
+            <li>Team Collaboration: Cross-functional Teamwork & Leadership</li>
+            <li>Leadership: Student Government, Budgeting, Advocacy</li>
+        </ul>
     </div>
-</section>
-
-<!-- Education Section -->
-<section id="education" class="section education">
-    <h2>Education</h2>
-    <p><strong>Framingham State University, Massachusetts</strong></p>
-    <p>Bachelor of Science in Business Information Technology, Expected Graduation: May 2025</p>
-    <p>Minor in Computer Science</p>
-</section>
-
-<!-- Activities Section -->
-<section id="activities" class="section activities">
-    <h2>Activities</h2>
-    <p><strong>Student Government Association (SGA), Framingham State University</strong></p>
-    <p>Senator, Financial Committee, May 2022 – Fall 2023</p>
-    <ul>
-        <li>Assisted in managing and allocating funds for student organizations, working closely with the Treasurer
-            to ensure responsible budgeting and spending.</li>
-        <li>Participated in policy development and performed weekly administrative tasks to maintain operational
-            efficiency.</li>
-    </ul>
 </section>
 
 <!-- Contact Section -->
 <section id="contact" class="section contact">
-    <h2>Contact</h2>
-    <p>Feel free to reach out to me through the following channels:</p>
-    <ul>
-        <li><i class="fas fa-envelope"></i> benboyer47@outlook.com </li>
-        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/benjamin-boyer-it/" target="_blank"
-                                               rel="noopener noreferrer">Benjamin Boyer</a></li>
+    <h2>Contact Me</h2>
+    <p>I'd love to connect! Whether it's about a project, collaboration, or just a chat, feel free to reach out.</p>
 
-    </ul>
+    <div class="contact-container">
+        <!-- Contact Form -->
+        <form action="mailto:benboyer47@outlook.com" method="post" enctype="text/plain" class="contact-form">
+            <label>
+                <input type="text" name="name" placeholder="Your Name" required>
+            </label>
+            <label>
+                <input type="email" name="email" placeholder="Your Email" required>
+            </label>
+            <label>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            </label>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <ul>
+                <li><i class="fas fa-envelope"></i> <a href="mailto:benboyer47@outlook.com">benboyer47@outlook.com</a></li>
+                <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/benjamin-boyer-it/" target="_blank">LinkedIn</a></li>
+                <li><i class="fab fa-github"></i> <a href="https://github.com/yourgithub" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
 </section>
+
 
 <!-- Footer -->
 <footer class="footer">
-    <p>&copy; 2024 Benjamin Boyer. All Rights Reserved.</p>
+    <p>&copy; 2025 Benjamin Boyer. All Rights Reserved.</p>
 </footer>
 
-<!-- Canvas for Game -->
-<canvas id="gameCanvas" width="800" height="600"></canvas>
-
-<!-- Custom Script -->
-<script src="js/script.js"></script>
+<!-- Single Script Reference as a Module -->
+<script type="module" src="js/script.js"></script>
 </body>
-
 </html>

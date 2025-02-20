@@ -1,0 +1,97 @@
+.fun-section {
+    text-align: center;
+    padding: 40px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Quiz */
+.quiz-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+.quiz-result {
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #007bff;
+}
+
+/* Chatbot */
+.chat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+.chat-input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.chat-output {
+    width: 80%;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    max-height: 200px;
+    overflow-y: auto;
+    text-align: left;
+}
+
+/* Game Canvas */
+#gameCanvas {
+    margin-top: 20px;
+}
+
+/* Slight style override for fun page navbar */
+.navbar {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+@media (max-width: 768px) {
+    .fun-section {
+        margin: 20px auto;
+        max-width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
