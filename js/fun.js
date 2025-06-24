@@ -81,8 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const chatPasswordSubmit = document.getElementById("chat-password-submit");
     const passwordError = document.getElementById("password-error");
 
-    // Set your password here (Change for security)
-    const chatbotPassword = "BBoyerAI2024";
+    // Read the password from config.js or environment variable
+    const chatbotPassword = window.APP_CONFIG?.CHATBOT_PASSWORD || "";
 
     chatPasswordSubmit.addEventListener("click", () => {
         const enteredPassword = chatPasswordInput.value.trim();
