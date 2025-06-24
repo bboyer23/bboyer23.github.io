@@ -177,8 +177,7 @@ public class Invoice {
 	        "Quantity: %d\n" +
 	        "Price: %.2f\n" +
 	        "Invoice Amount: %.2f",
-	        partNumber, partDescription, qtyPurchased, pricePerItem, getInvoiceAmount()
-	    );
+                partNumber, partDescription, qtyPurchased, pricePerItem, getInvoiceAmount());
 }
 
 
