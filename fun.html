@@ -26,10 +26,10 @@
     <a href="index.html" class="nav-logo">BBoyer</a>
 
     <div class="navbar-right">
-      <button id="dark-mode-toggle" class="btn-toggle">
+      <button id="dark-mode-toggle" class="btn-toggle" aria-label="Toggle dark mode">
         <i class="fas fa-moon"></i>
       </button>
-      <button id="navbar-toggle" class="navbar-toggle">
+      <button id="navbar-toggle" class="navbar-toggle" aria-label="Open navigation menu">
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
@@ -37,7 +37,7 @@
     </div>
 
     <div id="side-menu" class="side-menu">
-      <button id="close-side-menu" class="close-side-menu">&times;</button>
+      <button id="close-side-menu" class="close-side-menu" aria-label="Close navigation menu">&times;</button>
       <a href="index.html">Home</a>
       <a href="resume.html">Resume</a>
       <a href="fun.html">Fun Zone</a>
@@ -76,7 +76,7 @@
 <div id="password-modal" class="password-modal">
   <div class="password-box">
     <h2>With great power comes great responsibility… and also a password 🔑</h2>
-    <input type="password" id="chat-password" placeholder="Enter Password">
+    <input type="password" id="chat-password" placeholder="Enter Password" aria-label="Chat password">
     <button id="chat-password-submit" class="btn">Submit</button>
     <p id="password-error" class="password-error"></p>
   </div>
@@ -86,7 +86,7 @@
 <section id="mini-chatbot" class="section fun-section" style="display: none;">
   <h2>Ask the AI Anything</h2>
   <div class="chat-box">
-    <input type="text" id="chat-input" class="chat-input" placeholder="Type your question...">
+    <input type="text" id="chat-input" class="chat-input" placeholder="Type your question..." aria-label="Your question">
     <button id="chat-submit" class="btn">Ask</button>
   </div>
   <div id="chat-output" class="chat-output"></div>
@@ -96,7 +96,7 @@
 <!-- Mini Game Section -->
 <section id="game-section" class="section fun-section">
   <h2>Bouncing Ball Mini-Game</h2>
-  <canvas id="gameCanvas" width="400" height="300"></canvas>
+  <canvas id="gameCanvas" width="400" height="300" aria-label="Bouncing Ball game"></canvas>
 </section>
 
 <!-- Footer -->
