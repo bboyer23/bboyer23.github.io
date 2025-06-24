@@ -17,3 +17,8 @@ window.APP_CONFIG = {
 Make sure `config.js` is included on every page (it is already referenced by the
 HTML files in this repo).  The scripts will read `window.APP_CONFIG.CHATBOT_PASSWORD`
 when checking the password.
+
+### Fun Zone Enhancements
+
+The chatbot now keeps a chat history in your browser. Use the new **Clear** button
+to wipe the conversation or refresh the page to continue where you left off.
