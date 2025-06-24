@@ -141,6 +141,8 @@ a:hover {
     background-color: var(--accent-color);
     color: #fff;
 }
+.navbar-links a.active { background-color: var(--accent-color); color: #fff; }
+.side-menu a.active { color: var(--accent-color); }
 
 
 /* ================================
