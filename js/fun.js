@@ -107,10 +107,17 @@ document.addEventListener("DOMContentLoaded", () => {
     // ========== AI CHATBOT ==========
     const chatInput = document.getElementById("chat-input");
     const chatSubmit = document.getElementById("chat-submit");
+    const chatClear = document.getElementById("chat-clear");
     const chatOutput = document.getElementById("chat-output");
 
     if (chatInput && chatSubmit && chatOutput) {
         console.log("✅ Chatbot elements found. Initializing chatbot.");
+
+        // Load stored history if available
+        const storedHistory = localStorage.getItem('chatHistory');
+        if (storedHistory) {
+            chatOutput.innerHTML = storedHistory;
+        }
 
         chatSubmit.addEventListener("click", async () => {
             const userMessage = chatInput.value.trim();
@@ -133,6 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.error("[fun.js] Chatbot error:", error);
             }
 
+            localStorage.setItem('chatHistory', chatOutput.innerHTML);
             chatInput.value = "";
         });
 
@@ -142,6 +150,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 chatSubmit.click();
             }
         });
+
+        if (chatClear) {
+            chatClear.addEventListener("click", () => {
+                chatOutput.innerHTML = "";
+                localStorage.removeItem('chatHistory');
+            });
+        }
     }
 
     // ========== MINI GAME ==========
