@@ -11,12 +11,16 @@ function initHamburgerMenu() {
     const navMenu = document.getElementById("nav-menu");
 
     if (!navToggle || !navMenu) {
-        console.warn("Hamburger menu elements not found");
+        console.warn("Hamburger menu elements not found, retrying in 100ms");
+        setTimeout(initHamburgerMenu, 100);
         return;
     }
 
+    console.log("✓ Hamburger menu initialized");
+
     // Toggle menu on hamburger click
-    navToggle.addEventListener("click", () => {
+    navToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
         navMenu.classList.toggle("open");
         navToggle.classList.toggle("active");
     });
@@ -29,8 +33,9 @@ function initHamburgerMenu() {
         });
     });
 
-    // Close menu when clicking outside
+    // Close menu when clicking outside (on body/document)
     document.addEventListener("click", (e) => {
+        // Only close if click is NOT on the menu or toggle button
         if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
             navMenu.classList.remove("open");
             navToggle.classList.remove("active");
@@ -62,17 +67,17 @@ function loadComponent(id, file, callback) {
                 callback();
             }
         })
-        .catch(err => console.error(err));
+        .catch(err => console.error("Error loading component:", err));
 }
 
 // Load navbar + footer and initialize hamburger menu
 document.addEventListener("DOMContentLoaded", () => {
     loadComponent("navbar", "components/navbar.html", () => {
-        console.log("Navbar loaded.");
+        console.log("✓ Navbar loaded");
         initHamburgerMenu(); // Initialize after navbar is loaded
     });
 
     loadComponent("footer", "components/footer.html", () => {
-        console.log("Footer loaded.");
+        console.log("✓ Footer loaded");
     });
 });

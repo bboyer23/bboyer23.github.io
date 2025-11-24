@@ -85,6 +85,8 @@
     border: none;
     cursor: pointer;
     padding: 0.25rem;
+    z-index: 1001;
+    position: relative;
 }
 
 .nav-toggle span {
@@ -106,6 +108,8 @@
         top: 60px;
         right: 0;
         width: 100%;
+        height: calc(100vh - 60px);
+        max-height: calc(100vh - 60px);
         background: var(--onyx);
         padding: 1.5rem 0;
         border-top: 1px solid var(--border-medium);
@@ -113,6 +117,8 @@
         opacity: 0;
         pointer-events: none;
         transition: transform 0.35s ease, opacity 0.3s ease;
+        z-index: 999;
+        overflow-y: auto;
     }
 
     .nav-right.open {
@@ -125,10 +131,18 @@
         flex-direction: column;
         gap: 1.2rem;
         padding: 0 var(--space-3);
+        list-style: none;
+        margin: 0;
+    }
+
+    .nav-right li {
+        margin: 0;
     }
 
     .nav-right a {
         font-size: 1.1rem;
+        display: block;
+        padding: 0.5rem 0;
     }
 
     /* Hamburger animation */
