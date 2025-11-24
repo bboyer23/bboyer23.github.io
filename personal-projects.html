@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ben Boyer — Personal Projects</title>
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <!-- Page Styles -->
+    <link rel="stylesheet" href="css/pages/personal-projects.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<div id="navbar"></div>
+
+<main class="container">
+
+    <!-- Page Title -->
+    <h1 class="page-title fade-in">Personal Projects</h1>
+    <p class="page-subtitle fade-in">
+        These are the systems, applications, and real-world builds that shaped who I am as a developer and builder.
+        Every project here taught me something different — architecture, resilience, leadership, or technical depth.
+    </p>
+
+    <!-- ============================
+         CHRONOBOX
+    ============================== -->
+    <section class="project-section fade-in">
+        <h2 class="section-title">ChronoBox — Local Private Cloud Appliance</h2>
+        <p class="section-description">
+            My flagship project: a fully local cloud system built from the ground up.
+            Designed for privacy, autonomy, and long-term scalability.
+        </p>
+
+        <div class="chronobox-container">
+
+            <div class="chronobox-card scale-up">
+                <h3>v1 → Raspberry Pi Prototype</h3>
+                <p>First implementation using Pi hardware, basic storage, and early Nextcloud tests.</p>
+            </div>
+
+            <div class="chronobox-card scale-up">
+                <h3>v2 → Nextcloud Integration</h3>
+                <p>Implemented file sync, access control, and early security features.</p>
+            </div>
+
+            <div class="chronobox-card scale-up">
+                <h3>v3 → Debian 13 + RAID</h3>
+                <p>Upgraded to x86 hardware with RAID-1 mirroring, NVMe boot, optimized performance.</p>
+            </div>
+
+            <div class="chronobox-card scale-up">
+                <h3>v4 → Local Automation Cloud Concept</h3>
+                <p>Pivot into a device combining ChronoBox with n8n workflows for local automations.</p>
+            </div>
+
+            <div class="chronobox-card scale-up">
+                <h3>v5 → Micro-ATX Hardware Design</h3>
+                <p>Collaborated with hardware engineer on enclosure, airflow, and port layout.</p>
+            </div>
+
+            <div class="chronobox-card scale-up">
+                <h3>v6 → Production Prototype (2025)</h3>
+                <p>
+                    Installing Debian 13 on NVMe, optimizing Nextcloud, RAID mirroring,
+                    and documenting full setup procedures.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         SMART RETURN TRACKER
+    ============================== -->
+    <section class="project-section fade-in">
+        <h2 class="section-title">Smart Return Tracker</h2>
+        <p class="section-description">
+            A full-stack application simulating enterprise retail return workflows.  
+            Built with Express.js, PostgreSQL, Docker, and a clean API structure.
+        </p>
+
+        <div class="project-card scale-up">
+            <h3>Highlights</h3>
+            <ul class="project-list">
+                <li>Containerized with Docker Compose</li>
+                <li>REST API with modular Express routing</li>
+                <li>PostgreSQL relational database</li>
+                <li>Clean folder structure with controllers, routes, models</li>
+                <li>Scalable and production-ready architecture</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================
+         FEDC CAPSTONE PROJECT
+    ============================== -->
+    <section class="project-section fade-in">
+        <h2 class="section-title">FEDC Website — Capstone Project</h2>
+        <p class="section-description">
+            Team Lead for a 6-person project to deliver a full Squarespace redesign for the
+            Framingham Economic Development Corporation.
+        </p>
+
+        <div class="project-card scale-up">
+            <h3>My Role</h3>
+            <ul class="project-list">
+                <li>Lead designer for UI/UX concepts & animations</li>
+                <li>Created full code-injection system (HTML, CSS, JS)</li>
+                <li>Built mobile responsiveness & custom components</li>
+                <li>Managed deliverables, deadlines, and team alignment</li>
+                <li>Client liaison ensuring weekly communication & approvals</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================
+         IBM WATSONX PROJECT
+    ============================== -->
+    <section class="project-section fade-in">
+        <h2 class="section-title">IBM WatsonX — AI Assistant PoC</h2>
+        <p class="section-description">
+            A proof-of-concept virtual assistant built during IBM Accelerate to support
+            insurance-related queries and showcase AI-driven conversation design.
+        </p>
+
+        <div class="project-card scale-up">
+            <h3>Highlights</h3>
+            <ul class="project-list">
+                <li>Regex patterns for address, email, and user input parsing</li>
+                <li>Custom vocabulary tuning</li>
+                <li>API pipeline simulation</li>
+                <li>Team collaboration with mock client cycle</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================
+         NETWORKING MONITORING APP
+    ============================== -->
+    <section class="project-section fade-in">
+        <h2 class="section-title">Networking Monitoring App</h2>
+        <p class="section-description">
+            A real-time monitoring UI built in React.  
+            Displays simulated hardware metrics and API polling behavior.
+        </p>
+
+        <div class="project-card scale-up">
+            <h3>Tech Stack</h3>
+            <ul class="project-list">
+                <li>React.js</li>
+                <li>Polling interval logic</li>
+                <li>Live metric simulation</li>
+                <li>Clean visual dashboard</li>
+            </ul>
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<div id="footer"></div>
+
+<!-- Scripts -->
+<script src="js/router.js"></script>
+<script src="js/main.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/pages/personal-projects.js"></script>
+
+</body>
+</html>

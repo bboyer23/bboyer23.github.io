@@ -1,0 +1,498 @@
+/* ============================================================
+   HOME PAGE STYLES
+   Hero, Trajectory, About Preview, Project Preview
+   ============================================================ */
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+
+.hero {
+    padding: 10rem var(--space-3) 8rem var(--space-3);
+    background: linear-gradient(180deg, var(--charcoal) 0%, rgba(45, 48, 53, 0.5) 100%);
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--sage-green), transparent);
+}
+
+.hero-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: clamp(2.6rem, 6vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: var(--space-3);
+    letter-spacing: -0.5px;
+}
+
+.hero-title .highlight {
+    color: var(--sage-green);
+    font-weight: 800;
+    background: none;
+    padding: 0;
+}
+
+.hero-subtitle {
+    max-width: 620px;
+    margin: 0 auto var(--space-4) auto;
+    color: var(--graphite);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 6rem var(--space-3) 5rem var(--space-3);
+    }
+
+    .hero-title {
+        margin-bottom: var(--space-2);
+    }
+}
+
+/* ============================================================
+   HERO BUTTONS
+   ============================================================ */
+
+.hero-buttons {
+    margin-top: var(--space-4);
+    display: flex;
+    justify-content: center;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: var(--sage-green);
+    color: var(--charcoal);
+    padding: 0.95rem 2rem;
+    border-radius: var(--radius-s);
+    font-weight: 600;
+    transition: all var(--transition-fast);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(169, 193, 173, 0.15);
+    letter-spacing: 0.3px;
+}
+
+.btn-primary:hover {
+    background: var(--warm-gold);
+    color: var(--charcoal);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(169, 193, 173, 0.25);
+}
+
+.btn-secondary {
+    border: 2px solid var(--warm-gold);
+    color: var(--warm-gold);
+    padding: 0.95rem 2rem;
+    border-radius: var(--radius-s);
+    font-weight: 600;
+    transition: all var(--transition-fast);
+    background: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 0.3px;
+}
+
+.btn-secondary:hover {
+    background: var(--warm-gold);
+    color: var(--charcoal);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(208, 184, 138, 0.2);
+}
+
+.small-btn {
+    margin-top: 1.5rem;
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    font-size: 0.95rem;
+}
+
+/* ============================================================
+   TRAJECTORY STRIP
+   ============================================================ */
+
+.trajectory {
+    margin-top: 0;
+    background: linear-gradient(90deg, var(--espresso) 0%, rgba(45, 48, 53, 0.8) 50%, var(--espresso) 100%);
+    padding: 2rem var(--space-3);
+    border-top: 1px solid var(--border-medium);
+    border-bottom: 1px solid var(--border-medium);
+    position: relative;
+}
+
+.trajectory::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--warm-gold), transparent);
+}
+
+.trajectory-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.trajectory-step {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--warm-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all var(--transition-fast);
+}
+
+.trajectory-step:hover {
+    color: var(--sage-green);
+    transform: scale(1.05);
+}
+
+.trajectory-arrow {
+    color: var(--graphite);
+    opacity: 0.4;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .trajectory {
+        padding: 1.5rem var(--space-2);
+    }
+
+    .trajectory-inner {
+        gap: 0.8rem;
+    }
+
+    .trajectory-step {
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+    }
+
+    .trajectory-arrow {
+        font-size: 1rem;
+    }
+}
+
+/* ============================================================
+   ABOUT PREVIEW
+   ============================================================ */
+
+.about-preview {
+    text-align: center;
+    margin-top: var(--space-6);
+    padding: var(--space-5) var(--space-4);
+    background: linear-gradient(135deg, rgba(169, 193, 173, 0.03) 0%, rgba(208, 184, 138, 0.03) 100%);
+    border-radius: var(--radius-m);
+    border: 1px solid var(--border-soft);
+    position: relative;
+}
+
+.about-preview h2 {
+    margin-bottom: var(--space-3);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.about-preview p {
+    max-width: 700px;
+    margin: 1.5rem auto;
+    color: var(--graphite);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.about-preview strong {
+    color: var(--sage-green);
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .about-preview {
+        margin-top: var(--space-5);
+        padding: var(--space-4) var(--space-3);
+    }
+}
+
+/* ============================================================
+   PROJECT PREVIEW SECTION
+   ============================================================ */
+
+.project-preview {
+    margin-top: var(--space-6);
+    text-align: center;
+}
+
+.project-preview h2 {
+    color: var(--warm-gold);
+    margin-bottom: var(--space-4);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    position: relative;
+    padding-bottom: var(--space-3);
+}
+
+.project-preview h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--sage-green), transparent);
+}
+
+.project-cards {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: 1fr;
+    margin-bottom: var(--space-5);
+}
+
+@media (min-width: 768px) {
+    .project-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.project-card {
+    background: linear-gradient(135deg, var(--espresso) 0%, rgba(45, 48, 53, 0.7) 100%);
+    padding: var(--space-4);
+    border-radius: var(--radius-m);
+    border: 1px solid var(--border-medium);
+    transition: all var(--transition-fast);
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--sage-green), transparent);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--warm-gold);
+    box-shadow: 0 12px 24px rgba(169, 193, 173, 0.12);
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-card h3 {
+    color: var(--ink);
+    margin-bottom: var(--space-2);
+    font-size: 1.25rem;
+    transition: color var(--transition-fast);
+}
+
+.project-card:hover h3 {
+    color: var(--sage-green);
+}
+
+.project-card p {
+    color: var(--graphite);
+    margin-bottom: var(--space-3);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.project-link {
+    display: inline-block;
+    color: var(--sage-green);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    position: relative;
+    letter-spacing: 0.3px;
+}
+
+.project-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--sage-green);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--transition-fast);
+}
+
+.project-link:hover {
+    color: var(--warm-gold);
+}
+
+.project-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+    background: var(--warm-gold);
+}
+
+/* ==============================
+   MOBILE OPTIMIZATION (max-width: 768px)
+============================== */
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 5rem var(--space-2) 4rem var(--space-2);
+    }
+
+    .hero-title {
+        font-size: clamp(1.8rem, 5vw, 2.4rem);
+        line-height: 1.25;
+        margin-bottom: var(--space-2);
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin: 0 auto 1.5rem auto;
+    }
+
+    .hero-buttons {
+        gap: var(--space-2);
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 0.8rem 1.4rem;
+        font-size: 0.9rem;
+    }
+
+    .trajectory {
+        padding: 1.2rem var(--space-2);
+    }
+
+    .trajectory-inner {
+        gap: 1rem;
+    }
+
+    .trajectory-step {
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+    }
+
+    .about-preview {
+        padding: var(--space-3) var(--space-2);
+        margin-top: var(--space-4);
+    }
+
+    .about-preview p {
+        font-size: 0.95rem;
+        margin: 0.8rem auto;
+    }
+
+    .project-preview {
+        margin-top: var(--space-4);
+    }
+
+    .project-cards {
+        gap: var(--space-2);
+    }
+
+    .project-card {
+        padding: var(--space-3);
+    }
+
+    .project-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .project-card p {
+        font-size: 0.9rem;
+        margin-bottom: var(--space-2);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 3rem var(--space-2) 2rem var(--space-2);
+    }
+
+    .hero-title {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        padding: 0.7rem 1.2rem;
+    }
+
+    .trajectory-step {
+        font-size: 0.8rem;
+    }
+
+    .trajectory-arrow {
+        font-size: 0.9rem;
+    }
+
+    .project-card {
+        padding: var(--space-2);
+    }
+
+    .project-card h3 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-preview {
+        margin-top: var(--space-5);
+    }
+
+    .project-cards {
+        gap: var(--space-3);
+    }
+
+    .project-card {
+        padding: var(--space-3);
+    }
+}

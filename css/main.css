@@ -1,0 +1,276 @@
+/* ============================================================
+   BEN BOYER — QUIET LUXURY DARK MODE DESIGN SYSTEM
+   Global Styles, Variables, Typography, Layout, Resets
+   ============================================================ */
+
+/* ------------------------------
+   ROOT VARIABLES (HYBRID SYSTEM)
+   ------------------------------ */
+:root {
+
+    /* Core Dark Backgrounds */
+    --charcoal: #1A1D21;      /* Global background */
+    --espresso: #2D3035;      /* Cards, panels, inner sections */
+    --onyx: #16181B;          /* Nav, footer, deep sections */
+
+    /* Light Neutral */
+    --linen: #FAF7F2;         /* Highlight blocks (use sparingly) */
+
+    /* Accents */
+    --warm-gold: #D0B88A;     /* Headings, lines, refined accents */
+    --sage-green: #A9C1AD;    /* Buttons, interactive elements */
+
+    /* Typography */
+    --ink: #EDEDED;           /* Primary text */
+    --graphite: #B8B8B8;      /* Secondary text */
+
+    /* Borders & Lines */
+    --border-soft: rgba(255,255,255,0.08);
+    --border-medium: rgba(255,255,255,0.15);
+
+    /* Shadows */
+    --shadow-soft: 0 2px 6px rgba(0,0,0,0.25);
+    --shadow-card: 0 4px 12px rgba(0,0,0,0.28);
+
+    /* Spacing Scale (8px system) */
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-5: 3rem;
+    --space-6: 4rem;
+
+    /* Radius */
+    --radius-s: 6px;
+    --radius-m: 12px;
+    --radius-l: 18px;
+
+    /* Timing */
+    --transition-fast: 0.22s ease;
+    --transition-medium: 0.35s ease;
+}
+
+
+/* ------------------------------
+   GLOBAL RESET
+   ------------------------------ */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--charcoal);
+    color: var(--ink);
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+img, picture, video, canvas {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: var(--sage-green);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--warm-gold);
+}
+
+ul, ol {
+    list-style: none;
+}
+
+
+/* ------------------------------
+   TYPOGRAPHY SCALE
+   ------------------------------ */
+h1, h2, h3, h4 {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: var(--space-2);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: var(--warm-gold);
+    margin-bottom: var(--space-1);
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-1);
+    color: var(--ink);
+}
+
+p {
+    color: var(--graphite);
+    margin-bottom: var(--space-2);
+}
+
+
+/* ------------------------------
+   GLOBAL LAYOUT CONTAINER
+   ------------------------------ */
+.container {
+    width: min(1200px, 90%);
+    margin: 0 auto;
+    padding-top: var(--space-5);
+}
+
+
+/* ------------------------------
+   GLOBAL SECTION SPACING
+   ------------------------------ */
+section {
+    margin: var(--space-5) 0;
+}
+
+
+/* ------------------------------
+   CARDS (BASE STYLE)
+   ------------------------------ */
+.card {
+    background: var(--espresso);
+    border: 1px solid var(--border-medium);
+    padding: var(--space-3);
+    border-radius: var(--radius-m);
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.card:hover {
+    border-color: var(--warm-gold);
+    transform: translateY(-4px);
+}
+
+
+/* ------------------------------
+   BUTTONS (GLOBAL)
+   ------------------------------ */
+.btn {
+    display: inline-block;
+    background: var(--sage-green);
+    color: var(--charcoal);
+    padding: 0.7rem 1.4rem;
+    border-radius: var(--radius-s);
+    font-weight: 600;
+    transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn:hover {
+    background: var(--warm-gold);
+    transform: translateY(-3px);
+}
+
+
+/* ------------------------------
+   HIGHLIGHT BLOCK (LINEN SECTIONS)
+   ------------------------------ */
+.highlight-block {
+    background: var(--linen);
+    color: var(--charcoal);
+    padding: var(--space-4);
+    border-radius: var(--radius-m);
+}
+
+
+/* ------------------------------
+   DIVIDERS
+   ------------------------------ */
+.divider {
+    height: 1px;
+    width: 100%;
+    background: var(--border-medium);
+    margin: var(--space-4) 0;
+}
+
+
+/* ------------------------------
+   UTILITIES
+   ------------------------------ */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.mt-1 { margin-top: var(--space-1); }
+.mt-2 { margin-top: var(--space-2); }
+.mt-3 { margin-top: var(--space-3); }
+.mt-4 { margin-top: var(--space-4); }
+.mb-1 { margin-bottom: var(--space-1); }
+.mb-2 { margin-bottom: var(--space-2); }
+.mb-3 { margin-bottom: var(--space-3); }
+.mb-4 { margin-bottom: var(--space-4); }
+
+
+/* ------------------------------
+   RESPONSIVE ADJUSTMENTS
+   ------------------------------ */
+@media (max-width: 768px) {
+    .container {
+        width: min(100%, 95%);
+        padding: var(--space-4) 0;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: clamp(1.8rem, 4vw, 2.2rem);
+    }
+
+    h2 {
+        font-size: clamp(1.3rem, 3.5vw, 1.6rem);
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    section {
+        margin: var(--space-4) 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: var(--space-3) 0;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    section {
+        margin: var(--space-3) 0;
+    }
+}

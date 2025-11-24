@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ben Boyer — Research</title>
+
+    <!-- Global -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+
+    <!-- Page Styles -->
+    <link rel="stylesheet" href="css/pages/research.css" />
+</head>
+
+<body>
+
+<div id="navbar"></div>
+
+<main class="container">
+
+    <!-- HEADER -->
+    <h1 class="page-title fade-in">Research</h1>
+    <p class="page-subtitle fade-in">
+        I've been exploring cloud security, data autonomy, and privacy concerns. This research led me to propose
+        a new model for local, private cloud systems — combining the convenience of cloud with the control of on-premise infrastructure.
+    </p>
+
+    <!-- ============================
+         SECTION: MIXED METHODS STUDY
+    ============================== -->
+    <section class="research-section fade-in">
+        <h2 class="section-title">Mixed-Methods Study (2024–2025)</h2>
+        <p class="section-description">
+            I conducted research analyzing breach trends and trust gaps in cloud platforms.
+            This work led me to propose the "Local Centralized Private Cloud Model" — a new approach to data security and autonomy.
+        </p>
+
+        <div class="research-grid">
+            <div class="research-card scale-up">
+                <h3>Quantitative Analysis</h3>
+                <p>
+                    I gathered breach data from 200 companies across industries (2020–2023),
+                    then organized and analyzed it in Excel using pivot tables and charts.
+                </p>
+                <ul class="research-points">
+                    <li>Common breach vectors: credential theft, misconfigurations, insider access</li>
+                    <li>Authentication failures were connected to major losses</li>
+                    <li>Cloud misconfigurations kept appearing as a top issue</li>
+                </ul>
+            </div>
+
+            <div class="research-card scale-up">
+                <h3>Qualitative Analysis</h3>
+                <p>
+                    I ran a survey on LinkedIn with IT professionals using a Likert scale,
+                    asking about their trust in and concerns about public cloud providers.
+                </p>
+                <ul class="research-points">
+                    <li>Participants wanted more transparency in how cloud providers handle data</li>
+                    <li>Many worried about vendor lock-in and unclear security practices</li>
+                    <li>Significant interest in local, private cloud alternatives</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================
+         SECTION: PRIVATE CLOUD THEORETICAL MODEL
+    ============================== -->
+    <section class="research-section fade-in">
+        <h2 class="section-title">The Local Centralized Private Cloud Model</h2>
+        <p class="section-description">
+            A new architecture designed to merge cloud-style convenience with local-hardware autonomy.
+        </p>
+
+        <div class="model-grid">
+
+            <div class="model-card scale-up">
+                <h3>Concept</h3>
+                <p>
+                    A self-contained system running locally on user-owned hardware,
+                    providing cloud capabilities without dependency on public cloud vendors.
+                </p>
+            </div>
+
+            <div class="model-card scale-up">
+                <h3>Key Benefits</h3>
+                <ul class="research-points">
+                    <li>Data autonomy and physical control</li>
+                    <li>Reduced attack surface</li>
+                    <li>No vendor lock-in</li>
+                    <li>Predictable cost structure</li>
+                </ul>
+            </div>
+
+            <div class="model-card scale-up">
+                <h3>Security Stack</h3>
+                <ul class="research-points">
+                    <li>RAID-1 redundancy</li>
+                    <li>Encryption at rest + in transit</li>
+                    <li>Strict local-only access model</li>
+                    <li>Firewall + segmentation controls</li>
+                </ul>
+            </div>
+
+            <div class="model-card scale-up">
+                <h3>Future Vision</h3>
+                <p>
+                    Integrating workflow engines (n8n), NAS features, container services,
+                    and local AI models into a single trustworthy edge appliance.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============================
+         SECTION: POSTER / PRESENTATION
+    ============================== -->
+    <section class="research-section fade-in">
+        <h2 class="section-title">Poster & Academic Presentation</h2>
+        <p class="section-description">
+            Presented research findings in a formal poster setting, outlining the problem space,
+            methodology, and proposed private cloud solution.
+        </p>
+
+        <div class="poster-card scale-up">
+            <h3>Highlights</h3>
+            <ul class="research-points">
+                <li>Visual breakdown of breach data & categories</li>
+                <li>Security model comparison (Public Cloud vs Local Model)</li>
+                <li>Summary of survey findings</li>
+                <li>Implementation timeline & architectural sketch</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================
+         SECTION: REAL-WORLD LINKS
+    ============================== -->
+    <section class="research-section fade-in">
+        <h2 class="section-title">Connecting Research to Practice</h2>
+
+        <p class="section-description">
+            This research directly shaped how I built ChronoBox — from hardware choices and RAID strategy
+            to encryption and access control. It reinforced a belief: people should have more control over their own data.
+        </p>
+
+        <div class="connection-grid">
+            <div class="connection-card scale-up">
+                <h3>ChronoBox</h3>
+                <p>The research is directly embodied in the engineering of ChronoBox, a functioning prototype.</p>
+                <a href="personal-projects.html" class="link-arrow">View Project →</a>
+            </div>
+            <div class="connection-card scale-up">
+                <h3>Smart Return Tracker</h3>
+                <p>Applied database, systems, and reliability insights to backend system design.</p>
+                <a href="personal-projects.html" class="link-arrow">View Project →</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<div id="footer"></div>
+
+<!-- Scripts -->
+<script src="js/router.js"></script>
+<script src="js/main.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/pages/research.js"></script>
+
+</body>
+</html>

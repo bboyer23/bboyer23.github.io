@@ -1,115 +1,227 @@
-<!-- fun.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Benjamin Boyer - Fun Zone</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fun Zone — Ben Boyer</title>
 
-  <!-- Shared + Fun Styles -->
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/fun.css">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/animations.css" />
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Optional page-specific tuning */
+        .fun-header {
+            text-align: center;
+            margin-bottom: var(--space-4);
+        }
 
-  <!-- Optional Particles on Fun Page -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+        .quiz-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-2);
+        }
+
+        .quiz-option {
+            padding: var(--space-2);
+            background: var(--espresso);
+            border: 1px solid var(--border-medium);
+            border-radius: var(--radius-s);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .quiz-option:hover {
+            border-color: var(--sage-green);
+            background: rgba(169, 193, 173, 0.1);
+        }
+
+        /* ==============================
+           MOBILE OPTIMIZATION
+        ============================== */
+
+        @media (max-width: 768px) {
+            .fun-header {
+                font-size: 1.8rem;
+            }
+
+            .quiz-options {
+                grid-template-columns: 1fr;
+            }
+
+            .quiz-option {
+                padding: 1rem;
+                font-size: 0.95rem;
+            }
+
+            #password-modal {
+                max-width: 100%;
+                margin: 2rem auto !important;
+                padding: 1.5rem;
+            }
+
+            #chat-output {
+                height: 200px !important;
+            }
+
+            #gameCanvas {
+                width: 100% !important;
+                height: auto !important;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .fun-header {
+                font-size: 1.5rem;
+            }
+
+            #password-modal {
+                padding: 1.2rem;
+            }
+
+            #chat-output {
+                height: 150px !important;
+            }
+
+            .btn, .btn-outline {
+                font-size: 0.85rem;
+                padding: 0.6rem 0.9rem;
+            }
+        }
+    </style>
 </head>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+
 <body>
-<div id="particles-js"></div>
 
-<!-- Navbar -->
-<nav class="navbar">
-  <div class="navbar-container">
-    <a href="index.html" class="nav-logo">BBoyer</a>
+<!-- Navbar injects here -->
+<div id="navbar"></div>
 
-    <div class="navbar-right">
-      <button id="dark-mode-toggle" class="btn-toggle" aria-label="Toggle dark mode">
-        <i class="fas fa-moon"></i>
-      </button>
-      <button id="navbar-toggle" class="navbar-toggle" aria-label="Open navigation menu">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </button>
-    </div>
+<main class="container fade-in">
 
-    <div id="side-menu" class="side-menu">
-      <button id="close-side-menu" class="close-side-menu" aria-label="Close navigation menu">&times;</button>
-      <a href="index.html">Home</a>
-      <a href="resume.html">Resume</a>
-      <a href="fun.html">Fun Zone</a>
-      <a href="projects.html">Projects</a>
-      <a href="index.html#skills">Skills</a>
-      <a href="index.html#contact">Contact</a>
-    </div>
+    <!-- ============================
+         PAGE HEADER
+    ============================ -->
+    <section>
+        <h1 class="fun-header">🎉 The Fun Zone</h1>
+        <p class="text-center" style="max-width:700px;margin:0 auto;color:var(--graphite);">
+            Explore interactive tools, games, quizzes, and your personal AI assistant — 
+            all wrapped in the Quiet Luxury aesthetic.
+        </p>
+    </section>
 
-    <div class="navbar-links">
-      <a href="index.html">Home</a>
-      <a href="resume.html">Resume</a>
-      <a href="fun.html">Fun Zone</a>
-      <a href="projects.html">Projects</a>
-      <a href="index.html#skills">Skills</a>
-      <a href="index.html#contact">Contact</a>
-    </div>
-  </div>
-</nav>
+    <!-- ============================
+         CAREER QUIZ
+    ============================ -->
+    <section class="card fade-in">
+        <h2 class="text-center">Find Your Tech Career Path</h2>
+        <p class="text-center mb-3">
+            Answer quick questions to discover your ideal tech role.
+        </p>
 
-<!-- Quiz Section -->
-<section id="quiz" class="section fun-section">
-  <h2>What Type of Tech Role Suits You?</h2>
-  <p>Answer a few quick questions for a fun suggestion!</p>
-  <button id="start-quiz" class="btn">Start Quiz</button>
+        <div id="quiz-container" class="mb-3" style="display:none;">
+            <h3 id="quiz-question" class="mb-2"></h3>
+            <div class="quiz-options grid-2"></div>
+        </div>
 
-  <div id="quiz-container" class="quiz-box" style="display: none;">
-    <p id="quiz-question"></p>
-    <div class="quiz-options">
-      <!-- Options are dynamically generated in fun.js -->
-    </div>
-  </div>
-  <p id="quiz-result" class="quiz-result" style="display: none;"></p>
-</section>
+        <p id="quiz-result"
+           class="text-center"
+           style="display:none;font-size:1.2rem;color:var(--warm-gold);">
+        </p>
 
-<!-- Chatbot Password Modal -->
-<div id="password-modal" class="password-modal">
-  <div class="password-box">
-    <h2>With great power comes great responsibility… and also a password 🔑</h2>
-    <input type="password" id="chat-password" placeholder="Enter Password" aria-label="Chat password">
-    <button id="chat-password-submit" class="btn">Submit</button>
-    <p id="password-error" class="password-error"></p>
-  </div>
-</div>
+        <button id="start-quiz" class="btn" style="width:100%;margin-top:1rem;">
+            Start Quiz
+        </button>
+    </section>
 
-<!-- AI Chatbot Section (Hidden by Default) -->
-<section id="mini-chatbot" class="section fun-section" style="display: none;">
-  <h2>Ask the AI Anything</h2>
-  <div class="chat-box">
-    <input type="text" id="chat-input" class="chat-input" placeholder="Type your question..." aria-label="Your question">
-    <button id="chat-submit" class="btn">Ask</button>
-    <button id="chat-clear" class="btn">Clear</button>
-  </div>
-  <div id="chat-output" class="chat-output"></div>
-</section>
+    <!-- ============================
+         PASSWORD MODAL
+    ============================ -->
+    <section id="password-modal"
+             class="card fade-in"
+             style="max-width:420px;margin:3rem auto;text-align:center;">
 
+        <h2>Enter Chat Password</h2>
+        <input 
+            id="chat-password"
+            type="password"
+            placeholder="Enter password…"
+            style="margin-top:1rem;" />
 
-<!-- Mini Game Section -->
-<section id="game-section" class="section fun-section">
-  <h2>Bouncing Ball Mini-Game</h2>
-  <canvas id="gameCanvas" width="400" height="300" aria-label="Bouncing Ball game"></canvas>
-</section>
+        <p id="password-error"
+           style="margin-top:0.5rem;height:1.2rem;"></p>
 
-<!-- Footer -->
-<footer class="footer">
-  <p>&copy; 2024 Benjamin Boyer. All Rights Reserved.</p>
-</footer>
+        <button id="chat-password-submit" class="btn" style="width:100%;margin-top:1rem;">
+            Unlock Chatbot
+        </button>
+    </section>
 
-<!-- Config file must be loaded before other scripts -->
-<script src="js/config.js"></script>
-<!-- Single Script Reference as a Module -->
-<script type="module" src="js/script.js"></script>
+    <!-- ============================
+         AI CHATBOT
+    ============================ -->
+    <section id="mini-chatbot"
+             class="card fade-in"
+             style="display:none;margin-top: var(--space-5);">
+
+        <h2 class="mb-2">AI Assistant</h2>
+
+        <div id="chat-output"
+             style="
+                background: var(--onyx);
+                border: 1px solid var(--border-medium);
+                padding: var(--space-2);
+                height: 250px;
+                overflow-y: auto;
+                border-radius: var(--radius-s);
+                margin-bottom: var(--space-2);
+             ">
+        </div>
+
+        <input 
+            id="chat-input" 
+            type="text" 
+            placeholder="Ask me anything…" 
+            style="margin-bottom: var(--space-2);" />
+
+        <div style="display:flex;gap:var(--space-2);">
+            <button id="chat-submit" class="btn" style="flex:1;">Send</button>
+            <button id="chat-clear" class="btn-outline" style="flex:1;">Clear</button>
+        </div>
+    </section>
+
+    <!-- ============================
+         MINI GAME
+    ============================ -->
+    <section class="card fade-in" style="margin-top: var(--space-5);text-align:center;">
+        <h2 class="mb-3">Mini Game</h2>
+        <p class="mb-3">A simple bouncing-ball game running at ~60 FPS.</p>
+
+        <canvas id="gameCanvas"
+                width="300"
+                height="300"
+                style="border:1px solid var(--border-medium);border-radius:var(--radius-s);">
+        </canvas>
+    </section>
+
+</main>
+
+<!-- Footer injects here -->
+<div id="footer"></div>
+
+<!-- Scripts -->
+<script src="js/router.js"></script>
+<script src="js/main.js"></script>
+<script src="js/animations.js"></script>
+
+<!-- PAGE-SPECIFIC LOGIC -->
+<script>
+    window.APP_CONFIG = {
+        CHATBOT_PASSWORD: "benfun"  /* ← change to your actual password */
+    };
+</script>
+
+<script src="js/fun.js"></script>
+
 </body>
 </html>

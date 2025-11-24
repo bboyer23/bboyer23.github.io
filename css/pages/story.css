@@ -1,0 +1,226 @@
+/* ============================================================
+   STORY PAGE — Quiet Luxury Hybrid Redesign
+   Narrative structure, highlight cards, milestones, closing
+   ============================================================ */
+
+
+/* ==============================
+   HEADER & INTRO
+============================== */
+
+.story-header {
+    text-align: center;
+    margin-bottom: var(--space-5);
+}
+
+.story-header h1 {
+    color: var(--ink);
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    font-weight: 700;
+    margin-bottom: var(--space-2);
+}
+
+.story-intro {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 1rem auto;
+    color: var(--graphite);
+    opacity: 0.95;
+    text-align: center;
+}
+
+
+/* ==============================
+   STORY SECTIONS
+============================== */
+
+.story-section {
+    margin: var(--space-5) auto;
+    max-width: 850px;
+}
+
+.story-section h2 {
+    font-size: clamp(1.6rem, 3.5vw, 2rem);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+    color: var(--warm-gold);
+}
+
+.story-section p {
+    margin-bottom: var(--space-2);
+    color: var(--ink);
+    opacity: 0.9;
+    line-height: 1.55;
+}
+
+
+/* ==============================
+   LISTS (Milestones / Themes)
+============================== */
+
+.story-list {
+    list-style: none;
+    margin: 1rem 0 1.5rem 0;
+    padding: 0;
+}
+
+.story-list li {
+    padding: 0.6rem 0;
+    padding-left: 1rem;
+    margin-bottom: 0.3rem;
+    border-left: 3px solid var(--sage-green);
+    color: var(--graphite);
+    transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.story-list li:hover {
+    border-color: var(--warm-gold);
+    color: var(--ink);
+}
+
+
+/* ==============================
+   HIGHLIGHT CARDS (3-column grid)
+============================== */
+
+.story-highlights {
+    margin: 1.5rem 0;
+    display: grid;
+    gap: var(--space-3);
+}
+
+@media (min-width: 768px) {
+    .story-highlights {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.highlight-card {
+    background: var(--espresso);
+    padding: var(--space-3);
+    border-radius: var(--radius-m);
+    border: 1px solid var(--border-medium);
+    transition:
+        transform var(--transition-fast),
+        border-color var(--transition-fast),
+        background var(--transition-fast);
+    box-shadow: var(--shadow-card);
+}
+
+.highlight-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--warm-gold);
+}
+
+.highlight-card h3 {
+    color: var(--ink);
+    margin-bottom: var(--space-1);
+    font-weight: 600;
+}
+
+.highlight-card p {
+    color: var(--graphite);
+    line-height: 1.5;
+}
+
+
+/* ==============================
+   ENDING SECTION
+============================== */
+
+.story-ending {
+    padding-bottom: var(--space-6);
+    margin-top: var(--space-5);
+    text-align: center;
+}
+
+.closing-line {
+    margin-top: var(--space-3);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--sage-green);
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==============================
+   MOBILE OPTIMIZATION (max-width: 768px)
+============================== */
+
+@media (max-width: 768px) {
+    .story-header {
+        margin-bottom: var(--space-4);
+    }
+
+    .story-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .story-intro {
+        font-size: 1rem;
+        margin: 0.8rem auto;
+    }
+
+    .story-section {
+        margin: var(--space-4) auto;
+        padding: 0 var(--space-2);
+    }
+
+    .story-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .story-section p {
+        font-size: 0.95rem;
+    }
+
+    .story-list li {
+        font-size: 0.9rem;
+        padding-left: 0.8rem;
+    }
+
+    .story-highlights {
+        grid-template-columns: 1fr;
+        gap: var(--space-2);
+    }
+
+    .highlight-card {
+        padding: var(--space-2);
+    }
+
+    .highlight-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .closing-line {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .story-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .story-intro {
+        font-size: 0.95rem;
+    }
+
+    .story-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .story-list li {
+        font-size: 0.85rem;
+    }
+
+    .highlight-card h3 {
+        font-size: 0.95rem;
+    }
+
+    .highlight-card p {
+        font-size: 0.85rem;
+    }
+}
