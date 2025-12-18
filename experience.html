@@ -1,133 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ben Boyer — Experience</title>
-
-    <!-- Global Styles -->
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/animations.css" />
-
-    <!-- Page Styles -->
-    <link rel="stylesheet" href="css/pages/experience.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience | Ben Boyer</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Manrope:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- Navbar -->
-<div id="navbar"></div>
+    <div class="container">
+       <!-- NEW NAVIGATION BLOCK (Mobile Ready) -->
+<nav>
+    <div class="logo">BEN BOYER<span>.</span></div>
 
-<main class="container">
+    <!-- Desktop Links (Hidden on Mobile) -->
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="playground.html">R&D</a>
+        <a href="assets/pdf/BBoyer25-Resume.pdf" target="_blank" style="color: var(--accent-gold);">Resume ↗</a>
+    </div>
 
-    <h1 class="page-title fade-in">Experience</h1>
-    <p class="page-subtitle fade-in">
-        I've worked across operations, IT, cloud infrastructure, and product teams. Each role taught me something
-        different about how systems, teams, and technology actually work. These experiences shaped how I approach problems.
-    </p>
+    <!-- Hamburger Icon (Visible on Mobile) -->
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
 
-    <!-- ============================
-        TJX — IT ANALYST INTERN
-    ============================== -->
-    <section class="experience-card fade-in">
-        <div class="exp-header">
-            <h2>TJX Companies, Inc.</h2>
-            <span class="exp-role">IT Analyst Intern — Platform Engineering (Agile / ServiceNow)</span>
-            <span class="exp-dates">June 2025 – August 2025</span>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="playground.html">R&D</a>
+        <a href="assets/pdf/BBoyer25-Resume.pdf" target="_blank" style="color: var(--accent-gold);">Resume PDF</a>
+    </div>
+</nav>
+
+        <!-- 1. ENTERPRISE ENGINEERING -->
+        <div class="hidden" style="margin-bottom: var(--spacing-lg);">
+            <h2 class="category-title">01 / Enterprise Platform Engineering</h2>
+            
+            <!-- TJX -->
+            <div class="grid-2" style="margin-bottom: var(--spacing-lg);">
+                <div>
+                    <h3 style="font-size: 1.5rem;">TJX Companies</h3>
+                    <span style="color: var(--accent-gold);">IT Analyst Intern (Platform Engineering)</span>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Framingham, MA | May 2025 – Aug 2025</p>
+                    <div class="tag-container">
+                        <span class="tag">ServiceNow</span>
+                        <span class="tag">Agile/Scrum</span>
+                        <span class="tag">Jira/Confluence</span>
+                    </div>
+                </div>
+                <div>
+                    <p style="margin-bottom: 1rem;">
+                        Embedded within the Platform Engineering team, focusing on the intersection of Agile governance and workflow automation.
+                    </p>
+                    <ul style="list-style: disc; padding-left: 1rem; color: var(--text-muted); line-height: 1.7;">
+                        <li><strong>Agile Leadership:</strong> Facilitated daily stand-ups and retrospectives for multiple engineering teams, improving sprint alignment and communication efficiency.</li>
+                        <li><strong>Process Optimization:</strong> Developed a standup cost-tracking dashboard, identifying approximately <strong>$3k in monthly savings</strong> through meeting-time efficiency.</li>
+                        <li><strong>Documentation Architecture:</strong> Built and standardized Confluence-Jira integration templates, enhancing story traceability and creating a Single Source of Truth (SSOT).</li>
+                        <li><strong>Strategic Alignment:</strong> Partnered with Product Owners to improve backlog hygiene, ensuring alignment between technical deliverables and business capacity.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid var(--border-subtle); margin: var(--spacing-lg) 0;">
+
+            <!-- IBM -->
+            <div class="grid-2">
+                <div>
+                    <h3 style="font-size: 1.5rem;">IBM</h3>
+                    <span style="color: var(--accent-gold);">Accelerate Participant (Client Engineering)</span>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Remote | June 2024 – July 2024</p>
+                    <div class="tag-container">
+                        <span class="tag">WatsonX AI</span>
+                        <span class="tag">Technical Sales</span>
+                        <span class="tag">Solution Design</span>
+                    </div>
+                </div>
+                <div>
+                    <p style="margin-bottom: 1rem;">
+                        Selected for a competitive development program focused on AI architecture and consultative sales.
+                    </p>
+                    <ul style="list-style: disc; padding-left: 1rem; color: var(--text-muted); line-height: 1.7;">
+                        <li><strong>AI Solutioning:</strong> Designed and demonstrated a WatsonX-powered insurance assistant POC, utilizing Regex and prompt engineering to simulate complex client problem-solving.</li>
+                        <li><strong>Sales Cycle Execution:</strong> Executed a complete mock sales cycle—crafting proposals, delivering stakeholder presentations, and iterating based on technical feedback.</li>
+                        <li><strong>Cross-Functional Collaboration:</strong> Collaborated with IBM mentors and peers to deliver an 8-week prototype on time and to specification.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
-        <ul class="exp-list">
-            <li>Supported daily stand-ups, retrospectives, and sprint ceremonies while learning how Agile teams coordinate in real settings.</li>
-            <li>Helped build and refine Confluence documentation templates, gaining a better understanding of how clarity impacts team alignment.</li>
-            <li>Worked alongside Product Owners and Engineers to understand how scope, planning, and prioritization decisions are made.</li>
-            <li>Assisted the IT Gigs initiative by contributing ideas to improve visibility and communication for internal opportunities.</li>
-            <li>Explored cost-tracking and reporting, identifying areas where the team could potentially reduce monthly expenses and learning how data influences decisions.</li>
-        </ul>
-    </section>
-
-
-    <!-- ============================
-         CLOUD SOLVED MSP
-    ============================== -->
-    <section class="experience-card fade-in">
-        <div class="exp-header">
-            <h2>Cloud Solved IT</h2>
-            <span class="exp-role">Managed Service Provider Technician</span>
-            <span class="exp-dates">June 2023 – February 2024</span>
+        <!-- 2. INFRASTRUCTURE & SECURITY -->
+        <div class="hidden" style="margin-bottom: var(--spacing-lg); margin-top: var(--spacing-xl);">
+            <h2 class="category-title">02 / Infrastructure & Security Operations</h2>
+            
+            <!-- CLOUD SOLVED IT -->
+            <div class="grid-2">
+                <div>
+                    <h3 style="font-size: 1.5rem;">Cloud Solved IT</h3>
+                    <span style="color: var(--accent-gold);">Microsoft Managed Service Provider Technician</span>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Milford, MA | June 2023 – Feb 2024</p>
+                    <div class="tag-container">
+                        <span class="tag">Azure Entra ID</span>
+                        <span class="tag">Network Security</span>
+                        <span class="tag">Windows Server</span>
+                    </div>
+                </div>
+                <div>
+                    <p style="margin-bottom: 1rem;">
+                        Provided Tier 1/2 support for hybrid and on-premise client infrastructures, maintaining 40+ systems in Azure and O365.
+                    </p>
+                    <ul style="list-style: disc; padding-left: 1rem; color: var(--text-muted); line-height: 1.7;">
+                        <li><strong>Compliance Enforcement:</strong> Re-enrolled 150+ users into updated Azure Security 2.0 compliance, integrating FIDO key authentication to meet Security Act 2.0 standards.</li>
+                        <li><strong>Identity Management:</strong> Audited and remediated MFA, device compliance, and Active Directory inconsistencies across client environments.</li>
+                        <li><strong>System Reliability:</strong> Streamlined portal management and patching processes, improving system uptime and endpoint security posture.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
-        <ul class="exp-list">
-            <li>Maintained hybrid and on-premise systems across 40+ Azure and Office 365 environments.</li>
-            <li>Helped 150+ users migrate to Azure Security 2.0 with FIDO key authentication.</li>
-            <li>Audited and fixed MFA configurations, device compliance issues, and Active Directory inconsistencies.</li>
-            <li>Supported uptime and security improvements for small to mid-sized client infrastructures.</li>
-        </ul>
-    </section>
+        <!-- 3. LEADERSHIP & GOVERNANCE -->
+        <div class="hidden" style="margin-bottom: var(--spacing-xl); margin-top: var(--spacing-xl);">
+            <h2 class="category-title">03 / Operational Leadership</h2>
+            
+            <!-- SHAWS -->
+            <div class="grid-2" style="margin-bottom: var(--spacing-lg);">
+                <div>
+                    <h3 style="font-size: 1.5rem;">Shaw's Supermarkets</h3>
+                    <span style="color: var(--accent-gold);">Customer Service Rep / Front-End Lead</span>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Milford, MA | July 2019 – Present</p>
+                </div>
+                <div>
+                    <p style="margin-bottom: 1rem;">
+                        Oversight of high-volume front-end operations, balancing team leadership with operational targets.
+                    </p>
+                    <ul style="list-style: disc; padding-left: 1rem; color: var(--text-muted); line-height: 1.7;">
+                        <li><strong>Team Supervision:</strong> Mentor and supervise a team of 10–25 associates, overseeing scheduling, labor allocation, and service consistency.</li>
+                        <li><strong>Operational Metrics:</strong> Manage labor, supply, and cash-management targets to consistently hit monthly operational goals.</li>
+                        <li><strong>Conflict Resolution:</strong> Handle high-pressure customer satisfaction issues and operational bottlenecks in real-time.</li>
+                    </ul>
+                </div>
+            </div>
 
-    <!-- ============================
-         SHAW'S SUPERMARKET
-    ============================== -->
-    <section class="experience-card fade-in">
-        <div class="exp-header">
-            <h2>Shaw’s Supermarket</h2>
-            <span class="exp-role">Customer Service Representative</span>
-            <span class="exp-dates">July 2019 – Present</span>
+            <!-- STUDENT GOV -->
+            <div class="grid-2">
+                <div>
+                    <h3 style="font-size: 1.5rem;">Framingham State University</h3>
+                    <span style="color: var(--accent-gold);">SGA Senator (Finance Committee)</span>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Sept 2022 – Jan 2024</p>
+                </div>
+                <div>
+                    <ul style="list-style: disc; padding-left: 1rem; color: var(--text-muted); line-height: 1.7;">
+                        <li>Served as a member of the SATF Financial Committee, reviewing budgets and funding requests for campus organizations.</li>
+                        <li>Advocated for student body needs through policy review and resource allocation.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
-        <ul class="exp-list">
-            <li>Support 10–25 associates daily in a fast-paced, customer-focused environment.</li>
-            <li>Manage scheduling, cash handling, labor planning, and operational metrics.</li>
-            <li>Train new team members to ensure they understand standards and feel supported.</li>
-            <li>Developed skills in operational decision-making and problem-solving under pressure.</li>
-        </ul>
-    </section>
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2025 Ben Boyer. Built with purpose.</p>
+        </footer>
+    </div>
 
-    <!-- ============================
-         IBM ACCELERATE
-    ============================== -->
-    <section class="experience-card fade-in">
-        <div class="exp-header">
-            <h2>IBM</h2>
-            <span class="exp-role">IBM Accelerate Program — Client Engineering</span>
-            <span class="exp-dates">June 2024 – July 2024</span>
-        </div>
-
-        <ul class="exp-list">
-            <li>Built a WatsonX AI-driven Assistant proof of concept through a simulated client engagement.</li>
-            <li>Worked with IBM mentors to develop communication and solution design skills.</li>
-            <li>Explored regex-driven input validation to improve how users interact with systems.</li>
-        </ul>
-    </section>
-
-    <!-- ============================
-         LEADERSHIP SUMMARY
-    ============================== -->
-    <section class="leadership-summary fade-in">
-        <h2>Leadership Themes</h2>
-        <p>
-            Across all roles, I’ve built strengths in:
-        </p>
-
-        <div class="leadership-grid">
-            <div class="leadership-item scale-up">Team Coordination</div>
-            <div class="leadership-item scale-up">Technical Communication</div>
-            <div class="leadership-item scale-up">Problem Solving</div>
-            <div class="leadership-item scale-up">Process Optimization</div>
-            <div class="leadership-item scale-up">Adaptability</div>
-            <div class="leadership-item scale-up">Continuous Learning</div>
-        </div>
-    </section>
-
-</main>
-
-<!-- Footer -->
-<div id="footer"></div>
-
-<!-- Scripts -->
-<script src="js/router.js"></script>
-<script src="js/main.js"></script>
-<script src="js/animations.js"></script>
-<script src="js/pages/experience.js"></script>
-
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -1,176 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ben Boyer — Research</title>
-
-    <!-- Global -->
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/animations.css" />
-
-    <!-- Page Styles -->
-    <link rel="stylesheet" href="css/pages/research.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | Ben Boyer</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Manrope:wght@500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<div id="navbar"></div>
+    <div class="container">
+        <!-- NEW NAVIGATION BLOCK (Mobile Ready) -->
+<nav>
+    <div class="logo">BEN BOYER<span>.</span></div>
 
-<main class="container">
+    <!-- Desktop Links (Hidden on Mobile) -->
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="playground.html">R&D</a>
+        <a href="assets/pdf/BBoyer25-Resume.pdf" target="_blank" style="color: var(--accent-gold);">Resume ↗</a>
+    </div>
 
-    <!-- HEADER -->
-    <h1 class="page-title fade-in">Research</h1>
-    <p class="page-subtitle fade-in">
-        I've been exploring cloud security, data autonomy, and privacy concerns. This research led me to propose
-        a new model for local, private cloud systems — combining the convenience of cloud with the control of on-premise infrastructure.
-    </p>
+    <!-- Hamburger Icon (Visible on Mobile) -->
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
 
-    <!-- ============================
-         SECTION: MIXED METHODS STUDY
-    ============================== -->
-    <section class="research-section fade-in">
-        <h2 class="section-title">Mixed-Methods Study (2024–2025)</h2>
-        <p class="section-description">
-            I conducted research analyzing breach trends and trust gaps in cloud platforms.
-            This work led me to propose the "Local Centralized Private Cloud Model" — a new approach to data security and autonomy.
-        </p>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="playground.html">R&D</a>
+        <a href="assets/pdf/BBoyer25-Resume.pdf" target="_blank" style="color: var(--accent-gold);">Resume PDF</a>
+    </div>
+</nav>
 
-        <div class="research-grid">
-            <div class="research-card scale-up">
-                <h3>Quantitative Analysis</h3>
-                <p>
-                    I gathered breach data from 200 companies across industries (2020–2023),
-                    then organized and analyzed it in Excel using pivot tables and charts.
-                </p>
-                <ul class="research-points">
-                    <li>Common breach vectors: credential theft, misconfigurations, insider access</li>
-                    <li>Authentication failures were connected to major losses</li>
-                    <li>Cloud misconfigurations kept appearing as a top issue</li>
-                </ul>
+        <!-- HEADER -->
+        <header style="padding: var(--spacing-lg) 0;">
+            <p class="section-title hidden">Thought Leadership</p>
+            <h1 class="display-text hidden">
+                Data Sovereignty &<br>
+                Cloud Architecture.
+            </h1>
+            <p class="hidden" style="max-width: 700px; color: var(--text-muted); font-size: 1.1rem;">
+                Exploring the intersection of privacy, infrastructure governance, and the erosion of trust in public cloud providers.
+            </p>
+        </header>
+
+        <!-- MAIN PAPER FEATURE -->
+        <section class="hidden" style="margin-bottom: var(--spacing-xl);">
+            <div class="card" style="padding: var(--spacing-lg); border-left: 4px solid var(--accent-gold);">
+                <span class="section-title" style="margin-bottom: 0.5rem; color: var(--text-main);">Featured Publication</span>
+                <h2 style="font-size: 2rem; margin-bottom: 1rem;">A New Era of Cloud Computing: The Local Centralized Private Cloud Model</h2>
+                
+                <div class="grid-2" style="margin-top: 2rem;">
+                    <div>
+                        <h4 style="margin-bottom: 0.5rem; color: var(--accent-gold);">The Premise</h4>
+                        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                            As public cloud breaches become statistically inevitable, the "Trust but Verify" model is failing. This paper proposes a hybrid architectural model: <strong>The Local Centralized Private Cloud</strong>. It argues for a shift back to physical data ownership for sensitive use-cases, leveraging modern containerization to maintain usability without sacrificing sovereignty.
+                        </p>
+                    </div>
+                    
+                    <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 4px;">
+                        <h4 style="margin-bottom: 1rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem;">Methodology</h4>
+                        <ul style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.8;">
+                            <li><strong>Quantitative Analysis:</strong> Statistical review of major cloud breaches (2020-2024), analyzing vector and scale.</li>
+                            <li><strong>Qualitative Survey:</strong> Assessed consumer sentiment regarding AI training on user data vs. privacy expectations.</li>
+                            <li><strong>Architectural Proposal:</strong> Technical specifications for a Debian/Nextcloud implementation (ChronoBox).</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="research-card scale-up">
-                <h3>Qualitative Analysis</h3>
-                <p>
-                    I ran a survey on LinkedIn with IT professionals using a Likert scale,
-                    asking about their trust in and concerns about public cloud providers.
-                </p>
-                <ul class="research-points">
-                    <li>Participants wanted more transparency in how cloud providers handle data</li>
-                    <li>Many worried about vendor lock-in and unclear security practices</li>
-                    <li>Significant interest in local, private cloud alternatives</li>
-                </ul>
+        <!-- ADDITIONAL INSIGHTS / SPEAKING -->
+        <section class="hidden" style="margin-bottom: var(--spacing-xl);">
+            <div class="grid-2">
+                <div>
+                    <h3 style="margin-bottom: 1rem;">Areas of Inquiry</h3>
+                    <p style="color: var(--text-muted);">
+                       My current interests are no longer oriented in any one direction, but rather at the crossroads of several emerging trends: cloud trust erosion, data sovereignty, AI ethics, and decentralized infrastructure. I am particularly focused on how individuals and organizations can reclaim agency over their digital assets in an era of pervasive surveillance and commodification of data.
+                    </p>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 1rem;">Presentation</h3>
+                    <div class="card" style="padding: 1.5rem;">
+                        <span style="font-size: 0.8rem; color: var(--accent-gold);">Spring 2025</span>
+                        <h4 style="margin: 0.5rem 0;">UMass Research Poster Presentation</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">
+                            Presentation of findings on Cloud Trust & The ChronoBox Architecture at UMass Amherst.
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ============================
-         SECTION: PRIVATE CLOUD THEORETICAL MODEL
-    ============================== -->
-    <section class="research-section fade-in">
-        <h2 class="section-title">The Local Centralized Private Cloud Model</h2>
-        <p class="section-description">
-            A new architecture designed to merge cloud-style convenience with local-hardware autonomy.
-        </p>
-
-        <div class="model-grid">
-
-            <div class="model-card scale-up">
-                <h3>Concept</h3>
-                <p>
-                    A self-contained system running locally on user-owned hardware,
-                    providing cloud capabilities without dependency on public cloud vendors.
-                </p>
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2025 Ben Boyer. Built with purpose.</p>
+            <div style="margin-top: 1rem;">
+                <a href="https://linkedin.com/in/YOURPROFILE" target="_blank" style="margin: 0 10px;">LinkedIn</a>
+                <a href="https://github.com/bboyer23" target="_blank" style="margin: 0 10px;">GitHub</a>
+                <a href="mailto:youremail@example.com" style="margin: 0 10px;">Email</a>
             </div>
+        </footer>
+    </div>
 
-            <div class="model-card scale-up">
-                <h3>Key Benefits</h3>
-                <ul class="research-points">
-                    <li>Data autonomy and physical control</li>
-                    <li>Reduced attack surface</li>
-                    <li>No vendor lock-in</li>
-                    <li>Predictable cost structure</li>
-                </ul>
-            </div>
-
-            <div class="model-card scale-up">
-                <h3>Security Stack</h3>
-                <ul class="research-points">
-                    <li>RAID-1 redundancy</li>
-                    <li>Encryption at rest + in transit</li>
-                    <li>Strict local-only access model</li>
-                    <li>Firewall + segmentation controls</li>
-                </ul>
-            </div>
-
-            <div class="model-card scale-up">
-                <h3>Future Vision</h3>
-                <p>
-                    Integrating workflow engines (n8n), NAS features, container services,
-                    and local AI models into a single trustworthy edge appliance.
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ============================
-         SECTION: POSTER / PRESENTATION
-    ============================== -->
-    <section class="research-section fade-in">
-        <h2 class="section-title">Poster & Academic Presentation</h2>
-        <p class="section-description">
-            Presented research findings in a formal poster setting, outlining the problem space,
-            methodology, and proposed private cloud solution.
-        </p>
-
-        <div class="poster-card scale-up">
-            <h3>Highlights</h3>
-            <ul class="research-points">
-                <li>Visual breakdown of breach data & categories</li>
-                <li>Security model comparison (Public Cloud vs Local Model)</li>
-                <li>Summary of survey findings</li>
-                <li>Implementation timeline & architectural sketch</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- ============================
-         SECTION: REAL-WORLD LINKS
-    ============================== -->
-    <section class="research-section fade-in">
-        <h2 class="section-title">Connecting Research to Practice</h2>
-
-        <p class="section-description">
-            This research directly shaped how I built ChronoBox — from hardware choices and RAID strategy
-            to encryption and access control. It reinforced a belief: people should have more control over their own data.
-        </p>
-
-        <div class="connection-grid">
-            <div class="connection-card scale-up">
-                <h3>ChronoBox</h3>
-                <p>The research is directly embodied in the engineering of ChronoBox, a functioning prototype.</p>
-                <a href="personal-projects.html" class="link-arrow">View Project →</a>
-            </div>
-            <div class="connection-card scale-up">
-                <h3>Smart Return Tracker</h3>
-                <p>Applied database, systems, and reliability insights to backend system design.</p>
-                <a href="personal-projects.html" class="link-arrow">View Project →</a>
-            </div>
-        </div>
-    </section>
-
-</main>
-
-<div id="footer"></div>
-
-<!-- Scripts -->
-<script src="js/router.js"></script>
-<script src="js/main.js"></script>
-<script src="js/animations.js"></script>
-<script src="js/pages/research.js"></script>
-
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R&D Playground | Ben Boyer</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- PASSWORD PROTECTION MODAL -->
+    <div id="password-modal" class="modal-overlay">
+        <div class="card" style="padding: 2rem; width: 100%; max-width: 400px; text-align: center;">
+            <h3 style="margin-bottom: 1rem;">Restricted Access</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem;">
+                This interface connects to a live paid API. Please enter the access key to continue.
+            </p>
+            <input type="password" id="modal-pass-input" class="chat-input" placeholder="Enter Password..." style="width: 100%; margin-bottom: 1rem; text-align: center;">
+            <button id="modal-submit-btn" class="btn" style="width: 100%;">Unlock Terminal</button>
+            <p id="login-error" style="color: #ff6b6b; font-size: 0.8rem; margin-top: 1rem; min-height: 1.2em;"></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- NEW NAVIGATION BLOCK (Mobile Ready) -->
+<nav>
+    <div class="logo">BEN BOYER<span>.</span></div>
+
+    <!-- Desktop Links (Hidden on Mobile) -->
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="playground.html">R&D</a>
+        <a href="assets/pdf/BBoyer25-Resume.pdf" target="_blank" style="color: var(--accent-gold);">Resume ↗</a>
+    </div>
+
+    <!-- Hamburger Icon (Visible on Mobile) -->
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="playground.html">R&D</a>
+        <a href="assets/pdf/BBoyer25-Resume.pdf" target="_blank" style="color: var(--accent-gold);">Resume PDF</a>
+    </div>
+</nav>
+
+        <!-- HEADER -->
+        <header style="padding: var(--spacing-lg) 0;">
+            <p class="section-title hidden">Interactive Systems</p>
+            <h1 class="display-text hidden">
+                R&D Playground.
+            </h1>
+            <p class="hidden" style="max-width: 600px; color: var(--text-muted); font-size: 1.1rem;">
+                A testing ground for API integrations, serverless functions, and AI interactions. 
+                <br><em>Backend powered by Cloudflare Workers & OpenAI.</em>
+            </p>
+        </header>
+
+        <!-- CHAT INTERFACE -->
+        <section class="hidden" style="margin-bottom: var(--spacing-xl);">
+            <div class="chat-interface">
+                <div class="chat-header">
+                    <span style="font-family: var(--font-head); font-weight: 700;">AI Assistant // v1.0</span>
+                    <div class="status-indicator">
+                        <div class="status-dot"></div>
+                        Systems Operational
+                    </div>
+                </div>
+                
+                <div id="chat-window" class="chat-window">
+                    <!-- Messages will appear here -->
+                    <div class="message ai">
+                        Hello. I am Ben's virtual assistant. I have context on his professional history and technical skills. How can I help you today?
+                    </div>
+                </div>
+
+                <div class="chat-input-area">
+                    <input type="text" id="user-input" class="chat-input" placeholder="Ask about my experience with ServiceNow or Cloud Architecture...">
+                    <button id="send-btn" class="btn" style="margin-top: 0;">Send</button>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 1rem;">
+                <button id="clear-chat" style="background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 0.8rem; text-decoration: underline;">Reset Session</button>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2025 Ben Boyer. Built with purpose.</p>
+        </footer>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/chat.js"></script>
+</body>
+</html>

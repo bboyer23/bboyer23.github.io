@@ -1,3 +1,0 @@
-window.APP_CONFIG = {
-    CHATBOT_PASSWORD: "BBoyerAI2024"
-};

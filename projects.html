@@ -3,309 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benjamin Boyer – Projects</title>
-
-    <!-- Global Styles -->
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
-    <!-- Prism.js for Syntax Highlighting -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js" defer></script>
-
-    <style>
-        /* Card grid layout */
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 24px;
-            padding: 0 16px;
-        }
-
-        .project-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: var(--border-radius);
-            background-color: var(--secondary-color);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform var(--transition-speed) ease,
-            box-shadow var(--transition-speed) ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-        }
-
-        .card-front {
-            padding: 40px 20px;
-            text-align: center;
-            color: #fff;
-        }
-
-        .card-front i {
-            font-size: 2.5rem;
-            margin-bottom: 12px;
-        }
-
-        .card-front h3 {
-            margin: 0;
-            font-size: 1.25rem;
-        }
-
-        .card-back {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgb(255, 255, 255);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            text-align: center;
-            color: #fff;
-            opacity: 0;
-            transition: opacity var(--transition-speed) ease;
-        }
-
-        .project-card:hover .card-back {
-            opacity: 1;
-        }
-    </style>
+    <title>Projects & Artifacts | Ben Boyer</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Manrope:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<!-- Particles Background -->
-<div id="particles-js"></div>
 
-<!-- Navbar -->
-<nav class="navbar">
-    <div class="navbar-container">
-        <a href="index.html" class="nav-logo">BBoyer</a>
-        <button id="navbar-toggle" class="navbar-toggle" aria-label="Open navigation menu">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </button>
+    <div class="container">
+        <!-- NEW NAVIGATION BLOCK (Mobile Ready) -->
+<nav>
+    <div class="logo">BEN BOYER<span>.</span></div>
 
-        <div id="side-menu" class="side-menu">
-            <button id="close-side-menu" class="close-side-menu" aria-label="Close navigation menu">&times;</button>
-            <a href="index.html">Home</a>
-            <a href="resume.html">Resume</a>
-            <a href="fun.html">Fun Zone</a>
-            <a href="projects.html">Projects</a>
-            <a href="index.html#skills">Skills</a>
-            <a href="index.html#contact">Contact</a>
-        </div>
+    <!-- Desktop Links (Hidden on Mobile) -->
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="playground.html">R&D</a>
+        <a href="assets/pdf/BBoyer25-Resume.pdf" target="_blank" style="color: var(--accent-gold);">Resume ↗</a>
+    </div>
 
-        <div class="navbar-links">
-            <a href="index.html">Home</a>
-            <a href="resume.html">Resume</a>
-            <a href="fun.html">Fun Zone</a>
-            <a href="projects.html">Projects</a>
-            <a href="index.html#skills">Skills</a>
-            <a href="index.html#contact">Contact</a>
-        </div>
+    <!-- Hamburger Icon (Visible on Mobile) -->
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="playground.html">R&D</a>
+        <a href="assets/pdf/BBoyer25-Resume.pdf" target="_blank" style="color: var(--accent-gold);">Resume PDF</a>
     </div>
 </nav>
 
-<!-- Hero Section -->
-<header class="hero" id="projects-hero">
-    <h1 class="typed-text">My School & Personal Projects</h1>
-    <p class="subtitle">A dynamic showcase of academic work and personal builds.</p>
-</header>
+        <header style="margin-bottom: var(--spacing-xl);">
+            <p class="section-title hidden">The Proof of Work</p>
+            <h1 class="display-text hidden">Engineering Artifacts.</h1>
+            <p class="hidden" style="max-width: 600px; color: var(--text-muted);">
+                A collection of systems architecture, full-stack applications, and enterprise initiatives. Click any card to view detailed case studies and visual artifacts.
+            </p>
+        </header>
 
-<!-- Highlighted Projects -->
-<section id="projects-landing" class="section">
-    <h2>Highlighted Projects</h2>
-    <div class="projects-container">
-        <!-- UMass Poster -->
-        <div class="project-card">
-            <div class="card-front">
-                <i class="fas fa-chalkboard-teacher"></i>
-                <h3>UMass Poster</h3>
-            </div>
-            <div class="card-back">
-                <p>Presented research at UMass Amherst on local computing models. Designed a poster summarizing mixed-methods findings on latency & privacy, engaging attendees with live demos and feedback sessions.</p>
+        <!-- 1. FLAGSHIP SYSTEMS -->
+        <div class="project-category hidden">
+            <h2 class="category-title">01 / Systems & Architecture</h2>
+            <div class="grid-2">
+                
+                <!-- CHRONOBOX -->
+                <div class="project-card" 
+                     onclick="openModal('chronobox')"
+                     data-id="chronobox" 
+                     data-title="Cloud in a Box (ChronoBox)"
+                     data-role="Product Owner & Architect"
+                     data-stack="Debian, Nextcloud, RAID, NVMe, Networking"
+                     data-desc="A private, local centralized cloud system designed for data autonomy. Moving away from public internet dependency to a self-healing, encrypted local appliance."
+                     data-bullets="Designed hardware specs (Raspberry Pi -> Micro-ATX transition).|Implemented RAID redundancy and full-disk encryption.|Conducted security research on consumer data privacy.">
+                    
+                    <div class="project-status active">Ongoing</div>
+                    <h3 style="margin-bottom: 0.5rem;">ChronoBox</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Local Centralized Private Cloud Appliance.</p>
+                    <div class="tag-container">
+                        <span class="tag">Architecture</span>
+                        <span class="tag">Security</span>
+                        <span class="tag">Linux</span>
+                    </div>
+                    <div class="view-case-study">View Blueprints &rarr;</div>
+                </div>
+
+                <!-- RESEARCH PAPER -->
+                <div class="project-card"
+                     onclick="openModal('paper')"
+                     data-id="paper"
+                     data-title="A New Era of Cloud Computing"
+                     data-role="Primary Researcher"
+                     data-stack="Mixed-Methods Research, Data Analysis"
+                     data-desc="Academic research paper analyzing the statistical inevitability of public cloud breaches and proposing the Local Centralized Private Cloud Model as a viable alternative."
+                     data-bullets="Quantitative analysis of Forbes 200 security breaches.|Qualitative Likert survey of IT professionals regarding AI data scraping.|Technical proposal for GDPR/NIST compliant local storage.">
+                    
+                    <div class="project-status">Published</div>
+                    <h3 style="margin-bottom: 0.5rem;">Cloud Research Paper</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Data Sovereignty & Breach Analysis.</p>
+                    <div class="tag-container">
+                        <span class="tag">Academic</span>
+                        <span class="tag">Data Privacy</span>
+                    </div>
+                    <div class="view-case-study">Read Abstract &rarr;</div>
+                </div>
+
             </div>
         </div>
 
-        <!-- DB Management -->
-        <div class="project-card">
-            <div class="card-front">
-                <i class="fas fa-database"></i>
-                <h3>DB Management</h3>
-            </div>
-            <div class="card-back">
-                <p>Led a six-person team to create a normalized Access database. Defined ER diagrams, wrote SQL queries, and enforced data integrity across all modules.</p>
+        <!-- 2. ENTERPRISE & FULL STACK -->
+        <div class="project-category hidden">
+            <h2 class="category-title">02 / Enterprise & Application</h2>
+            <div class="grid-3">
+
+                <!-- TJX INITIATIVES -->
+                <div class="project-card"
+                     onclick="openModal('tjx')"
+                     data-id="tjx"
+                     data-title="TJX Platform Engineering Initiatives"
+                     data-role="IT Analyst Intern / Scrum Master"
+                     data-stack="ServiceNow, Jira, Confluence, Agile"
+                     data-desc="Embedded within the Platform Engineering team to optimize workflows. Bridged the gap between technical execution and business visibility through better documentation and ceremony management."
+                     data-bullets="Led daily standups and sprint planning for engineering teams.Standardized Confluence documentation for Single Source of Truth.">
+                    
+                    <div class="project-status">Completed</div>
+                    <h3 style="margin-bottom: 0.5rem;">TJX Platform Eng.</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Workflow Optimization & Agile Leadership.</p>
+                    <div class="tag-container">
+                        <span class="tag">Process Design</span>
+                        <span class="tag">Leadership</span>
+                    </div>
+                    <div class="view-case-study">View Artifacts &rarr;</div>
+                </div>
+
+                <!-- FEDC CAPSTONE -->
+                <div class="project-card"
+                     onclick="openModal('fedc')"
+                     data-id="fedc"
+                     data-title="FEDC Website Redesign"
+                     data-role="Team Lead"
+                     data-stack="Squarespace, HTML/CSS/JS, Client Mgmt"
+                     data-desc="Delivered a premium, executive-level web presence for the Framingham Economic Development Corporation. Focused on the 'Ritz-Carlton' aesthetic requested by the board."
+                     data-bullets="Managed client expectations and delivered final board presentation.|Implemented custom CSS/JS for marquees and carousels.|Supported the QUAILS (Quantum, AI, Life Sciences) initiative.">
+                    
+                    <div class="project-status">Delivered</div>
+                    <h3 style="margin-bottom: 0.5rem;">FEDC Capstone</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Client-facing Web Development.</p>
+                    <div class="tag-container">
+                        <span class="tag">Frontend</span>
+                        <span class="tag">Team Lead</span>
+                    </div>
+                    <div class="view-case-study">View Gallery &rarr;</div>
+                </div>
+
+                <!-- SMART RETURN TRACKER -->
+                <div class="project-card"
+                     onclick="openModal('tracker')"
+                     data-id="tracker"
+                     data-title="Smart Return Tracker"
+                     data-role="Full Stack Developer"
+                     data-stack="Docker, Express.js, PostgreSQL"
+                     data-desc="A containerized retail simulation app handling complex return logic. Demonstrates backend architecture and database design skills relevant to high-volume retail environments."
+                     data-bullets="Designed ER Diagrams for return workflows.|Built RESTful API endpoints for transaction handling.|Dockerized the application for consistent deployment.">
+                    
+                    <div class="project-status active">Phase 2</div>
+                    <h3 style="margin-bottom: 0.5rem;">Smart Return Tracker</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Dockerized Retail Simulation.</p>
+                    <div class="tag-container">
+                        <span class="tag">Backend</span>
+                        <span class="tag">SQL</span>
+                    </div>
+                    <div class="view-case-study">View Schema &rarr;</div>
+                </div>
+
             </div>
         </div>
 
-        <!-- Mortgage Tool -->
-        <div class="project-card">
-            <div class="card-front">
-                <i class="fas fa-calculator"></i>
-                <h3>Mortgage Tool</h3>
-            </div>
-            <div class="card-back">
-                <p>Built an Excel-based mortgage analyzer: payment schedules, PMI sensitivity, and extra-payment impact, all automated through smart cell referencing and scenario toggles.</p>
+        <!-- 3. INFRASTRUCTURE & SECURITY -->
+        <div class="project-category hidden">
+            <h2 class="category-title">03 / Infrastructure & Security</h2>
+            <div class="grid-3">
+
+                <!-- NETWORK DESIGN -->
+                <div class="project-card"
+                     onclick="openModal('network')"
+                     data-id="network"
+                     data-title="Enterprise Network Design"
+                     data-role="Network Architect (Student)"
+                     data-stack="VLANs, IPAM, Windows Server"
+                     data-desc="Full theoretical network design for 'Boyer Technologies', including IP planning, hardware selection, and security segregation."
+                     data-bullets="Designed VLAN topology for departmental segregation.|Planned server infrastructure and WAN connectivity.|Created topology diagrams for final proposal.">
+                    <h3 style="margin-bottom: 0.5rem;">Enterprise Network</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Topology & VLAN Architecture.</p>
+                    <div class="view-case-study">View Topology &rarr;</div>
+                </div>
+
+                <!-- MSP SECURITY -->
+                <div class="project-card"
+                     onclick="openModal('msp')"
+                     data-id="msp"
+                     data-title="MSP Security Compliance"
+                     data-role="Security Intern"
+                     data-stack="Azure Entra ID, FIDO, MFA"
+                     data-desc="Executed Security Act 2.0 remediation across 150+ end-users. Focused on identity management and hardware security keys."
+                     data-bullets="Enrolled devices in Azure Entra ID.|Deployed FIDO security keys for MFA.|Troubleshot edge-cases in legacy environments.">
+                    <h3 style="margin-bottom: 0.5rem;">MSP Security Remediation</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Identity & Access Mgmt.</p>
+                    <div class="view-case-study">View Details &rarr;</div>
+                </div>
+
+                <!-- IBM WATSON -->
+                <div class="project-card"
+                     onclick="openModal('ibm')"
+                     data-id="ibm"
+                     data-title="IBM WatsonX Assistant"
+                     data-role="Client Engineering"
+                     data-stack="WatsonX, Regex, Python"
+                     data-desc="Developed an AI chatbot for insurance claims as part of the Accelerate program. Focused on input validation and prompt engineering."
+                     data-bullets="Utilized Regex for strict data validation (emails/dates).|Credentialed in Technical Sales.|Presented solution to IBM stakeholders.">
+                    <h3 style="margin-bottom: 0.5rem;">IBM WatsonX AI</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">AI Engineering & Sales.</p>
+                    <div class="view-case-study">View Details &rarr;</div>
+                </div>
+
             </div>
         </div>
 
-        <!-- Kali Linux Paper -->
-        <div class="project-card">
-            <div class="card-front">
-                <i class="fab fa-linux"></i>
-                <h3>Kali Linux Paper</h3>
-            </div>
-            <div class="card-back">
-                <p>Researched penetration-testing frameworks in Kali. Benchmarked key tools & methods, proposing a secure workflow and ethical guidelines for vulnerability assessments.</p>
-            </div>
-        </div>
+        <footer>
+            <p>&copy; 2025 Ben Boyer. Built with purpose.</p>
+        </footer>
+    </div>
 
-        <!-- Cloud Research -->
-        <div class="project-card">
-            <div class="card-front">
-                <i class="fas fa-file-alt"></i>
-                <h3>Cloud Research</h3>
+    <!-- === THE CASE STUDY MODAL === -->
+    <div id="project-modal" class="modal-backdrop">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <span id="m-role" style="color: var(--accent-gold); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;"></span>
+                    <h2 id="m-title" style="font-size: 2rem; margin-top: 0.5rem;"></h2>
+                </div>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
             </div>
-            <div class="card-back">
-                <p>Analyzed breach data & professional surveys to argue for local private cloud security. Authored an APA-formatted paper with quantitative & qualitative insights.</p>
-            </div>
-        </div>
+            
+            <div class="modal-body">
+                <div class="modal-grid">
+                    <!-- LEFT COL: Description & Artifacts -->
+                    <div>
+                        <h4 style="margin-bottom: 1rem; color: var(--text-main);">Project Overview</h4>
+                        <p id="m-desc" style="color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem;"></p>
+                        
+                        <h4 style="margin-bottom: 1rem; color: var(--text-main);">Visual Artifacts</h4>
+                        <div id="m-gallery" class="artifact-gallery">
+                            <!-- Images injected via JS -->
+                        </div>
+                    </div>
 
-        <!-- Windows Networking -->
-        <div class="project-card">
-            <div class="card-front">
-                <i class="fas fa-network-wired"></i>
-                <h3>Win Networking</h3>
-            </div>
-            <div class="card-back">
-                <p>Documented DNS, DHCP, IPAM, DirectAccess, & ADDS configurations. Compiled best practices for enterprise compliance and secure deployment.</p>
-            </div>
-        </div>
+                    <!-- RIGHT COL: Metadata -->
+                    <div>
+                        <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 4px;">
+                            <h5 style="color: var(--accent-gold); margin-bottom: 1rem;">Key Contributions</h5>
+                            <ul id="m-bullets" style="list-style: disc; padding-left: 1rem; color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 2rem;">
+                                <!-- Bullets injected via JS -->
+                            </ul>
 
-        <!-- Topology Design -->
-        <div class="project-card">
-            <div class="card-front">
-                <i class="fas fa-sitemap"></i>
-                <h3>Topology Design</h3>
-            </div>
-            <div class="card-back">
-                <p>Designed VLAN-based layouts for SMBs: floor plans, subnetting, hardware specs & security zones, optimizing for scalability and maintenance.</p>
-            </div>
-        </div>
-
-        <!-- Return Tracker -->
-        <div class="project-card">
-            <div class="card-front">
-                <i class="fas fa-undo-alt"></i>
-                <h3>Return Tracker</h3>
-            </div>
-            <div class="card-back">
-                <p>Built a Dockerized full-stack returns app with Express, PostgreSQL & React. Implemented CRUD operations and an admin dashboard for real-time status updates.</p>
+                            <h5 style="color: var(--accent-gold); margin-bottom: 1rem;">Tech Stack</h5>
+                            <div id="m-tags" class="tag-container">
+                                <!-- Tags injected via JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</section>
 
-<!-- Java Code Viewer -->
-<section id="all-code" class="section">
-    <h2>All Java Code Viewer</h2>
-    <div id="code-viewer-container">
-        <label for="file-selector">Select a Java file:</label>
-        <select id="file-selector">
-            <option value="AcademicStanding.java">AcademicStanding.java</option>
-            <option value="AcademicTest.java">AcademicTest.java</option>
-            <option value="AmazonStore.java">AmazonStore.java</option>
-            <option value="ArrayObject.java">ArrayObject.java</option>
-            <option value="BarChart.java">BarChart.java</option>
-            <option value="BenTest.java">BenTest.java</option>
-            <option value="Book.java">Book.java</option>
-            <option value="CargoShip.java">CargoShip.java</option>
-            <option value="CashRegister.java">CashRegister.java</option>
-            <option value="Check.java">Check.java</option>
-            <option value="CruiseShip.java">CruiseShip.java</option>
-            <option value="Customer.java">Customer.java</option>
-            <option value="Grades.java">Grades.java</option>
-            <option value="Invoice.java">Invoice.java</option>
-            <option value="InvoiceTest.java">InvoiceTest.java</option>
-            <option value="LandTest.java">LandTest.java</option>
-            <option value="LandTract.java">LandTract.java</option>
-            <option value="MassLottery.java">MassLottery.java</option>
-            <option value="Matrix.java">Matrix.java</option>
-            <option value="MyClass.java">MyClass.java</option>
-            <option value="MyClassTest.java">MyClassTest.java</option>
-            <option value="Payroll.java">Payroll.java</option>
-            <option value="Person.java">Person.java</option>
-            <option value="PlaneSystem.java">PlaneSystem.java</option>
-            <option value="PlayLottery.java">PlayLottery.java</option>
-            <option value="Rectangle.java">Rectangle.java</option>
-            <option value="RetailItem.java">RetailItem.java</option>
-            <option value="RollTheDice.java">RollTheDice.java</option>
-            <option value="SavingsAccount.java">SavingsAccount.java</option>
-            <option value="Ship.java">Ship.java</option>
-            <option value="Shop.java">Shop.java</option>
-            <option value="Student.java">Student.java</option>
-            <option value="StudentTest.java">StudentTest.java</option>
-            <option value="TaxCalculator.java">TaxCalculator.java</option>
-            <option value="Test.java">Test.java</option>
-            <option value="TestArrayObject.java">TestArrayObject.java</option>
-            <option value="TestBarChart.java">TestBarChart.java</option>
-            <option value="TestBook.java">TestBook.java</option>
-            <option value="TestCar.java">TestCar.java</option>
-            <option value="TestCustomer.java">TestCustomer.java</option>
-            <option value="TestGrades.java">TestGrades.java</option>
-            <option value="TestMatrix.java">TestMatrix.java</option>
-            <option value="TestPayroll.java">TestPayroll.java</option>
-            <option value="TestPurchase.java">TestPurchase.java</option>
-            <option value="TestRectangle.java">TestRectangle.java</option>
-            <option value="TestRoll.java">TestRoll.java</option>
-            <option value="TestSavings.java">TestSavings.java</option>
-            <option value="TestShip.java">TestShip.java</option>
-            <option value="TestTaxCalculator.java">TestTaxCalculator.java</option>
-            <option value="TestTest.java">TestTest.java</option>
-            <option value="car.java">car.java</option>
-            <option value="charArray.java">charArray.java</option>
-            <option value="checkAmountConverter.java">checkAmountConverter.java</option>
-            <option value="r1.java">r1.java</option>
-            <option value="r2.java">r2.java</option>
-            <option value="r3.java">r3.java</option>
-            <option value="r4.java">r4.java</option>
-            <option value="r5.java">r5.java</option>
-            <option value="r6.java">r6.java</option>
-        </select>
-        <button id="load-code">Load Code</button>
-        <pre><code id="code-block" class="language-java">// Select a file and click "Load Code"</code></pre>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-    <p>&copy; 2025 Benjamin Boyer. All Rights Reserved.</p>
-</footer>
-
-<!-- Scripts -->
-<script src="js/config.js"></script>
-<script type="module" src="js/script.js"></script>
-<script>
-    document.getElementById('load-code').addEventListener('click', () => {
-        const file = document.getElementById('file-selector').value;
-        fetch(`projects/java/${file}`)
-            .then(res => res.ok ? res.text() : Promise.reject(res.statusText))
-            .then(code => {
-                const codeBlock = document.getElementById('code-block');
-                codeBlock.textContent = code;
-                Prism.highlightElement(codeBlock);
-            })
-            .catch(err => alert('Could not load file: ' + err));
-    });
-</script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/modal.js"></script>
 </body>
 </html>

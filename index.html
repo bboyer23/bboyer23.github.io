@@ -1,109 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ben Boyer — Home</title>
-
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/animations.css" />
-    <link rel="stylesheet" href="css/pages/home.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ben Boyer | Systems & Platform Analyst</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Manrope:wght@500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<!-- Navbar Inject -->
-<div id="navbar"></div>
-
-<!-- =======================
-      HERO SECTION
-======================== -->
-<section class="hero">
-    <div class="hero-inner">
-        <h1 class="hero-title">
-            Building systems.<br>
-            Learning continuously.<br>
-            <span class="highlight">Pushing forward.</span>
-        </h1>
-
-        <p class="hero-subtitle">
-            Hi, I'm Ben, this website is a representation of my professional, educational, and personal work.
-        </p>
-
-        <div class="hero-buttons">
-            <a href="story.html" class="btn-primary">My Story</a>
-            <a href="personal-projects.html" class="btn-secondary">View Projects</a>
-        </div>
-    </div>
-</section>
-
-<!-- =======================
-   TRAJECTORY STRIP
-======================== -->
-<section class="trajectory">
-    <div class="trajectory-inner">
-        <div class="trajectory-step fade-in">Learning</div>
-        <div class="trajectory-arrow">→</div>
-        <div class="trajectory-step fade-in">Breaking</div>
-        <div class="trajectory-arrow">→</div>
-        <div class="trajectory-step fade-in">Building</div>
-        <div class="trajectory-arrow">→</div>
-        <div class="trajectory-step fade-in">Breaking</div>
-    </div>
-</section>
-
-<!-- =======================
-   ABOUT PREVIEW
-======================== -->
-<section class="about-preview container fade-in">
-    <h2>Who I Am</h2>
-    <p>
-        Life-long Learner</strong>
-    </p>
-    <a href="story.html" class="btn-primary small-btn">More</a>
-</section>
-
-<!-- =======================
-   PROJECT PREVIEW
-======================== -->
-<section class="project-preview container fade-in">
-    <h2>Recent Work</h2>
-
-    <div class="project-cards">
-        <div class="project-card">
-            <h3>ChronoBox</h3>
-            <p>A personal edge-based cloud system built on Debian 13, RAID storage, and secure local access. An exploration in self-hosting and infrastructure design.</p>
-            <a href="personal-projects.html" class="project-link">Learn more →</a>
-        </div>
-
-        <div class="project-card">
-            <h3>Smart Return Tracker</h3>
-            <p>A Dockerized full-stack application using Express and PostgreSQL to handle retail return workflows. Built to solve a real problem with deliberate system design.</p>
-            <a href="personal-projects.html" class="project-link">Learn more →</a>
-        </div>
-
-        <div class="project-card">
-            <h3>FEDC Website Redesign</h3>
-            <p>Led a team of 6 through a Squarespace redesign for the Framingham EDC. Focused on collaboration, clear requirements, and delivering impact together.</p>
-            <a href="personal-projects.html" class="project-link">Learn more →</a>
-        </div>
+    <!-- BACKGROUND ANIMATION LAYER -->
+    <div id="canvas-container">
+        <canvas id="network-canvas"></canvas>
     </div>
 
-    <a href="personal-projects.html" class="btn-secondary small-btn">View All Projects</a>
-</section>
+    <div class="container">
+        <!-- NEW NAVIGATION BLOCK (Mobile Ready) -->
+<nav>
+    <div class="logo">BEN BOYER<span>.</span></div>
 
-<!-- =======================
-   FOOTER
-======================== -->
-<div id="footer"></div>
+    <!-- Desktop Links (Hidden on Mobile) -->
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="playground.html">R&D</a>
+        <a href="assets/pdf/BBoyer25-Resume.pdf" target="_blank" style="color: var(--accent-gold);">Resume ↗</a>
+    </div>
 
-<!-- Scripts -->
-<script src="js/router.js"></script>
-<script src="js/main.js"></script>
-<script src="js/animations.js"></script>
-<script src="js/pages/home.js"></script>
+    <!-- Hamburger Icon (Visible on Mobile) -->
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="playground.html">R&D</a>
+        <a href="assets/pdf/BBoyer25-Resume.pdf" target="_blank" style="color: var(--accent-gold);">Resume PDF</a>
+    </div>
+</nav>
+
+        <!-- HERO SECTION -->
+        <header style="min-height: 80vh; display: flex; flex-direction: column; justify-content: center; position: relative;">
+            <p class="section-title hidden">Platform / Systems / Analytics</p>
+            <h1 class="display-text hidden">
+                Bridging the gap between<br>
+                complex technical systems<br>
+                and business outcomes.
+            </h1>
+            <p class="hidden" style="max-width: 650px; color: var(--text-muted); font-size: 1.15rem; margin-bottom: 2rem;">
+                I am an IT Analyst and Systems Thinker specializing in platform engineering, governance, and automation. Previously driving value at <strong>TJX Companies</strong> and <strong>IBM</strong>.
+            </p>
+            
+            <div class="hidden" style="display: flex; gap: 1rem;">
+                <a href="projects.html" class="btn">View Selected Work</a>
+                <a href="experience.html" class="btn" style="background: transparent; border-color: var(--border-subtle); color: var(--text-muted);">See Experience</a>
+            </div>
+        </header>
+
+        <!-- CURRENT STATUS (Terminal Style) -->
+        <section class="hidden" style="margin-bottom: var(--spacing-xl);">
+            <div class="status-widget">
+                <div style="border-bottom: 1px solid #333; padding-bottom: 0.5rem; margin-bottom: 1rem; color: #555; font-size: 0.75rem;">
+                    SYSTEM_STATUS_LOG // BEN_BOYER_V25.1
+                </div>
+                <div class="status-line">
+                    <span>> Current Role</span>
+                    <span class="status-value">Seeking Full-Time Opportunities</span>
+                </div>
+                <div class="status-line">
+                    <span>> Education</span>
+                    <span class="status-value">B.S. Business IT (Dec 2025)</span>
+                </div>
+                <div class="status-line">
+                    <span>> Active Project</span>
+                    <span class="status-value">ChronoBox Phase 3 (Hardware)</span>
+                </div>
+                <div class="status-line">
+                    <span>> Latest Commit</span>
+                    <span class="status-value blinking-cursor">Updated Portfolio Artifacts...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PHILOSOPHY SECTION -->
+        <section class="hidden" style="margin-bottom: var(--spacing-xl);">
+            <div class="grid-2">
+                <div>
+                    <h2 style="margin-bottom: 1rem;">Core Philosophy</h2>
+                    <p style="color: var(--text-muted); line-height: 1.8;">
+                        In a world of increasing technical complexity, the most valuable skill is the ability to create structure from ambiguity.
+                        <br><br>
+                        I don't just "write code" or "manage tickets." I build systems—both digital and operational—that allow teams to scale, govern, and execute with clarity. My approach combines the precision of engineering with the strategic view of business analysis.
+                    </p>
+                </div>
+                <div>
+                    <div style="background: var(--bg-card); padding: 2rem; border-left: 2px solid var(--accent-gold);">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">The "Quiet Luxury" Approach</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-muted);">
+                            Technology should feel seamless. Whether it's a ServiceNow workflow for a Fortune 100 retailer or a private cloud appliance, the user experience should be stable, secure, and intentional. No clutter. Just function.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNICAL ARSENAL (Skills Grid) -->
+        <section class="skills-section hidden">
+            <h2 style="margin-bottom: var(--spacing-md);">Technical Arsenal</h2>
+            
+            <div class="grid-3">
+                <!-- COL 1 -->
+                <div class="skill-category">
+                    <div class="skill-header">Platform & Cloud</div>
+                    <div class="skill-list">
+                        <span class="skill-item">ServiceNow</span>
+                        <span class="skill-item">Azure</span>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">Debian/Linux</span>
+                        <span class="skill-item">IBM WatsonX</span>
+                    </div>
+                </div>
+
+                <!-- COL 2 -->
+                <div class="skill-category">
+                    <div class="skill-header">Development</div>
+                    <div class="skill-list">
+                        <span class="skill-item">HTML/CSS/JS</span>
+                        <span class="skill-item">SQL / PostgreSQL</span>
+                        <span class="skill-item">Python (Regex)</span>
+                        <span class="skill-item">Spring Boot</span>
+                        <span class="skill-item">Git / Version Control</span>
+                    </div>
+                </div>
+
+                <!-- COL 3 -->
+                <div class="skill-category">
+                    <div class="skill-header">Process & Ops</div>
+                    <div class="skill-list">
+                        <span class="skill-item">Agile / Scrum</span>
+                        <span class="skill-item">Jira & Confluence</span>
+                        <span class="skill-item">System Architecture</span>
+                        <span class="skill-item">Documentation (SSOT)</span>
+                        <span class="skill-item">Client Relations</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2025 Ben Boyer. Built with purpose.</p>
+            <div style="margin-top: 1rem;">
+                <a href="https://linkedin.com/in/YOURPROFILE" target="_blank" style="margin: 0 10px;">LinkedIn</a>
+                <a href="https://github.com/bboyer23" target="_blank" style="margin: 0 10px;">GitHub</a>
+                <a href="mailto:youremail@example.com" style="margin: 0 10px;">Email</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/home-bg.js"></script> <!-- NEW SCRIPT -->
 </body>
 </html>
