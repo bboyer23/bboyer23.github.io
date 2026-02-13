@@ -42,7 +42,7 @@ const artifactsDB = {
 
 // TEXT EXPLANATIONS FOR MISSING VISUALS
 const missingVisualsText = {
-    'tjx': "Due to strict NDA and corporate data policies, internal screenshots of ServiceNow workflows, Jira backlogs, and Confluence documentation cannot be shared publicly. Key artifacts produced included a 'Fun Friday' Engagement Deck and standardized API Governance Templates.",
+    'tjx': "Due to strict NDA and corporate data policies, internal screenshots of ServiceNow workflows, Jira backlogs, and Confluence documentation cannot be shared publicly.",
     'ibm': "This project involved proprietary Client Engineering prototypes for the insurance sector. The work focused on backend logic (Regex/Python) and WatsonX Assistant architecture, which contains sensitive client data.",
     'msp': "Security remediation work was performed on live client environments involving Azure Entra ID and physical FIDO key deployments. Due to the sensitive nature of security compliance, visual artifacts are not available."
 };

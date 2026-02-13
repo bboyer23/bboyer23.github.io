@@ -1,151 +1,111 @@
+<!-- REPLACE CONTENTS OF projects.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects & Artifacts | Ben Boyer</title>
+    <title>Projects | Ben Boyer</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Manrope:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="container">
-        <!-- NEW NAVIGATION BLOCK (Mobile Ready) -->
-<nav>
-    <div class="logo">BEN BOYER<span>.</span></div>
-
-    <!-- Desktop Links (Hidden on Mobile) -->
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="experience.html">Experience</a>
-        <a href="projects.html">Projects</a>
-        <a href="research.html">Research</a>
-        <a href="playground.html">R&D</a>
-        <a href="assets/pdf/BBoyer25-Resume.pdf" target="_blank" style="color: var(--accent-gold);">Resume ↗</a>
-    </div>
-
-    <!-- Hamburger Icon (Visible on Mobile) -->
-    <div class="hamburger">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
-
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu">
-        <a href="index.html">Home</a>
-        <a href="experience.html">Experience</a>
-        <a href="projects.html">Projects</a>
-        <a href="research.html">Research</a>
-        <a href="playground.html">R&D</a>
-        <a href="assets/pdf/BBoyer25-Resume.pdf" target="_blank" style="color: var(--accent-gold);">Resume PDF</a>
-    </div>
-</nav>
+        <!-- NAV (Same as Index) -->
+        <nav>
+            <div class="logo">BEN BOYER<span>.</span></div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="experience.html">Experience</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="research.html">Learning</a>
+                <a href="playground.html">Experimental</a>
+                <a href="assets/pdf/BBoyer25-Resume.pdf" target="_blank" style="color: var(--accent-gold);">Resume ↗</a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+            <div class="mobile-menu">
+                <a href="index.html">Home</a>
+                <a href="experience.html">Experience</a>
+                <a href="research.html">Learning</a>
+                <a href="playground.html">Experimental</a>
+                <a href="assets/pdf/BBoyer26-Resume.pdf" target="_blank">Resume PDF</a>
+            </div>
+        </nav>
 
         <header style="margin-bottom: var(--spacing-xl);">
-            <p class="section-title hidden">The Proof of Work</p>
-            <h1 class="display-text hidden">Engineering Artifacts.</h1>
+            <p class="section-title hidden">Applying Knowledge</p>
+            <h1 class="display-text hidden">Building to Learn.</h1>
             <p class="hidden" style="max-width: 600px; color: var(--text-muted);">
-                A collection of systems architecture, full-stack applications, and enterprise initiatives. Click any card to view detailed case studies and visual artifacts.
+                I learn best by getting my hands dirty. Here are a few projects where I explored new technologies, solved problems, and worked with teams.
             </p>
         </header>
 
-        <!-- 1. FLAGSHIP SYSTEMS -->
+        <!-- 1. FEATURED -->
         <div class="project-category hidden">
-            <h2 class="category-title">01 / Systems & Architecture</h2>
+            <h2 class="category-title">Current Focus</h2>
             <div class="grid-2">
                 
                 <!-- CHRONOBOX -->
                 <div class="project-card" 
                      onclick="openModal('chronobox')"
                      data-id="chronobox" 
-                     data-title="Cloud in a Box (ChronoBox)"
-                     data-role="Product Owner & Architect"
-                     data-stack="Debian, Nextcloud, RAID, NVMe, Networking"
-                     data-desc="A private, local centralized cloud system designed for data autonomy. Moving away from public internet dependency to a self-healing, encrypted local appliance."
-                     data-bullets="Designed hardware specs (Raspberry Pi -> Micro-ATX transition).|Implemented RAID redundancy and full-disk encryption.|Conducted security research on consumer data privacy.">
+                     data-title="ChronoBox (Private Cloud Lab)"
+                     data-role="Founder & Builder"
+                     data-stack="Debian, Nextcloud, RAID, Linux"
+                     data-desc="I wanted to understand data sovereignty, so I built a private cloud. This project taught me about hardware selection, RAID configurations, and Linux security hardening."
+                     data-bullets="Experimented with Micro-ATX builds vs Raspberry Pi.|Configured RAID-1 for data redundancy.|Researched encryption standards for personal data privacy.">
                     
                     <div class="project-status active">Ongoing</div>
                     <h3 style="margin-bottom: 0.5rem;">ChronoBox</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Local Centralized Private Cloud Appliance.</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">My Home Lab for Privacy & Linux.</p>
                     <div class="tag-container">
-                        <span class="tag">Architecture</span>
-                        <span class="tag">Security</span>
+                        <span class="tag">Self-Hosting</span>
                         <span class="tag">Linux</span>
                     </div>
                     <div class="view-case-study">View Blueprints &rarr;</div>
                 </div>
 
-                <!-- RESEARCH PAPER -->
+                <!-- CAPSTONE -->
                 <div class="project-card"
-                     onclick="openModal('paper')"
-                     data-id="paper"
-                     data-title="A New Era of Cloud Computing"
-                     data-role="Primary Researcher"
-                     data-stack="Mixed-Methods Research, Data Analysis"
-                     data-desc="Academic research paper analyzing the statistical inevitability of public cloud breaches and proposing the Local Centralized Private Cloud Model as a viable alternative."
-                     data-bullets="Quantitative analysis of Forbes 200 security breaches.|Qualitative Likert survey of IT professionals regarding AI data scraping.|Technical proposal for GDPR/NIST compliant local storage.">
+                     onclick="openModal('fedc')"
+                     data-id="fedc"
+                     data-title="Framingham EDC Website"
+                     data-role="Team Lead (Capstone)"
+                     data-stack="Squarespace, Project Management"
+                     data-desc="Leading a team of 6 students to revamp the digital presence of the Framingham Economic Development Corporation. It's a lesson in client management and real-world delivery."
+                     data-bullets="Translating client needs into technical requirements.|Managed team milestones for a proposed Dec 2025 launch.|Focusing on accessible, clean UI for public sector use.">
                     
-                    <div class="project-status">Published</div>
-                    <h3 style="margin-bottom: 0.5rem;">Cloud Research Paper</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Data Sovereignty & Breach Analysis.</p>
+                    <div class="project-status">In Progress</div>
+                    <h3 style="margin-bottom: 0.5rem;">FEDC Capstone</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Team Leadership & Client Work.</p>
                     <div class="tag-container">
-                        <span class="tag">Academic</span>
-                        <span class="tag">Data Privacy</span>
+                        <span class="tag">Web Design</span>
+                        <span class="tag">Teamwork</span>
                     </div>
-                    <div class="view-case-study">Read Abstract &rarr;</div>
+                    <div class="view-case-study">View Drafts &rarr;</div>
                 </div>
-
             </div>
         </div>
 
-        <!-- 2. ENTERPRISE & FULL STACK -->
+        <!-- 2. ACADEMIC & INTERN WORK -->
         <div class="project-category hidden">
-            <h2 class="category-title">02 / Enterprise & Application</h2>
+            <h2 class="category-title">Academic & Internship Projects</h2>
             <div class="grid-3">
 
                 <!-- TJX INITIATIVES -->
                 <div class="project-card"
                      onclick="openModal('tjx')"
                      data-id="tjx"
-                     data-title="TJX Platform Engineering Initiatives"
-                     data-role="IT Analyst Intern / Scrum Master"
-                     data-stack="ServiceNow, Jira, Confluence, Agile"
-                     data-desc="Embedded within the Platform Engineering team to optimize workflows. Bridged the gap between technical execution and business visibility through better documentation and ceremony management."
-                     data-bullets="Led daily standups and sprint planning for engineering teams.Standardized Confluence documentation for Single Source of Truth.">
-                    
-                    <div class="project-status">Completed</div>
-                    <h3 style="margin-bottom: 0.5rem;">TJX Platform Eng.</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Workflow Optimization & Agile Leadership.</p>
-                    <div class="tag-container">
-                        <span class="tag">Process Design</span>
-                        <span class="tag">Leadership</span>
-                    </div>
-                    <div class="view-case-study">View Artifacts &rarr;</div>
-                </div>
-
-                <!-- FEDC CAPSTONE -->
-                <div class="project-card"
-                     onclick="openModal('fedc')"
-                     data-id="fedc"
-                     data-title="FEDC Website Redesign"
-                     data-role="Team Lead"
-                     data-stack="Squarespace, HTML/CSS/JS, Client Mgmt"
-                     data-desc="Delivered a premium, executive-level web presence for the Framingham Economic Development Corporation. Focused on the 'Ritz-Carlton' aesthetic requested by the board."
-                     data-bullets="Managed client expectations and delivered final board presentation.|Implemented custom CSS/JS for marquees and carousels.|Supported the QUAILS (Quantum, AI, Life Sciences) initiative.">
-                    
-                    <div class="project-status">Delivered</div>
-                    <h3 style="margin-bottom: 0.5rem;">FEDC Capstone</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Client-facing Web Development.</p>
-                    <div class="tag-container">
-                        <span class="tag">Frontend</span>
-                        <span class="tag">Team Lead</span>
-                    </div>
-                    <div class="view-case-study">View Gallery &rarr;</div>
+                     data-title="Agile Workflow Improvements"
+                     data-role="Intern Project"
+                     data-stack="ServiceNow, Jira, Confluence"
+                     data-desc="At TJX, I focused on the IT Gigs intiative where we connected teams in need with qualified organization members. I also focused on developing key relationships with partners within the company to build a broader understanding of not my only my job function but the broader organizational goals."
+                     data-bullets="Created documentation in Confluence to assist requirements gathering for broad projects within engineering teams">
+                    <h3 style="margin-bottom: 0.5rem;">TJX Documentation</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Process & Knowledge Mgmt.</p>
+                    <div class="view-case-study">Read Summary &rarr;</div>
                 </div>
 
                 <!-- SMART RETURN TRACKER -->
@@ -153,80 +113,38 @@
                      onclick="openModal('tracker')"
                      data-id="tracker"
                      data-title="Smart Return Tracker"
-                     data-role="Full Stack Developer"
-                     data-stack="Docker, Express.js, PostgreSQL"
-                     data-desc="A containerized retail simulation app handling complex return logic. Demonstrates backend architecture and database design skills relevant to high-volume retail environments."
-                     data-bullets="Designed ER Diagrams for return workflows.|Built RESTful API endpoints for transaction handling.|Dockerized the application for consistent deployment.">
-                    
-                    <div class="project-status active">Phase 2</div>
-                    <h3 style="margin-bottom: 0.5rem;">Smart Return Tracker</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Dockerized Retail Simulation.</p>
-                    <div class="tag-container">
-                        <span class="tag">Backend</span>
-                        <span class="tag">SQL</span>
-                    </div>
+                     data-role="Coursework"
+                     data-stack="Docker, PostgreSQL, Express.js"
+                     data-desc="A full-stack experiment to simulate retail returns. This helped me improve my SQL and Docker skills."
+                     data-bullets="Designed database schema for order tracking.|Containerized the app for easy deployment.">
+                    <h3 style="margin-bottom: 0.5rem;">Retail Tracker</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Database & Backend Study.</p>
                     <div class="view-case-study">View Schema &rarr;</div>
                 </div>
 
-            </div>
-        </div>
-
-        <!-- 3. INFRASTRUCTURE & SECURITY -->
-        <div class="project-category hidden">
-            <h2 class="category-title">03 / Infrastructure & Security</h2>
-            <div class="grid-3">
-
-                <!-- NETWORK DESIGN -->
+                <!-- RESEARCH PAPER -->
                 <div class="project-card"
-                     onclick="openModal('network')"
-                     data-id="network"
-                     data-title="Enterprise Network Design"
-                     data-role="Network Architect (Student)"
-                     data-stack="VLANs, IPAM, Windows Server"
-                     data-desc="Full theoretical network design for 'Boyer Technologies', including IP planning, hardware selection, and security segregation."
-                     data-bullets="Designed VLAN topology for departmental segregation.|Planned server infrastructure and WAN connectivity.|Created topology diagrams for final proposal.">
-                    <h3 style="margin-bottom: 0.5rem;">Enterprise Network</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Topology & VLAN Architecture.</p>
-                    <div class="view-case-study">View Topology &rarr;</div>
-                </div>
-
-                <!-- MSP SECURITY -->
-                <div class="project-card"
-                     onclick="openModal('msp')"
-                     data-id="msp"
-                     data-title="MSP Security Compliance"
-                     data-role="Security Intern"
-                     data-stack="Azure Entra ID, FIDO, MFA"
-                     data-desc="Executed Security Act 2.0 remediation across 150+ end-users. Focused on identity management and hardware security keys."
-                     data-bullets="Enrolled devices in Azure Entra ID.|Deployed FIDO security keys for MFA.|Troubleshot edge-cases in legacy environments.">
-                    <h3 style="margin-bottom: 0.5rem;">MSP Security Remediation</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">Identity & Access Mgmt.</p>
-                    <div class="view-case-study">View Details &rarr;</div>
-                </div>
-
-                <!-- IBM WATSON -->
-                <div class="project-card"
-                     onclick="openModal('ibm')"
-                     data-id="ibm"
-                     data-title="IBM WatsonX Assistant"
-                     data-role="Client Engineering"
-                     data-stack="WatsonX, Regex, Python"
-                     data-desc="Developed an AI chatbot for insurance claims as part of the Accelerate program. Focused on input validation and prompt engineering."
-                     data-bullets="Utilized Regex for strict data validation (emails/dates).|Credentialed in Technical Sales.|Presented solution to IBM stakeholders.">
-                    <h3 style="margin-bottom: 0.5rem;">IBM WatsonX AI</h3>
-                    <p style="color: var(--text-muted); font-size: 0.9rem;">AI Engineering & Sales.</p>
-                    <div class="view-case-study">View Details &rarr;</div>
+                     onclick="openModal('paper')"
+                     data-id="paper"
+                     data-title="Cloud Data Sovereignty"
+                     data-role="Research Paper"
+                     data-stack="Academic Writing, Data Analysis"
+                     data-desc="My senior research paper analyzing why people are losing trust in public cloud storage, and proposing local alternatives."
+                     data-bullets="Surveyed students on AI data scraping fears.|Analyzed breach statistics to support local-first storage.">
+                    <h3 style="margin-bottom: 0.5rem;">Senior Research</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Academic Writing.</p>
+                    <div class="view-case-study">Read Abstract &rarr;</div>
                 </div>
 
             </div>
         </div>
 
         <footer>
-            <p>&copy; 2025 Ben Boyer. Built with purpose.</p>
+            <p>&copy; 2026 Ben Boyer.</p>
         </footer>
     </div>
 
-    <!-- === THE CASE STUDY MODAL === -->
+    <!-- MODAL (Kept same structure, just needs to exist) -->
     <div id="project-modal" class="modal-backdrop">
         <div class="modal-content">
             <div class="modal-header">
@@ -236,32 +154,20 @@
                 </div>
                 <button class="modal-close" onclick="closeModal()">&times;</button>
             </div>
-            
             <div class="modal-body">
                 <div class="modal-grid">
-                    <!-- LEFT COL: Description & Artifacts -->
                     <div>
-                        <h4 style="margin-bottom: 1rem; color: var(--text-main);">Project Overview</h4>
+                        <h4 style="margin-bottom: 1rem; color: var(--text-main);">Overview</h4>
                         <p id="m-desc" style="color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem;"></p>
-                        
-                        <h4 style="margin-bottom: 1rem; color: var(--text-main);">Visual Artifacts</h4>
-                        <div id="m-gallery" class="artifact-gallery">
-                            <!-- Images injected via JS -->
-                        </div>
+                        <h4 style="margin-bottom: 1rem; color: var(--text-main);">Artifacts</h4>
+                        <div id="m-gallery" class="artifact-gallery"></div>
                     </div>
-
-                    <!-- RIGHT COL: Metadata -->
                     <div>
                         <div style="background: rgba(255,255,255,0.03); padding: 1.5rem; border-radius: 4px;">
-                            <h5 style="color: var(--accent-gold); margin-bottom: 1rem;">Key Contributions</h5>
-                            <ul id="m-bullets" style="list-style: disc; padding-left: 1rem; color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 2rem;">
-                                <!-- Bullets injected via JS -->
-                            </ul>
-
+                            <h5 style="color: var(--accent-gold); margin-bottom: 1rem;">What I Did</h5>
+                            <ul id="m-bullets" style="list-style: disc; padding-left: 1rem; color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 2rem;"></ul>
                             <h5 style="color: var(--accent-gold); margin-bottom: 1rem;">Tech Stack</h5>
-                            <div id="m-tags" class="tag-container">
-                                <!-- Tags injected via JS -->
-                            </div>
+                            <div id="m-tags" class="tag-container"></div>
                         </div>
                     </div>
                 </div>
