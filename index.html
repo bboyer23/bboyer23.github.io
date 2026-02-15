@@ -10,90 +10,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Manrope:wght@500;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* --- MOBILE & LAYOUT LOGIC --- */
-        /* These handle the responsive behavior. Add to your global CSS if preferred. */
-
-        /* 1. Grid Stacking logic */
-        .grid-2, .grid-3 {
-            display: grid;
-            gap: 2rem;
-            grid-template-columns: 1fr; /* Default mobile: 1 column */
-        }
-
-        /* 2. Mobile Menu Base Styles */
-        .hamburger {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            cursor: pointer;
-            z-index: 1001;
-        }
-        .hamburger .bar {
-            width: 30px;
-            height: 3px;
-            background-color: white; /* Adjust to match your theme variable */
-            transition: 0.3s;
-        }
-        
-        /* The Mobile Overlay */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%; /* Hidden by default */
-            width: 100%;
-            height: 100vh;
-            background-color: #0a0a0a; /* Fallback dark bg */
-            background-color: var(--bg-dark, #0a0a0a);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            transition: 0.3s ease-in-out;
-            z-index: 1000;
-        }
-        .mobile-menu.active {
-            right: 0; /* Slide in */
-        }
-        .mobile-menu a {
-            font-size: 1.5rem;
-            text-decoration: none;
-            color: white; /* Adjust to match theme */
-        }
-
-        /* 3. Hero Section Logic */
-        .hero-section {
-            min-height: 75vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        /* --- MEDIA QUERIES --- */
-        
-        /* Desktop: Unstack grids, show nav, hide hamburger */
-        @media (min-width: 769px) {
-            .grid-2 { grid-template-columns: 1fr 1fr; }
-            .grid-3 { grid-template-columns: repeat(3, 1fr); }
-            
-            .hamburger, .mobile-menu { display: none !important; }
-            .nav-links { display: flex; gap: 2rem; }
-        }
-
-        /* Mobile: Hide desktop nav, stack specific elements */
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero-btns { flex-direction: column; width: 100%; }
-            .hero-btns .btn { width: 100%; text-align: center; }
-            
-            /* Animate Hamburger to X */
-            .hamburger.active .bar:nth-child(1) { transform: rotate(45deg) translate(5px, 8px); }
-            .hamburger.active .bar:nth-child(2) { opacity: 0; }
-            .hamburger.active .bar:nth-child(3) { transform: rotate(-45deg) translate(5px, -8px); }
-        }
-    </style>
 </head>
 <body>
 
@@ -104,42 +20,32 @@
 
     <div class="container">
         <!-- NAVIGATION -->
-        <nav style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0;">
+        <nav>
             <div class="logo">BEN BOYER<span>.</span></div>
-            
-            <!-- Desktop Nav Links -->
             <div class="nav-links">
                 <a href="index.html" class="active">Home</a>
                 <a href="experience.html">Experience</a>
                 <a href="projects.html">Projects</a>
                 <a href="research.html">Learning</a>
                 <a href="playground.html">Experimental</a>
-                <a href="assets/pdf/BBoyer26-Resume.pdf" target="_blank" style="color: var(--accent-gold);">Resume ↗</a>
+                <a href="assets/pdf/BBoyer25-Resume.pdf" target="_blank" style="color: var(--accent-gold);">Resume ↗</a>
             </div>
-
-            <!-- Mobile Hamburger -->
-            <div class="hamburger" onclick="toggleMobileMenu()">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="hamburger">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
             </div>
-            
-            <!-- Mobile Menu Overlay -->
-            <div class="mobile-menu" id="mobileMenu">
-                <a href="index.html" onclick="toggleMobileMenu()">Home</a>
-                <a href="experience.html" onclick="toggleMobileMenu()">Experience</a>
-                <a href="projects.html" onclick="toggleMobileMenu()">Projects</a>
-                <a href="research.html" onclick="toggleMobileMenu()">Learning</a>
-                <a href="playground.html" onclick="toggleMobileMenu()">Experimental</a>
-                <a href="assets/pdf/BBoyer26-Resume.pdf" target="_blank" style="color: var(--accent-gold);">Resume ↗</a>
+            <div class="mobile-menu">
+                <a href="index.html">Home</a>
+                <a href="experience.html">Experience</a>
+                <a href="projects.html">Projects</a>
+                <a href="research.html">Academic Work</a>
+                <a href="assets/pdf/BBoyer25-Resume.pdf" target="_blank">Resume PDF</a>
             </div>
         </nav>
 
         <!-- HERO SECTION -->
-        <header class="hero-section">
+        <header style="min-height: 75vh; display: flex; flex-direction: column; justify-content: center;">
             <p class="section-title hidden">Curiosity • Connection • Code</p>
-            <!-- Fluid typography for mobile -->
-            <h1 class="display-text hidden" style="font-size: clamp(2rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 1.5rem;">
+            <h1 class="display-text hidden">
                 Technology works best<br>
                 when it serves people.
             </h1>
@@ -147,33 +53,37 @@
                 I am a graduated Business IT Student. My goal isn't just to manage systems, but to understand the people who use them. From the service desk to the Scrum team, I show up ready to learn.
             </p>
             
-            <div class="hidden hero-btns" style="display: flex; gap: 1rem;">
+            <div class="hidden" style="display: flex; gap: 1rem;">
                 <a href="experience.html" class="btn">My Journey So Far</a>
                 <a href="projects.html" class="btn" style="background: transparent; border-color: var(--border-subtle); color: var(--text-muted);">See My Work</a>
             </div>
         </header>
 
-        <!-- CURRENT STATUS -->
+        <!-- CURRENT STATUS (FIXED OVERFLOW) -->
         <section class="hidden" style="margin-bottom: var(--spacing-xl);">
-            <div class="status-widget" style="overflow-wrap: break-word;">
+            <div class="status-widget" style="width: 100%; overflow-wrap: break-word;">
                 <div style="border-bottom: 1px solid #333; padding-bottom: 0.5rem; margin-bottom: 1rem; color: #555; font-size: 0.75rem;">
                     CURRENT_FOCUS_LOG
                 </div>
-                <!-- Added flex-wrap for mobile responsiveness -->
-                <div class="status-line" style="display:flex; flex-wrap:wrap; margin-bottom: 0.5rem;">
-                    <span style="margin-right: 10px;">> Education</span>
-                    <span class="status-value">Framingham State University, B.S. Business IT & Systems</span>
+                
+                <!-- Added flex-wrap and gap to allow wrapping on mobile -->
+                <div class="status-line" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 0.5rem;">
+                    <span style="flex-shrink: 0; font-weight: bold;">> Education</span>
+                    <span class="status-value">Framingham State University, B.S. Business IT & Systems, Minor distinction in Computer Science</span>
                 </div>
-                <div class="status-line" style="display:flex; flex-wrap:wrap; margin-bottom: 0.5rem;">
-                    <span style="margin-right: 10px;">> Latest Role</span>
+                
+                <div class="status-line" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 0.5rem;">
+                    <span style="flex-shrink: 0; font-weight: bold;">> Latest Role</span>
                     <span class="status-value">Platform Engineering Intern @ TJX</span>
                 </div>
-                <div class="status-line" style="display:flex; flex-wrap:wrap; margin-bottom: 0.5rem;">
-                    <span style="margin-right: 10px;">> Learning</span>
+                
+                <div class="status-line" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 0.5rem;">
+                    <span style="flex-shrink: 0; font-weight: bold;">> Learning</span>
                     <span class="status-value">Private Cloud Architecture (ChronoBox)</span>
                 </div>
-                <div class="status-line" style="display:flex; flex-wrap:wrap; margin-bottom: 0.5rem;">
-                    <span style="margin-right: 10px;">> Status</span>
+                
+                <div class="status-line" style="display: flex; flex-wrap: wrap; gap: 2px; margin-bottom: 0.2rem;">
+                    <span style="flex-shrink: 0; font-weight: bold;">> Status</span>
                     <span class="status-value blinking-cursor">Returning to TJX IT :)</span>
                 </div>
             </div>
@@ -247,24 +157,6 @@
             </div>
         </footer>
     </div>
-
-    <!-- Script for Mobile Menu Toggle -->
-    <script>
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const hamburger = document.querySelector('.hamburger');
-            
-            menu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-            
-            // Optional: Prevent body scroll when menu is open
-            if(menu.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = 'auto';
-            }
-        }
-    </script>
 
     <script src="assets/js/main.js"></script>
     <script src="assets/js/home-bg.js"></script>
