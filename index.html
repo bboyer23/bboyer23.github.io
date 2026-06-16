@@ -1,161 +1,757 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ben Boyer | IT Professional</title>
+    <title>Ben Boyer — Business IT & Systems | Technology, People & Process</title>
+    <meta name="description" content="Benjamin (Ben) Boyer — early-career technology professional working at the intersection of IT systems, Agile delivery, cloud & identity, and business execution. Portfolio, experience, and projects.">
+    <meta name="author" content="Benjamin Boyer">
+
+    <!-- Open Graph (link previews for recruiters / LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ben Boyer — Business IT & Systems">
+    <meta property="og:description" content="Building at the intersection of technology, people, and process. IT support, Agile coordination, cloud & identity, and business technology.">
+    <!-- TODO(ben): set og:url and og:image to your live GitHub Pages URL + a preview image once deployed -->
+    <meta name="theme-color" content="#0A0E17">
+
+    <!-- Emoji favicon (no extra file needed) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
     <link rel="stylesheet" href="assets/css/style.css">
-    
-    <!-- Google Fonts -->
+
+    <!-- Fonts: Space Grotesk (display) · Inter (body) · JetBrains Mono (accents) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Set theme before first paint to avoid a flash of the wrong theme -->
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) { t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'; }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
 </head>
 <body>
 
-    <!-- BACKGROUND ANIMATION LAYER -->
-    <div id="canvas-container">
-        <canvas id="network-canvas"></canvas>
+    <a class="skip-link" href="#about">Skip to content</a>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- =========================================================
+         NAVIGATION
+         ========================================================= -->
+    <header class="nav" id="nav">
+        <div class="container">
+            <a href="#top" class="logo" aria-label="Ben Boyer — home">BEN BOYER<span class="dot">.</span></a>
+
+            <nav class="nav-links" aria-label="Primary">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#approach">Approach</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="assets/pdf/BBoyer26-Resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost btn-sm btn-resume">Résumé ↗</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme" title="Toggle theme">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#approach">Approach</a>
+        <a href="#direction">What's Next</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+        <a href="lab.html">AI Lab</a>
+        <a href="assets/pdf/BBoyer26-Resume.pdf" target="_blank" rel="noopener" class="btn btn-primary">Download Résumé ↗</a>
     </div>
 
-    <div class="container">
-        <!-- NAVIGATION -->
-        <nav>
-            <div class="logo">BEN BOYER<span>.</span></div>
-            <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="experience.html">Experience</a>
-                <a href="projects.html">Projects</a>
-                <a href="research.html">Learning</a>
-                <a href="playground.html">Experimental</a>
-                <a href="assets/pdf/BBoyer25-Resume.pdf" target="_blank" style="color: var(--accent-gold);">Resume ↗</a>
-            </div>
-            <div class="hamburger">
-                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-            </div>
-            <div class="mobile-menu">
-                <a href="index.html">Home</a>
-                <a href="experience.html">Experience</a>
-                <a href="projects.html">Projects</a>
-                <a href="research.html">Academic Work</a>
-                <a href="assets/pdf/BBoyer25-Resume.pdf" target="_blank">Resume PDF</a>
-            </div>
-        </nav>
+    <main id="top">
 
-        <!-- HERO SECTION -->
-        <header style="min-height: 75vh; display: flex; flex-direction: column; justify-content: center;">
-            <p class="section-title hidden">Curiosity • Connection • Code</p>
-            <h1 class="display-text hidden">
-                Technology works best<br>
-                when it serves people.
-            </h1>
-            <p class="hidden" style="max-width: 650px; color: var(--text-muted); font-size: 1.15rem; margin-bottom: 2rem;">
-                I am a graduated Business IT Student. My goal isn't just to manage systems, but to understand the people who use them. From the service desk to the Scrum team, I show up ready to learn.
-            </p>
-            
-            <div class="hidden" style="display: flex; gap: 1rem;">
-                <a href="experience.html" class="btn">My Journey So Far</a>
-                <a href="projects.html" class="btn" style="background: transparent; border-color: var(--border-subtle); color: var(--text-muted);">See My Work</a>
-            </div>
-        </header>
+        <!-- =========================================================
+             HERO
+             ========================================================= -->
+        <section class="hero" aria-label="Introduction">
+            <canvas id="hero-canvas" aria-hidden="true"></canvas>
+            <div class="container">
+                <div class="hero-inner">
+                    <span class="availability reveal">
+                        <span class="ping" aria-hidden="true"></span>
+                        Open to early-career roles in IT &amp; business technology
+                    </span>
 
-        <!-- CURRENT STATUS (FIXED OVERFLOW) -->
-        <section class="hidden" style="margin-bottom: var(--spacing-xl);">
-            <div class="status-widget" style="width: 100%; overflow-wrap: break-word;">
-                <div style="border-bottom: 1px solid #333; padding-bottom: 0.5rem; margin-bottom: 1rem; color: #555; font-size: 0.75rem;">
-                    CURRENT_FOCUS_LOG
-                </div>
-                
-                <!-- Added flex-wrap and gap to allow wrapping on mobile -->
-                <div class="status-line" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 0.5rem;">
-                    <span style="flex-shrink: 0; font-weight: bold;">> Education</span>
-                    <span class="status-value">Framingham State University, B.S. Business IT & Systems, Minor distinction in Computer Science</span>
-                </div>
-                
-                <div class="status-line" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 0.5rem;">
-                    <span style="flex-shrink: 0; font-weight: bold;">> Latest Role</span>
-                    <span class="status-value">Platform Engineering Intern @ TJX</span>
-                </div>
-                
-                <div class="status-line" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 0.5rem;">
-                    <span style="flex-shrink: 0; font-weight: bold;">> Learning</span>
-                    <span class="status-value">Private Cloud Architecture (ChronoBox)</span>
-                </div>
-                
-                <div class="status-line" style="display: flex; flex-wrap: wrap; gap: 2px; margin-bottom: 0.2rem;">
-                    <span style="flex-shrink: 0; font-weight: bold;">> Status</span>
-                    <span class="status-value blinking-cursor">Returning to TJX IT :)</span>
+                    <p class="eyebrow reveal d1">Benjamin “Ben” Boyer</p>
+
+                    <h1 class="display reveal d1">
+                        I build at the intersection of
+                        <span class="gradient-text">technology, people, and process.</span>
+                    </h1>
+
+                    <p class="hero-rotator reveal d2" aria-hidden="true">
+                        <span class="muted" style="font-family: var(--font-mono); font-size: 0.95rem;">~ currently exploring&nbsp;</span>
+                        <span class="rotator-text" id="rotator">IT systems &amp; support</span><span class="cursor">▋</span>
+                    </p>
+
+                    <p class="lead reveal d2">
+                        A Business Information Technology &amp; Systems student with a Computer Science minor — and
+                        hands-on experience across IT support, an Agile platform-engineering internship, operations
+                        leadership, and enterprise technical-sales training. I care less about any single tool and more
+                        about how tools, teams, and processes come together to make things actually work.
+                    </p>
+
+                    <div class="hero-cta reveal d3">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="assets/pdf/BBoyer26-Resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Download Résumé</a>
+                        <a href="https://www.linkedin.com/in/benjamin-boyer-it/" target="_blank" rel="noopener" class="btn btn-ghost">Connect on LinkedIn</a>
+                    </div>
+
+                    <div class="hero-socials reveal d3">
+                        <a href="https://www.linkedin.com/in/benjamin-boyer-it/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/bboyer23" target="_blank" rel="noopener" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                            GitHub
+                        </a>
+                        <a href="mailto:Benboyer47@outlook.com" aria-label="Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+                            Email
+                        </a>
+                    </div>
                 </div>
             </div>
+            <a href="#about" class="scroll-hint" aria-label="Scroll to about">
+                <span class="mouse" aria-hidden="true"></span>
+                Scroll
+            </a>
         </section>
 
-        <!-- PHILOSOPHY SECTION -->
-        <section class="hidden" style="margin-bottom: var(--spacing-xl);">
-            <div class="grid-2">
-                <div>
-                    <h2 style="margin-bottom: 1rem;">What I Stand For</h2>
-                    <p style="color: var(--text-muted); line-height: 1.8;">
-                        I am early in my career, which means my biggest asset is my curiosity. I believe in asking the "dumb" questions that clarify problems for everyone else.
-                        <br><br>
-                        Whether I'm facilitating a stand-up or managing a busy front-end at a supermarket, I value clear communication over complex jargon. I want to build technology that connects people rather than confusing them.
-                    </p>
+        <!-- =========================================================
+             ABOUT
+             ========================================================= -->
+        <section id="about" aria-labelledby="about-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">01 — About</p>
+                    <h2 class="section-title" id="about-title">A wide-angle view of how work gets done.</h2>
                 </div>
-                <div>
-                    <div style="background: var(--bg-card); padding: 2rem; border-left: 2px solid var(--accent-gold);">
-                        <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Beyond the Screen</h3>
-                        <p style="font-size: 0.95rem; color: var(--text-muted);">
-                            My experience in customer service (Shaw's) taught me patience and empathy—skills that don't appear in a GitHub repo, but are vital when supporting users in an enterprise environment.
+
+                <div class="about-grid">
+                    <div class="about-body reveal">
+                        <p>
+                            I'm an early-career technology professional who has spent the last few years collecting an
+                            unusually well-rounded view of how things actually get built and run. I've remediated MFA and
+                            identity issues for business clients, facilitated sprint stand-ups inside a platform-engineering
+                            team, coordinated a supermarket front-end during a Saturday rush, and pitched an AI proof-of-concept
+                            to mentors at IBM.
+                        </p>
+                        <p>
+                            That range is the point. I'm genuinely fascinated by the space where <strong>technology meets the
+                            people who use it and the processes that surround it</strong> — where a cleaner ServiceNow workflow,
+                            a shared Confluence template, or a calmer stand-up quietly makes an entire team faster.
+                        </p>
+                        <p>
+                            I'm building toward roles where <strong>technical understanding, business context, communication,
+                            and process all overlap</strong>: IT and systems, cloud and identity, solutions engineering,
+                            technical sales, and Agile delivery. I'm early in the journey, relentlessly curious, coachable,
+                            and I learn fastest by doing.
                         </p>
                     </div>
+
+                    <aside class="reveal d1">
+                        <div class="panel snapshot">
+                            <h3>⚡ Snapshot</h3>
+                            <div class="snapshot-row">
+                                <span class="k">Studying</span>
+                                <span class="v">B.S. Business IT &amp; Systems · CS minor — Framingham State University</span>
+                            </div>
+                            <div class="snapshot-row">
+                                <span class="k">Based</span>
+                                <!-- TODO(ben): confirm how you want your location shown. Kept general for privacy. -->
+                                <span class="v">Massachusetts · open to hybrid &amp; remote</span>
+                            </div>
+                            <div class="snapshot-row">
+                                <span class="k">Focus</span>
+                                <span class="v">IT systems · Cloud &amp; identity · Agile delivery · Process improvement</span>
+                            </div>
+                            <div class="snapshot-row">
+                                <span class="k">Now</span>
+                                <span class="v">Leading the Framingham EDC capstone &amp; building ChronoBox</span>
+                            </div>
+                            <div class="snapshot-row">
+                                <span class="k">Strengths</span>
+                                <span class="v">Communication · Adaptability · Problem-solving</span>
+                            </div>
+                        </div>
+
+                        <!-- "Currently exploring" terminal widget -->
+                        <div class="terminal">
+                            <div class="terminal-bar">
+                                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                                <span class="title">ben@portfolio: ~/now</span>
+                            </div>
+                            <div class="terminal-body">
+                                <div class="line"><span class="prompt">$</span> whoami</div>
+                                <div class="line"><span class="val">ben_boyer — business IT &amp; systems</span></div>
+                                <div class="line"><span class="prompt">$</span> currently --building</div>
+                                <div class="line"><span class="val">ChronoBox · Framingham EDC site</span></div>
+                                <div class="line"><span class="prompt">$</span> learning</div>
+                                <div class="line"><span class="val">Azure identity · self-hosting · Agile delivery</span></div>
+                                <div class="line"><span class="prompt">$</span> status <span class="typed"></span></div>
+                            </div>
+                        </div>
+                    </aside>
                 </div>
             </div>
         </section>
 
-        <!-- SKILLS GRID -->
-        <section class="skills-section hidden">
-            <h2 style="margin-bottom: var(--spacing-md);">Toolbox & Skills</h2>
-            
-            <div class="grid-3">
-                <div class="skill-category">
-                    <div class="skill-header">Technical</div>
-                    <div class="skill-list">
-                        <span class="skill-item">ServiceNow</span>
-                        <span class="skill-item">Azure / Entra ID</span>
-                        <span class="skill-item">Java & Spring Boot</span>
-                        <span class="skill-item">SQL / PostgreSQL</span>
-                        <span class="skill-item">Git Version Control</span>
+        <!-- =========================================================
+             EXPERIENCE (TIMELINE)
+             ========================================================= -->
+        <section id="experience" aria-labelledby="exp-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">02 — Experience</p>
+                    <h2 class="section-title" id="exp-title">From operations to IT to Agile delivery.</h2>
+                    <p class="lead" style="margin-top: 1rem;">Tap any role to expand the details. Each one added a different lens.</p>
+                </div>
+
+                <div class="timeline">
+
+                    <!-- TJX -->
+                    <article class="tl-item reveal">
+                        <span class="tl-node" aria-hidden="true"></span>
+                        <div class="panel xp-card" tabindex="0" role="button" aria-expanded="false" aria-label="Expand TJX Companies role details">
+                            <div class="xp-head">
+                                <div>
+                                    <h3 class="xp-role">IT Analyst Intern — Platform Engineering</h3>
+                                    <div class="xp-org">TJX Companies, Inc.</div>
+                                </div>
+                                <div class="xp-meta">
+                                    <div class="xp-date">Jun 2025 – Aug 2025</div>
+                                    <div class="xp-loc">Framingham, MA</div>
+                                </div>
+                            </div>
+                            <p class="muted" style="margin-top: 0.8rem; font-size: 0.95rem;">
+                                Embedded with a Platform Engineering team — supporting Agile ceremonies and making the
+                                team's work easier to see, coordinate, and improve.
+                            </p>
+                            <div class="xp-detail">
+                                <div class="xp-detail-inner">
+                                    <ul>
+                                        <li><strong>Agile support:</strong> Facilitated daily stand-ups and retrospectives and joined sprint planning, helping engineers surface blockers and keep sprints moving (Scrum-Master-style support, not a full Scrum Master role).</li>
+                                        <li><strong>Process visibility:</strong> Built and standardized Confluence templates so Product Owners, Analysts, and Engineers worked from one shared source of truth.</li>
+                                        <li><strong>Cross-functional coordination:</strong> Partnered across roles to streamline sprint coordination and contributed to the internal <em>IT Gigs</em> initiative to improve role visibility.</li>
+                                        <li><strong>Measurable initiative:</strong> Designed a stand-up cost-tracking dashboard that surfaced ≈ <strong>$3K/month</strong> in potential savings through meeting-time efficiency.</li>
+                                    </ul>
+                                    <div class="tag-row">
+                                        <span class="tag">ServiceNow</span><span class="tag">Confluence</span><span class="tag">Agile / Scrum</span><span class="tag">Process Improvement</span>
+                                    </div>
+                                    <div class="xp-takeaway"><b>What this taught me:</b> how healthy Agile teams really run — and that small, well-placed process improvements compound quickly.</div>
+                                </div>
+                            </div>
+                            <div class="xp-toggle"><span>View details</span> <span class="chev" aria-hidden="true">▾</span></div>
+                        </div>
+                    </article>
+
+                    <!-- IBM -->
+                    <article class="tl-item reveal">
+                        <span class="tl-node" aria-hidden="true"></span>
+                        <div class="panel xp-card" tabindex="0" role="button" aria-expanded="false" aria-label="Expand IBM Accelerate Program details">
+                            <div class="xp-head">
+                                <div>
+                                    <h3 class="xp-role">IBM Accelerate — Client Engineering &amp; Technical Sales</h3>
+                                    <div class="xp-org">IBM (Professional Development Program)</div>
+                                </div>
+                                <div class="xp-meta">
+                                    <div class="xp-date">Jun 2024 – Jul 2024</div>
+                                    <div class="xp-loc">Remote</div>
+                                </div>
+                            </div>
+                            <p class="muted" style="margin-top: 0.8rem; font-size: 0.95rem;">
+                                A selective professional-development program focused on where technical ideas meet client
+                                conversations.
+                            </p>
+                            <div class="xp-detail">
+                                <div class="xp-detail-inner">
+                                    <ul>
+                                        <li>Completed an IBM <strong>watsonx</strong> AI-driven proof of concept through a simulated client-engineering sales cycle.</li>
+                                        <li>Collaborated with IBM mentors to strengthen technical communication and solution-design skills.</li>
+                                        <li>Practiced translating a technical solution into clear business value for non-technical stakeholders.</li>
+                                    </ul>
+                                    <div class="tag-row">
+                                        <span class="tag">IBM watsonx</span><span class="tag">Technical Sales</span><span class="tag">Solution Design</span><span class="tag">Client Engineering</span>
+                                    </div>
+                                    <div class="xp-takeaway"><b>What this taught me:</b> the best technical solution still has to be communicated — selling the “why” matters as much as building the “what.”</div>
+                                </div>
+                            </div>
+                            <div class="xp-toggle"><span>View details</span> <span class="chev" aria-hidden="true">▾</span></div>
+                        </div>
+                    </article>
+
+                    <!-- CLOUD SOLVED IT -->
+                    <article class="tl-item reveal">
+                        <span class="tl-node" aria-hidden="true"></span>
+                        <div class="panel xp-card" tabindex="0" role="button" aria-expanded="false" aria-label="Expand Cloud Solved IT role details">
+                            <div class="xp-head">
+                                <div>
+                                    <h3 class="xp-role">Microsoft Managed Service Provider Technician</h3>
+                                    <div class="xp-org">Cloud Solved IT</div>
+                                </div>
+                                <div class="xp-meta">
+                                    <div class="xp-date">Jun 2023 – Feb 2024</div>
+                                    <div class="xp-loc">Milford, MA</div>
+                                </div>
+                            </div>
+                            <p class="muted" style="margin-top: 0.8rem; font-size: 0.95rem;">
+                                Hands-on managed-services work keeping small-business Microsoft environments secure,
+                                compliant, and running.
+                            </p>
+                            <div class="xp-detail">
+                                <div class="xp-detail-inner">
+                                    <ul>
+                                        <li>Provided IT support across hybrid and on-prem client infrastructures, maintaining <strong>40+ systems</strong> in Azure and Microsoft 365 / O365.</li>
+                                        <li>Re-enrolled <strong>150+ users</strong> into updated Azure Security 2.0 compliance and integrated FIDO key authentication.</li>
+                                        <li>Audited and remediated MFA, device-compliance, and Active Directory inconsistencies.</li>
+                                        <li>Supported Windows Server configurations, improving uptime and endpoint security.</li>
+                                    </ul>
+                                    <div class="tag-row">
+                                        <span class="tag">Azure / Entra ID</span><span class="tag">Microsoft 365</span><span class="tag">MFA &amp; FIDO</span><span class="tag">Active Directory</span><span class="tag">Windows Server</span>
+                                    </div>
+                                    <div class="xp-takeaway"><b>What this taught me:</b> what real identity and endpoint security looks like under pressure — and how much careful documentation matters when systems break.</div>
+                                </div>
+                            </div>
+                            <div class="xp-toggle"><span>View details</span> <span class="chev" aria-hidden="true">▾</span></div>
+                        </div>
+                    </article>
+
+                    <!-- SHAW'S -->
+                    <article class="tl-item current reveal">
+                        <span class="tl-node" aria-hidden="true"></span>
+                        <div class="panel xp-card" tabindex="0" role="button" aria-expanded="false" aria-label="Expand Shaw's Supermarket role details">
+                            <div class="xp-head">
+                                <div>
+                                    <h3 class="xp-role">Customer Service Representative — Front-End Operations</h3>
+                                    <div class="xp-org">Shaw's Supermarket</div>
+                                    <span class="xp-badge">● Current · since 2019</span>
+                                </div>
+                                <div class="xp-meta">
+                                    <div class="xp-date">Jul 2019 – Present</div>
+                                    <div class="xp-loc">Milford, MA</div>
+                                </div>
+                            </div>
+                            <p class="muted" style="margin-top: 0.8rem; font-size: 0.95rem;">
+                                Real-world operational leadership in a high-volume environment — the human side of execution
+                                that makes me a better technologist.
+                            </p>
+                            <div class="xp-detail">
+                                <div class="xp-detail-inner">
+                                    <ul>
+                                        <li>Manage front-end operations and coordinate a team of <strong>10–25 associates</strong> during high-volume shifts.</li>
+                                        <li>Oversee scheduling, labor allocation, cash control, and customer-satisfaction metrics.</li>
+                                        <li>Mentor and train new hires to keep service quality and operations consistent.</li>
+                                        <li>Hit performance goals across productivity, cost control, and customer engagement — while studying full-time.</li>
+                                    </ul>
+                                    <div class="tag-row">
+                                        <span class="tag">Team Leadership</span><span class="tag">Operations</span><span class="tag">Customer Service</span><span class="tag">Mentoring</span>
+                                    </div>
+                                    <div class="xp-takeaway"><b>What this taught me:</b> how to stay calm under pressure, coordinate people in real time, and own outcomes — the foundation everything technical sits on.</div>
+                                </div>
+                            </div>
+                            <div class="xp-toggle"><span>View details</span> <span class="chev" aria-hidden="true">▾</span></div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             PROJECTS
+             ========================================================= -->
+        <section id="projects" aria-labelledby="proj-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">03 — Projects</p>
+                    <h2 class="section-title" id="proj-title">Things I've built, led, and researched.</h2>
+                    <p class="lead" style="margin-top: 1rem;">A mix of entrepreneurial, client, and academic work. Open a card for the full case study.</p>
+                </div>
+
+                <p class="subhead">Featured</p>
+                <div class="project-grid featured">
+
+                    <!-- CHRONOBOX -->
+                    <article class="panel project-card" data-project="chronobox" tabindex="0" role="button" aria-label="Open ChronoBox case study">
+                        <span class="project-status progress">MVP / Framework</span>
+                        <div class="project-icon" aria-hidden="true">🗄️</div>
+                        <div class="project-role">Founder · 2024–2025</div>
+                        <h3>ChronoBox</h3>
+                        <p>A privacy-first local private-cloud appliance — your own cloud, on hardware you control. Built to explore real data autonomy without giving up modern usability.</p>
+                        <div class="tag-row">
+                            <span class="tag">Nextcloud</span><span class="tag">Debian 13</span><span class="tag">RAID-1</span><span class="tag">Linux</span>
+                        </div>
+                        <span class="project-link">View case study <span aria-hidden="true">→</span></span>
+                    </article>
+
+                    <!-- FEDC -->
+                    <article class="panel project-card" data-project="fedc" tabindex="0" role="button" aria-label="Open Framingham EDC case study">
+                        <span class="project-status progress">In Progress</span>
+                        <div class="project-icon" aria-hidden="true">🌐</div>
+                        <div class="project-role">Team Lead · Capstone</div>
+                        <h3>Framingham EDC Website</h3>
+                        <p>Leading a 6-person team to design and launch a Squarespace site for the Framingham Economic Development Corporation — built to present the EDC professionally to enterprise investors.</p>
+                        <div class="tag-row">
+                            <span class="tag">Squarespace</span><span class="tag">UI / UX</span><span class="tag">SEO</span><span class="tag">Team Leadership</span>
+                        </div>
+                        <span class="project-link">View case study <span aria-hidden="true">→</span></span>
+                    </article>
+                </div>
+
+                <p class="subhead">Academic &amp; Research Work</p>
+                <div class="project-grid compact">
+
+                    <!-- RESEARCH PAPER -->
+                    <article class="panel project-card" data-project="research" tabindex="0" role="button" aria-label="Open cloud research case study">
+                        <div class="project-icon" aria-hidden="true">📄</div>
+                        <div class="project-role">Senior Research</div>
+                        <h3>A New Era of Cloud Computing</h3>
+                        <p>Research on eroding trust in public cloud and a proposed local, centralized private-cloud model — the thinking behind ChronoBox.</p>
+                        <span class="project-link">Read summary <span aria-hidden="true">→</span></span>
+                    </article>
+
+                    <!-- NETWORK DESIGN -->
+                    <article class="panel project-card" data-project="network" tabindex="0" role="button" aria-label="Open network design case study">
+                        <div class="project-icon" aria-hidden="true">🛰️</div>
+                        <div class="project-role">Coursework</div>
+                        <h3>Enterprise Network Design</h3>
+                        <p>A formal written proposal designing an enterprise network — topology, addressing, and security considerations.</p>
+                        <span class="project-link">Read summary <span aria-hidden="true">→</span></span>
+                    </article>
+
+                    <!--
+                      TODO(ben): "Smart Return Tracker" appeared on the old site (Docker / PostgreSQL / Express
+                      coursework) but isn't on your résumé and has no artifact or repo link. I left it out to keep
+                      the site fully honest. If it's real, send me the repo link / details and I'll add a card here.
+                    -->
+                </div>
+
+                <p class="subhead">Open Source — live from GitHub <a href="https://github.com/bboyer23" target="_blank" rel="noopener" style="color: var(--accent); font-family: var(--font-mono); font-size: 0.72rem; margin-left: 0.5rem;">@bboyer23 ↗</a></p>
+                <div class="project-grid compact gh-feed" id="github-repos">
+                    <p class="gh-loading">Loading public repositories…</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             APPROACH — LEADERSHIP / PROCESS / TEAM EXECUTION
+             ========================================================= -->
+        <section id="approach" aria-labelledby="appr-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">04 — Approach</p>
+                    <h2 class="section-title" id="appr-title">Leadership, process &amp; team execution.</h2>
+                </div>
+
+                <p class="lead approach-intro reveal">
+                    My background isn't a straight line — and that's deliberate. Each role taught me something different
+                    about how work actually gets organized, how teams communicate, how processes scale, and how technology
+                    supports better execution. Here's the through-line.
+                </p>
+
+                <!-- Systems I've worked across -->
+                <p class="subhead reveal">Systems I've worked across</p>
+                <div class="systems-flow reveal d1">
+                    <div class="flow-node">
+                        <div class="fn-icon" aria-hidden="true">🛒</div>
+                        <div class="fn-label">Front-line Operations</div>
+                        <div class="fn-sub">Shaw's</div>
+                    </div>
+                    <div class="flow-arrow" aria-hidden="true">→</div>
+                    <div class="flow-node">
+                        <div class="fn-icon" aria-hidden="true">🔧</div>
+                        <div class="fn-label">Client IT &amp; Security</div>
+                        <div class="fn-sub">Cloud Solved IT</div>
+                    </div>
+                    <div class="flow-arrow" aria-hidden="true">→</div>
+                    <div class="flow-node">
+                        <div class="fn-icon" aria-hidden="true">💡</div>
+                        <div class="fn-label">Enterprise Sales Exposure</div>
+                        <div class="fn-sub">IBM Accelerate</div>
+                    </div>
+                    <div class="flow-arrow" aria-hidden="true">→</div>
+                    <div class="flow-node">
+                        <div class="fn-icon" aria-hidden="true">🔁</div>
+                        <div class="fn-label">Agile Platform Eng.</div>
+                        <div class="fn-sub">TJX</div>
                     </div>
                 </div>
 
-                <div class="skill-category">
-                    <div class="skill-header">Operational</div>
-                    <div class="skill-list">
-                        <span class="skill-item">Agile / Scrum</span>
-                        <span class="skill-item">Jira & Confluence</span>
-                        <span class="skill-item">Documentation</span>
-                        <span class="skill-item">Client Relations</span>
+                <!-- Pillars -->
+                <div class="pillars">
+                    <div class="panel pillar reveal">
+                        <div class="p-num">01</div>
+                        <h3>Real-time operational leadership</h3>
+                        <p>Coordinating 10–25 people through a rush teaches you to prioritize fast, communicate clearly, and own the outcome. Execution is a people problem first.</p>
+                        <div class="p-source">// from Shaw's</div>
+                    </div>
+                    <div class="panel pillar reveal d1">
+                        <h3>Client-facing technical execution</h3>
+                        <div class="p-num">02</div>
+                        <p>Supporting live Microsoft environments taught me reliability, security discipline, and that good documentation is what keeps systems trustworthy.</p>
+                        <div class="p-source">// from Cloud Solved IT</div>
+                    </div>
+                    <div class="panel pillar reveal d2">
+                        <div class="p-num">03</div>
+                        <h3>Technology → business value</h3>
+                        <p>IBM Accelerate showed me how a technical idea becomes a client-facing solution — and that translating value is a skill worth practicing.</p>
+                        <div class="p-source">// from IBM Accelerate</div>
+                    </div>
+                    <div class="panel pillar reveal d3">
+                        <div class="p-num">04</div>
+                        <h3>Agile coordination &amp; visibility</h3>
+                        <p>At TJX I saw how ceremonies, shared templates, and a little measurement keep cross-functional teams aligned and moving.</p>
+                        <div class="p-source">// from TJX</div>
                     </div>
                 </div>
 
-                <div class="skill-category">
-                    <div class="skill-header">Human</div>
-                    <div class="skill-list">
-                        <span class="skill-item">Active Listening</span>
-                        <span class="skill-item">Team Facilitation</span>
-                        <span class="skill-item">Conflict Resolution</span>
-                        <span class="skill-item">Adaptability</span>
+                <p class="lead approach-intro reveal" style="margin-top: var(--space-lg); margin-bottom: 0;">
+                    Underneath all of it, my <strong style="color: var(--text);">Business IT &amp; Systems</strong> degree gives me the
+                    vocabulary to see a problem from both the technical and the business side — which is exactly where I want to work.
+                </p>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             CAREER DIRECTION
+             ========================================================= -->
+        <section id="direction" aria-labelledby="dir-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">05 — What's Next</p>
+                    <h2 class="section-title" id="dir-title">Directions I'm actively growing into.</h2>
+                    <p class="lead" style="margin-top: 1rem;">Not titles I'm claiming — areas I'm building toward, and would love an early-career role to go deeper in.</p>
+                </div>
+
+                <div class="direction-grid">
+                    <div class="panel dir-card reveal"><div class="d-icon" aria-hidden="true">🖥️</div><h3>IT Systems &amp; Support</h3><p>Keeping environments reliable, secure, and well-documented.</p></div>
+                    <div class="panel dir-card reveal d1"><div class="d-icon" aria-hidden="true">☁️</div><h3>Cloud, Identity &amp; Security</h3><p>Azure, Microsoft 365, MFA/identity, and endpoint compliance.</p></div>
+                    <div class="panel dir-card reveal d2"><div class="d-icon" aria-hidden="true">🧩</div><h3>Solutions Engineering</h3><p>Mapping real needs to workable technical solutions.</p></div>
+                    <div class="panel dir-card reveal"><div class="d-icon" aria-hidden="true">🤝</div><h3>Technical Sales</h3><p>Communicating technology's value to people and businesses.</p></div>
+                    <div class="panel dir-card reveal d1"><div class="d-icon" aria-hidden="true">🤖</div><h3>AI &amp; Automation</h3><p>Practical automation and AI tooling that removes busywork.</p></div>
+                    <div class="panel dir-card reveal d2"><div class="d-icon" aria-hidden="true">🔁</div><h3>Agile / Project Coordination</h3><p>Helping teams plan, coordinate, and keep work visible.</p></div>
+                    <div class="panel dir-card reveal"><div class="d-icon" aria-hidden="true">📈</div><h3>Process Improvement</h3><p>Finding the small changes that make teams measurably faster.</p></div>
+                    <div class="panel dir-card reveal d1"><div class="d-icon" aria-hidden="true">🏢</div><h3>Business Technology Strategy</h3><p>Where systems, process, and business outcomes meet.</p></div>
+                </div>
+
+                <p class="direction-note reveal">
+                    I'm looking for an early-career role where I can go deep on one of these while keeping the
+                    cross-functional perspective that makes me useful between teams.
+                </p>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             SKILLS
+             ========================================================= -->
+        <section id="skills" aria-labelledby="skills-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">06 — Skills</p>
+                    <h2 class="section-title" id="skills-title">Toolbox &amp; strengths.</h2>
+                    <p class="lead" style="margin-top: 1rem;">Filter by area. Honest about where I'm strong and where I'm growing.</p>
+                </div>
+
+                <div class="skill-filters reveal" role="group" aria-label="Filter skills by category">
+                    <button class="skill-filter active" data-filter="all">All</button>
+                    <button class="skill-filter" data-filter="it">IT &amp; Systems</button>
+                    <button class="skill-filter" data-filter="cloud">Cloud &amp; Security</button>
+                    <button class="skill-filter" data-filter="dev">Software &amp; Web</button>
+                    <button class="skill-filter" data-filter="agile">Agile &amp; Process</button>
+                    <button class="skill-filter" data-filter="biz">Business &amp; People</button>
+                    <button class="skill-filter" data-filter="emerging">Emerging Interests</button>
+                </div>
+
+                <div class="skills-groups">
+                    <div class="panel skill-group reveal" data-category="it">
+                        <h3>🖥️ IT &amp; Systems</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip">Microsoft Server Systems</span>
+                            <span class="skill-chip">Windows Server</span>
+                            <span class="skill-chip">Microsoft 365 / O365</span>
+                            <span class="skill-chip">Endpoint Support</span>
+                            <span class="skill-chip">IT Support &amp; Troubleshooting</span>
+                        </div>
+                    </div>
+                    <div class="panel skill-group reveal d1" data-category="cloud">
+                        <h3>☁️ Cloud, Identity &amp; Security</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip">Azure</span>
+                            <span class="skill-chip">Cloud Security</span>
+                            <span class="skill-chip">Entra ID</span>
+                            <span class="skill-chip">MFA</span>
+                            <span class="skill-chip">FIDO Keys</span>
+                            <span class="skill-chip">Active Directory</span>
+                        </div>
+                    </div>
+                    <div class="panel skill-group reveal d2" data-category="dev">
+                        <h3>💻 Software &amp; Web Development</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip">Java</span>
+                            <span class="skill-chip">Spring Boot</span>
+                            <span class="skill-chip">SQL</span>
+                            <span class="skill-chip">PostgreSQL</span>
+                            <span class="skill-chip">Web Development</span>
+                            <span class="skill-chip">Git / Version Control</span>
+                        </div>
+                    </div>
+                    <div class="panel skill-group reveal" data-category="agile">
+                        <h3>🔁 Agile, Process &amp; Collaboration</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip">Agile / Scrum (support)</span>
+                            <span class="skill-chip">ServiceNow</span>
+                            <span class="skill-chip">Confluence</span>
+                            <span class="skill-chip">Sprint Coordination</span>
+                            <span class="skill-chip">Documentation</span>
+                            <span class="skill-chip">Process Improvement</span>
+                        </div>
+                    </div>
+                    <div class="panel skill-group reveal d1" data-category="biz">
+                        <h3>🤝 Business, Communication &amp; Leadership</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip">Team Coordination</span>
+                            <span class="skill-chip">Mentoring &amp; Training</span>
+                            <span class="skill-chip">Client Relations</span>
+                            <span class="skill-chip">CRM</span>
+                            <span class="skill-chip">Technical Communication</span>
+                            <span class="skill-chip">Adaptability</span>
+                        </div>
+                    </div>
+                    <div class="panel skill-group reveal d2" data-category="emerging">
+                        <h3>🚀 Emerging Interests</h3>
+                        <div class="skill-chips">
+                            <span class="skill-chip">IBM watsonx</span>
+                            <span class="skill-chip">AI &amp; Automation</span>
+                            <span class="skill-chip">Solutions Engineering</span>
+                            <span class="skill-chip">Self-Hosting / Linux</span>
+                            <span class="skill-chip">Cybersecurity</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <footer>
-            <p>&copy; 2026 Ben Boyer. Always learning.</p>
-            <div style="margin-top: 1rem;">
-                <a href="https://linkedin.com/in/YOURPROFILE" target="_blank" style="margin: 0 10px;">LinkedIn</a>
-                <a href="mailto:Benboyer47@outlook.com" style="margin: 0 10px;">Benboyer47@outlook.com</a>
+        <!-- =========================================================
+             EDUCATION
+             ========================================================= -->
+        <section id="education" aria-labelledby="edu-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">07 — Education</p>
+                    <h2 class="section-title" id="edu-title">The foundation.</h2>
+                </div>
+
+                <div class="panel edu-card reveal">
+                    <div class="edu-logo" aria-hidden="true">🎓</div>
+                    <div>
+                        <h3>Framingham State University</h3>
+                        <div class="edu-degree">B.S. in Business Information Technology &amp; Systems</div>
+                        <div class="edu-meta">Minor distinction in Computer Science · Massachusetts</div>
+                        <!-- TODO(ben): add expected/actual graduation date and any honors/GPA if you'd like them shown. -->
+                        <p class="muted" style="margin-top: 1rem; font-size: 0.95rem; max-width: 60ch;">
+                            A degree built at the intersection of business and technology — systems thinking, technical
+                            problem-solving, computer-science fundamentals, and how organizations actually operate. The
+                            reason I can talk to both the engineering team and the people paying for the project.
+                        </p>
+                        <div class="edu-highlights">
+                            <span class="edu-pill">Business IT &amp; Systems</span>
+                            <span class="edu-pill">CS Minor</span>
+                            <span class="edu-pill">Former SGA Senator · Finance Committee</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </footer>
+        </section>
+
+        <!-- =========================================================
+             CONTACT
+             ========================================================= -->
+        <section id="contact" class="contact" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="panel contact-card reveal">
+                    <p class="eyebrow" style="justify-content: center;">08 — Contact</p>
+                    <h2 id="contact-title">Let's build something — or just talk shop.</h2>
+                    <p>
+                        I'm open to early-career opportunities in IT, cloud, and business technology — and I'm always
+                        happy to connect with recruiters, mentors, and people doing interesting work. Reach out.
+                    </p>
+                    <div class="contact-actions">
+                        <a href="mailto:Benboyer47@outlook.com" class="btn btn-primary">Benboyer47@outlook.com</a>
+                        <a href="https://www.linkedin.com/in/benjamin-boyer-it/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+                        <a href="https://github.com/bboyer23" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+                        <a href="assets/pdf/BBoyer26-Resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Résumé ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <div class="footer-brand">BEN BOYER<span class="dot">.</span></div>
+                <div class="footer-tag">Technology, people &amp; process. Always learning.</div>
+            </div>
+            <nav class="footer-links" aria-label="Footer">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <a href="lab.html">AI Lab</a>
+            </nav>
+            <div class="footer-credit">© <span id="year">2026</span> Benjamin Boyer · Built from scratch with HTML, CSS &amp; vanilla JS.</div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="to-top" id="toTop" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+    </button>
+
+    <!-- =========================================================
+         PROJECT MODAL
+         ========================================================= -->
+    <div class="modal-backdrop" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal">
+            <div class="modal-header">
+                <div>
+                    <div class="modal-role" id="modalRole"></div>
+                    <h2 id="modalTitle"></h2>
+                </div>
+                <button class="modal-close" id="modalClose" aria-label="Close case study">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
     </div>
 
     <script src="assets/js/main.js"></script>
