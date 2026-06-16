@@ -7,7 +7,7 @@
     <meta name="description" content="Benjamin (Ben) Boyer — early-career technology professional working at the intersection of IT systems, Agile delivery, cloud & identity, and business execution. Portfolio, experience, and projects.">
     <meta name="author" content="Benjamin Boyer">
 
-    <!-- Open Graph (link previews for recruiters / LinkedIn) -->
+    <!-- Open Graph (rich link previews for LinkedIn / sharing) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Ben Boyer — Business IT & Systems">
     <meta property="og:description" content="Building at the intersection of technology, people, and process. IT support, Agile coordination, cloud & identity, and business technology.">
@@ -17,21 +17,35 @@
     <!-- Emoji favicon (no extra file needed) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Bump the ?v= number whenever you change CSS/JS so browsers fetch the new files -->
+    <link rel="stylesheet" href="assets/css/style.css?v=20260615c">
 
     <!-- Fonts: Space Grotesk (display) · Inter (body) · JetBrains Mono (accents) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- Set theme before first paint to avoid a flash of the wrong theme -->
+    <!-- Set theme before first paint + enable the scroll-reveal safety switch -->
     <script>
         (function () {
+            var de = document.documentElement;
             try {
                 var t = localStorage.getItem('theme');
                 if (!t) { t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'; }
-                document.documentElement.setAttribute('data-theme', t);
+                de.setAttribute('data-theme', t);
             } catch (e) {}
+            // Animations are only allowed once JS is confirmed running. If main.js never
+            // initializes (failed/blocked/stale cache), force every section visible so the
+            // page is never blank.
+            de.classList.add('js-reveal');
+            window.addEventListener('load', function () {
+                setTimeout(function () {
+                    if (!window.__portfolioReady) {
+                        var els = document.querySelectorAll('.reveal');
+                        for (var i = 0; i < els.length; i++) els[i].classList.add('show');
+                    }
+                }, 1500);
+            });
         })();
     </script>
 </head>
@@ -93,7 +107,8 @@
                 <div class="hero-inner">
                     <span class="availability reveal">
                         <span class="ping" aria-hidden="true"></span>
-                        Open to early-career roles in IT &amp; business technology
+                        <!-- TODO(ben): add the specific title/team if you'd like it more precise -->
+                        Returning to TJX Companies — September 2026
                     </span>
 
                     <p class="eyebrow reveal d1">Benjamin “Ben” Boyer</p>
@@ -168,10 +183,10 @@
                             a shared Confluence template, or a calmer stand-up quietly makes an entire team faster.
                         </p>
                         <p>
-                            I'm building toward roles where <strong>technical understanding, business context, communication,
+                            What pulls me in is work where <strong>technical understanding, business context, communication,
                             and process all overlap</strong>: IT and systems, cloud and identity, solutions engineering,
                             technical sales, and Agile delivery. I'm early in the journey, relentlessly curious, coachable,
-                            and I learn fastest by doing.
+                            and I learn fastest by doing — which is exactly why I'm excited to be returning to TJX this fall.
                         </p>
                     </div>
 
@@ -185,7 +200,11 @@
                             <div class="snapshot-row">
                                 <span class="k">Based</span>
                                 <!-- TODO(ben): confirm how you want your location shown. Kept general for privacy. -->
-                                <span class="v">Massachusetts · open to hybrid &amp; remote</span>
+                                <span class="v">Massachusetts</span>
+                            </div>
+                            <div class="snapshot-row">
+                                <span class="k">Incoming</span>
+                                <span class="v">TJX Companies · September 2026</span>
                             </div>
                             <div class="snapshot-row">
                                 <span class="k">Focus</span>
@@ -546,7 +565,7 @@
                 <div class="section-head reveal">
                     <p class="eyebrow">05 — What's Next</p>
                     <h2 class="section-title" id="dir-title">Directions I'm actively growing into.</h2>
-                    <p class="lead" style="margin-top: 1rem;">Not titles I'm claiming — areas I'm building toward, and would love an early-career role to go deeper in.</p>
+                    <p class="lead" style="margin-top: 1rem;">Not titles I'm claiming — areas I'm genuinely curious about and actively building my skills toward.</p>
                 </div>
 
                 <div class="direction-grid">
@@ -561,8 +580,8 @@
                 </div>
 
                 <p class="direction-note reveal">
-                    I'm looking for an early-career role where I can go deep on one of these while keeping the
-                    cross-functional perspective that makes me useful between teams.
+                    As I start my career at TJX, these are the areas I'm most excited to keep growing into — while
+                    holding onto the cross-functional perspective that makes me useful between teams.
                 </p>
             </div>
         </section>
@@ -698,8 +717,8 @@
                     <p class="eyebrow" style="justify-content: center;">08 — Contact</p>
                     <h2 id="contact-title">Let's build something — or just talk shop.</h2>
                     <p>
-                        I'm open to early-career opportunities in IT, cloud, and business technology — and I'm always
-                        happy to connect with recruiters, mentors, and people doing interesting work. Reach out.
+                        I'm always happy to connect with people doing interesting work in IT, cloud, and business
+                        technology — whether it's trading ideas, comparing notes, or just staying in touch. Reach out anytime.
                     </p>
                     <div class="contact-actions">
                         <a href="mailto:Benboyer47@outlook.com" class="btn btn-primary">Benboyer47@outlook.com</a>
@@ -754,7 +773,7 @@
         </div>
     </div>
 
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/home-bg.js"></script>
+    <script src="assets/js/main.js?v=20260615c"></script>
+    <script src="assets/js/home-bg.js?v=20260615c"></script>
 </body>
 </html>

@@ -577,6 +577,10 @@ section[id]:first-of-type { padding-top: var(--space-lg); }
 /* ---------- 16. REVEAL ANIMATIONS + BACK TO TOP ---------- */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.show { opacity: 1; transform: translateY(0); }
+/* Resilience: only hide reveal elements once JS has confirmed it is running (the
+   inline <head> script adds .js-reveal). If main.js fails to load, is blocked, or a
+   stale cached script runs, this keeps every section fully visible instead of blank. */
+html:not(.js-reveal) .reveal { opacity: 1; transform: none; }
 .reveal.d1 { transition-delay: 0.08s; }
 .reveal.d2 { transition-delay: 0.16s; }
 .reveal.d3 { transition-delay: 0.24s; }

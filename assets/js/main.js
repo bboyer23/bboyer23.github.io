@@ -109,6 +109,8 @@
             }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
             revealEls.forEach(function (el) { io.observe(el); });
         }
+        // Tell the inline <head> safety net that interactions initialized successfully.
+        window.__portfolioReady = true;
 
         /* ---------- 5. HERO ROLE ROTATOR ---------- */
         var rotator = $('#rotator');
@@ -141,7 +143,7 @@
         /* ---------- 6. TERMINAL STATUS LINE ---------- */
         var typed = $('.terminal-body .typed');
         if (typed) {
-            var msg = 'open to early-career roles ✓';
+            var msg = 'incoming @ TJX · Sept 2026 ✓';
             if (prefersReduced) {
                 typed.textContent = msg;
             } else {
