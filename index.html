@@ -6,19 +6,33 @@
     <title>Ben Boyer — Business IT & Systems | Technology, People & Process</title>
     <meta name="description" content="Benjamin (Ben) Boyer — early-career technology professional working at the intersection of IT systems, Agile delivery, cloud & identity, and business execution. Portfolio, experience, and projects.">
     <meta name="author" content="Benjamin Boyer">
+    <link rel="canonical" href="https://bboyer23.github.io/">
 
     <!-- Open Graph (rich link previews for LinkedIn / sharing) -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ben Boyer — Portfolio">
     <meta property="og:title" content="Ben Boyer — Business IT & Systems">
     <meta property="og:description" content="Building at the intersection of technology, people, and process. IT support, Agile coordination, cloud & identity, and business technology.">
-    <!-- TODO(ben): set og:url and og:image to your live GitHub Pages URL + a preview image once deployed -->
+    <meta property="og:url" content="https://bboyer23.github.io/">
+    <meta property="og:image" content="https://bboyer23.github.io/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Ben Boyer — building at the intersection of technology, people, and process.">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ben Boyer — Business IT & Systems">
+    <meta name="twitter:description" content="Building at the intersection of technology, people, and process. IT support, Agile coordination, cloud & identity, and business technology.">
+    <meta name="twitter:image" content="https://bboyer23.github.io/assets/og-image.png">
+
     <meta name="theme-color" content="#0A0E17">
 
     <!-- Emoji favicon (no extra file needed) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 
     <!-- Bump the ?v= number whenever you change CSS/JS so browsers fetch the new files -->
-    <link rel="stylesheet" href="assets/css/style.css?v=20260615d">
+    <link rel="stylesheet" href="assets/css/style.css?v=20260622b">
 
     <!-- Fonts: Space Grotesk (display) · Inter (body) · JetBrains Mono (accents) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,7 +85,20 @@
             </nav>
 
             <div class="nav-actions">
+                <span class="momentum-flag" aria-hidden="true">⚡ momentum</span>
                 <a href="assets/pdf/BBoyer26-Resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost btn-sm btn-resume">Résumé ↗</a>
+
+                <!-- Command palette launcher (Ctrl/Cmd + K) -->
+                <button class="nav-btn cmdk-hint" id="cmdkHint" aria-label="Open command palette (Ctrl or Cmd + K)" title="Command palette · Ctrl/Cmd + K">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                    <kbd>⌘K</kbd>
+                </button>
+
+                <!-- Momentum Mode toggle -->
+                <button class="nav-btn momentum-toggle" id="momentumToggle" aria-pressed="false" aria-label="Toggle Momentum Mode" title="Momentum Mode">
+                    <svg class="mo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                </button>
+
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme" title="Toggle theme">
                     <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                     <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -93,6 +120,7 @@
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
         <a href="lab.html">AI Lab</a>
+        <a href="arcade.html">Arcade</a>
         <a href="assets/pdf/BBoyer26-Resume.pdf" target="_blank" rel="noopener" class="btn btn-primary">Download Résumé ↗</a>
     </div>
 
@@ -119,7 +147,7 @@
                     </h1>
 
                     <p class="hero-rotator reveal d2" aria-hidden="true">
-                        <span class="muted" style="font-family: var(--font-mono); font-size: 0.95rem;">~ currently exploring&nbsp;</span>
+                        <span class="muted" style="font-family: var(--font-mono); font-size: 0.95rem;" data-momentum-copy="~ currently shipping ">~ currently exploring&nbsp;</span>
                         <span class="rotator-text" id="rotator">IT systems &amp; support</span><span class="cursor">▋</span>
                     </p>
 
@@ -131,7 +159,7 @@
                     </p>
 
                     <div class="hero-cta reveal d3">
-                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#projects" class="btn btn-primary" data-momentum-copy="See what I’ve built">View Projects</a>
                         <a href="assets/pdf/BBoyer26-Resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost">Download Résumé</a>
                         <a href="https://www.linkedin.com/in/benjamin-boyer-it/" target="_blank" rel="noopener" class="btn btn-ghost">Connect on LinkedIn</a>
                     </div>
@@ -150,11 +178,20 @@
                             Email
                         </a>
                     </div>
+
+                    <!-- Viewing-mode "lens" switch — tailors what the page emphasizes -->
+                    <div class="lens-switch reveal d3" role="group" aria-label="Choose a viewing lens for this page">
+                        <span class="lens-label">View as</span>
+                        <button class="lens-btn" type="button" data-lens="default" aria-pressed="true">Standard</button>
+                        <button class="lens-btn" type="button" data-lens="recruiter" aria-pressed="false">Recruiter</button>
+                        <button class="lens-btn" type="button" data-lens="builder" aria-pressed="false">Builder</button>
+                        <button class="lens-btn" type="button" data-lens="story" aria-pressed="false">Story</button>
+                    </div>
                 </div>
             </div>
             <a href="#about" class="scroll-hint" aria-label="Scroll to about">
                 <span class="mouse" aria-hidden="true"></span>
-                Scroll
+                <span data-momentum-copy="Let’s go">Scroll</span>
             </a>
         </section>
 
@@ -212,7 +249,7 @@
                             </div>
                             <div class="snapshot-row">
                                 <span class="k">Now</span>
-                                <span class="v">Leading the Framingham EDC capstone &amp; building ChronoBox</span>
+                                <span class="v">Building Claptrap (local voice AI) &amp; prepping for TJX this fall</span>
                             </div>
                             <div class="snapshot-row">
                                 <span class="k">Strengths</span>
@@ -230,13 +267,69 @@
                                 <div class="line"><span class="prompt">$</span> whoami</div>
                                 <div class="line"><span class="val">ben_boyer — business IT &amp; systems</span></div>
                                 <div class="line"><span class="prompt">$</span> currently --building</div>
-                                <div class="line"><span class="val">ChronoBox · Framingham EDC site</span></div>
+                                <div class="line"><span class="val">Claptrap · ChronoBox</span></div>
                                 <div class="line"><span class="prompt">$</span> learning</div>
                                 <div class="line"><span class="val">Azure identity · self-hosting · Agile delivery</span></div>
                                 <div class="line"><span class="prompt">$</span> status <span class="typed"></span></div>
                             </div>
                         </div>
                     </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             NOW BUILDING — live-style status dashboard
+             ========================================================= -->
+        <section id="now" aria-labelledby="now-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">Now — live status</p>
+                    <h2 class="section-title" id="now-title" data-momentum-copy="What I’m shipping right now.">What I'm building right now.</h2>
+                    <p class="lead" style="margin-top: 1rem;">A snapshot of where my focus actually is — updated by hand, no API required.</p>
+                </div>
+
+                <div class="nb-board grid-bg reveal d1">
+                    <div class="nb-bar">
+                        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                        <span class="nb-path">ben@portfolio: ~/now --status</span>
+                        <span class="nb-tminus" id="tjxCountdown" aria-hidden="true"></span>
+                        <span class="nb-live"><span class="status-dot"></span> live</span>
+                    </div>
+                    <div class="nb-grid">
+                        <div class="nb-card is-building">
+                            <div class="nb-head"><span class="nb-led" aria-hidden="true"></span><span class="nb-key">Currently building</span></div>
+                            <ul class="nb-list">
+                                <li><strong>Claptrap</strong> — local voice AI sidekick</li>
+                                <li><strong>ChronoBox</strong> — private-cloud appliance</li>
+                                <li>This portfolio's <strong>“Ben OS”</strong> layer</li>
+                            </ul>
+                        </div>
+                        <div class="nb-card is-learning">
+                            <div class="nb-head"><span class="nb-led" aria-hidden="true"></span><span class="nb-key">Currently learning</span></div>
+                            <ul class="nb-list">
+                                <li><strong>Cloud &amp; identity</strong> (Azure / Entra)</li>
+                                <li><strong>Automation</strong> &amp; scripting</li>
+                                <li><strong>System design</strong> fundamentals</li>
+                            </ul>
+                        </div>
+                        <div class="nb-card is-practice">
+                            <div class="nb-head"><span class="nb-led" aria-hidden="true"></span><span class="nb-key">Currently practicing</span></div>
+                            <ul class="nb-list">
+                                <li>Clearer <strong>communication</strong></li>
+                                <li>Better <strong>documentation</strong></li>
+                                <li>Stronger, calmer <strong>execution</strong></li>
+                            </ul>
+                        </div>
+                        <div class="nb-card is-direction">
+                            <div class="nb-head"><span class="nb-led" aria-hidden="true"></span><span class="nb-key">Current direction</span></div>
+                            <ul class="nb-list">
+                                <li>IT systems &amp; <strong>solutions engineering</strong></li>
+                                <li><strong>Agile</strong> / project coordination</li>
+                                <li><strong>AI automation</strong> in real workflows</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -413,6 +506,32 @@
                     <p class="lead" style="margin-top: 1rem;">A mix of entrepreneurial, client, and academic work. Open a card for the full case study.</p>
                 </div>
 
+                <!-- The local-first lineage: thesis → infrastructure → interface -->
+                <p class="subhead reveal">The local-first thread</p>
+                <div class="systems-flow reveal d1">
+                    <div class="flow-node">
+                        <div class="fn-icon" aria-hidden="true">📄</div>
+                        <div class="fn-label">The thesis</div>
+                        <div class="fn-sub">Research · 2025</div>
+                    </div>
+                    <div class="flow-arrow" aria-hidden="true">→</div>
+                    <div class="flow-node">
+                        <div class="fn-icon" aria-hidden="true">🗄️</div>
+                        <div class="fn-label">The infrastructure</div>
+                        <div class="fn-sub">ChronoBox</div>
+                    </div>
+                    <div class="flow-arrow" aria-hidden="true">→</div>
+                    <div class="flow-node">
+                        <div class="fn-icon" aria-hidden="true">🤖</div>
+                        <div class="fn-label">The interface</div>
+                        <div class="fn-sub">Claptrap · 2026</div>
+                    </div>
+                </div>
+                <p class="lead reveal" style="margin: -0.4rem 0 var(--space-md);">
+                    One idea in three layers: <strong>own your data</strong>, run it on <strong>hardware you control</strong>,
+                    and talk to it with <strong>local AI</strong> — no cloud required.
+                </p>
+
                 <p class="subhead">Featured</p>
                 <div class="project-grid featured">
 
@@ -422,24 +541,50 @@
                         <div class="project-icon" aria-hidden="true">🗄️</div>
                         <div class="project-role">Founder · 2024–2025</div>
                         <h3>ChronoBox</h3>
-                        <p>A privacy-first local private-cloud appliance — your own cloud, on hardware you control. Built to explore real data autonomy without giving up modern usability.</p>
+                        <p>A privacy-first local private-cloud appliance — your own cloud, on hardware you control. Nextcloud on Debian 13 with a RAID-1 mirror, built for real data autonomy without giving up modern usability.</p>
                         <div class="tag-row">
                             <span class="tag">Nextcloud</span><span class="tag">Debian 13</span><span class="tag">RAID-1</span><span class="tag">Linux</span>
                         </div>
-                        <span class="project-link">View case study <span aria-hidden="true">→</span></span>
+                        <span class="pc-launch">Launch case study <span class="pc-chev" aria-hidden="true">→</span></span>
+                    </article>
+
+                    <!-- CLAPTRAP -->
+                    <article class="panel project-card" data-project="claptrap" tabindex="0" role="button" aria-label="Open Claptrap case study">
+                        <span class="project-status">Experiment · 2026</span>
+                        <div class="project-icon" aria-hidden="true">🤖</div>
+                        <div class="project-role">Personal Project</div>
+                        <h3>Claptrap</h3>
+                        <p>A fully-local voice AI sidekick — it hears you, thinks on a local LLM, talks back, and takes safe desktop actions. No cloud, nothing leaving the machine.</p>
+                        <div class="tag-row">
+                            <span class="tag">Python</span><span class="tag">Ollama</span><span class="tag">Whisper</span><span class="tag">Piper TTS</span>
+                        </div>
+                        <span class="pc-launch">Launch case study <span class="pc-chev" aria-hidden="true">→</span></span>
                     </article>
 
                     <!-- FEDC -->
                     <article class="panel project-card" data-project="fedc" tabindex="0" role="button" aria-label="Open Framingham EDC case study">
-                        <span class="project-status progress">In Progress</span>
+                        <span class="project-status">Delivered · 2025</span>
                         <div class="project-icon" aria-hidden="true">🌐</div>
                         <div class="project-role">Team Lead · Capstone</div>
                         <h3>Framingham EDC Website</h3>
-                        <p>Leading a 6-person team to design and launch a Squarespace site for the Framingham Economic Development Corporation — built to present the EDC professionally to enterprise investors.</p>
+                        <p>Led my capstone team to design and launch a Squarespace site for the Framingham Economic Development Corporation — a clean, visual-first presence built to present the EDC credibly to enterprise investors.</p>
                         <div class="tag-row">
                             <span class="tag">Squarespace</span><span class="tag">UI / UX</span><span class="tag">SEO</span><span class="tag">Team Leadership</span>
                         </div>
-                        <span class="project-link">View case study <span aria-hidden="true">→</span></span>
+                        <span class="pc-launch">Launch case study <span class="pc-chev" aria-hidden="true">→</span></span>
+                    </article>
+
+                    <!-- WORTH-IT -->
+                    <article class="panel project-card" data-project="worthit" tabindex="0" role="button" aria-label="Open Worth-It case study">
+                        <span class="project-status">Prototype</span>
+                        <div class="project-icon" aria-hidden="true">🫧</div>
+                        <div class="project-role">Personal Project</div>
+                        <h3>Worth-It</h3>
+                        <p>A mobile-first PWA that turns volunteer discovery into a game — opportunities float as poppable bubbles you tap to explore. A two-sided marketplace for volunteers and organizations.</p>
+                        <div class="tag-row">
+                            <span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">D3</span><span class="tag">PWA</span>
+                        </div>
+                        <span class="pc-launch">Launch case study <span class="pc-chev" aria-hidden="true">→</span></span>
                     </article>
                 </div>
 
@@ -550,6 +695,51 @@
                     </div>
                 </div>
 
+                <!-- Chaos → Clarity: a small interactive model of how I work -->
+                <p class="subhead reveal" style="margin-top: var(--space-lg);">How I approach a messy problem</p>
+                <div class="clarity-wrap grid-bg reveal d1">
+                    <div class="clarity-head">
+                        <div>
+                            <h3>Chaos → Clarity</h3>
+                            <p>Most problems land as noise. My instinct is to sort that noise into people, process, and technology — then drive it toward an outcome.</p>
+                        </div>
+                        <button class="btn btn-primary clarify-btn" id="clarifyBtn" type="button" aria-pressed="false" aria-controls="clarityStage">Clarify the system <span aria-hidden="true">✨</span></button>
+                    </div>
+
+                    <div class="clarity-stage" id="clarityStage">
+                        <!-- Messy state -->
+                        <div class="chaos-cloud">
+                            <span class="chaos-tag" style="--rot:-4deg">unclear process</span>
+                            <span class="chaos-tag" style="--rot:3deg">manual work</span>
+                            <span class="chaos-tag" style="--rot:-2deg">blocked sprint</span>
+                            <span class="chaos-tag" style="--rot:5deg">identity issue</span>
+                            <span class="chaos-tag" style="--rot:-5deg">scattered docs</span>
+                            <span class="chaos-tag" style="--rot:2deg">customer pressure</span>
+                        </div>
+                        <!-- Organised state -->
+                        <div class="clarity-grid">
+                            <div class="clarity-col" data-cat="people">
+                                <h4><span class="cc-dot" aria-hidden="true"></span> People</h4>
+                                <ul><li>customer pressure</li></ul>
+                            </div>
+                            <div class="clarity-col" data-cat="process">
+                                <h4><span class="cc-dot" aria-hidden="true"></span> Process</h4>
+                                <ul><li>unclear process</li><li>blocked sprint</li></ul>
+                            </div>
+                            <div class="clarity-col" data-cat="technology">
+                                <h4><span class="cc-dot" aria-hidden="true"></span> Technology</h4>
+                                <ul><li>manual work</li><li>identity issue</li><li>scattered docs</li></ul>
+                            </div>
+                            <div class="clarity-col" data-cat="outcome">
+                                <h4><span class="cc-dot" aria-hidden="true"></span> Outcome</h4>
+                                <ul><li>things move faster</li></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="clarity-note">My favorite problems are the ones where a little structure makes everything move faster.</p>
+                </div>
+
                 <p class="lead approach-intro reveal" style="margin-top: var(--space-lg); margin-bottom: 0;">
                     Underneath all of it, my <strong style="color: var(--text);">Business IT &amp; Systems</strong> degree gives me the
                     vocabulary to see a problem from both the technical and the business side — which is exactly where I want to work.
@@ -616,6 +806,8 @@
                             <span class="skill-chip">Microsoft 365 / O365</span>
                             <span class="skill-chip">Endpoint Support</span>
                             <span class="skill-chip">IT Support &amp; Troubleshooting</span>
+                            <span class="skill-chip">Linux / Debian</span>
+                            <span class="skill-chip">Self-Hosting / NAS</span>
                         </div>
                     </div>
                     <div class="panel skill-group reveal d1" data-category="cloud">
@@ -627,6 +819,7 @@
                             <span class="skill-chip">MFA</span>
                             <span class="skill-chip">FIDO Keys</span>
                             <span class="skill-chip">Active Directory</span>
+                            <span class="skill-chip">Network Design / VLANs</span>
                         </div>
                     </div>
                     <div class="panel skill-group reveal d2" data-category="dev">
@@ -634,8 +827,12 @@
                         <div class="skill-chips">
                             <span class="skill-chip">Java</span>
                             <span class="skill-chip">Spring Boot</span>
+                            <span class="skill-chip">Python</span>
+                            <span class="skill-chip">React / TypeScript</span>
+                            <span class="skill-chip">D3.js</span>
                             <span class="skill-chip">SQL</span>
                             <span class="skill-chip">PostgreSQL</span>
+                            <span class="skill-chip">Nginx</span>
                             <span class="skill-chip">Web Development</span>
                             <span class="skill-chip">Git / Version Control</span>
                         </div>
@@ -667,6 +864,8 @@
                         <div class="skill-chips">
                             <span class="skill-chip">IBM watsonx</span>
                             <span class="skill-chip">AI &amp; Automation</span>
+                            <span class="skill-chip">Local LLMs (Ollama)</span>
+                            <span class="skill-chip">Voice Interfaces</span>
                             <span class="skill-chip">Solutions Engineering</span>
                             <span class="skill-chip">Self-Hosting / Linux</span>
                             <span class="skill-chip">Cybersecurity</span>
@@ -709,13 +908,44 @@
         </section>
 
         <!-- =========================================================
+             AI LAB — preview / explainer
+             ========================================================= -->
+        <section id="ailab" aria-labelledby="ailab-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">AI Lab</p>
+                    <h2 class="section-title" id="ailab-title">AI as a practical tool — not a buzzword.</h2>
+                </div>
+
+                <div class="ailab-panel">
+                    <div class="ailab-intro reveal">
+                        <h3>What the lab is for</h3>
+                        <p>I treat AI the way I treat any system: a way to remove busywork, document faster, learn quicker, and make workflows simpler. Less hype, more leverage.</p>
+                        <p>The live demo is a small, access-gated assistant wired to a serverless backend — a hands-on playground for API integration and prompt design, not a shipped product.</p>
+                        <p class="ailab-disclaim">Honest scope: these are experiments and concepts. I don't claim production AI systems I haven't actually built.</p>
+                        <div class="hero-cta" style="margin-top: 1.5rem;">
+                            <a href="lab.html" class="btn btn-primary">Open the AI Lab <span aria-hidden="true">→</span></a>
+                        </div>
+                    </div>
+
+                    <div class="ailab-cards reveal d1">
+                        <div class="ailab-card"><div class="alc-icon" aria-hidden="true">⚙️</div><h4>Automation ideas</h4><p>Small tools and scripts that delete repetitive, manual steps.</p></div>
+                        <div class="ailab-card"><div class="alc-icon" aria-hidden="true">🧠</div><h4>Portfolio assistant</h4><p>A concept: an assistant that can answer questions about my work.</p></div>
+                        <div class="ailab-card"><div class="alc-icon" aria-hidden="true">🪄</div><h4>Workflow simplification</h4><p>Turning messy notes into clear docs, templates, and checklists.</p></div>
+                        <div class="ailab-card"><div class="alc-icon" aria-hidden="true">🔬</div><h4>Learning experiments</h4><p>Hands-on tests to genuinely understand what these tools can do.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================================
              CONTACT
              ========================================================= -->
         <section id="contact" class="contact" aria-labelledby="contact-title">
             <div class="container">
                 <div class="panel contact-card reveal">
                     <p class="eyebrow" style="justify-content: center;">08 — Contact</p>
-                    <h2 id="contact-title">Let's build something — or just talk shop.</h2>
+                    <h2 id="contact-title" data-momentum-copy="Let’s build momentum — or just talk shop.">Let's build something — or just talk shop.</h2>
                     <p>
                         I'm always happy to connect with people doing interesting work in IT, cloud, and business
                         technology — whether it's trading ideas, comparing notes, or just staying in touch. Reach out anytime.
@@ -747,6 +977,7 @@
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
                 <a href="lab.html">AI Lab</a>
+                <a href="arcade.html">Arcade</a>
             </nav>
             <div class="footer-credit">© <span id="year">2026</span> Benjamin Boyer · Built from scratch with HTML, CSS &amp; vanilla JS.</div>
         </div>
@@ -773,7 +1004,9 @@
         </div>
     </div>
 
-    <script src="assets/js/main.js?v=20260615d"></script>
-    <script src="assets/js/home-bg.js?v=20260615d"></script>
+    <script src="assets/js/main.js?v=20260622b"></script>
+    <script src="assets/js/home-bg.js?v=20260622b"></script>
+    <!-- "Ben OS" layer: command palette, Momentum Mode, viewing modes, dashboards, easter eggs -->
+    <script src="assets/js/ben-os.js?v=20260622b"></script>
 </body>
 </html>

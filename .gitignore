@@ -1,3 +1,29 @@
+# =====================================================================
+#  Deploy hygiene — keep working material & secrets OUT of the public
+#  GitHub Pages root. Everything in this repo root is served publicly,
+#  so anything sensitive must be excluded here.
+# =====================================================================
+
+# Working/source material for case studies (NOT for the public site).
+# Contains internal worklogs, an unredacted system config (admin password),
+# and the Worth-It app source incl. an API key. Never deploy this.
+/Resources/
+
+# Any environment / secret files anywhere in the tree
+**/.env
+**/.env.*
+*.key
+*.pem
+
+# Local tooling / OS noise
+.claude/
 .DS_Store
-.idea/
-projects/java.zip
+Thumbs.db
+desktop.ini
+
+# Python / build artifacts (from bundled app sources, if ever copied in)
+__pycache__/
+*.pyc
+node_modules/
+dist/
+build/

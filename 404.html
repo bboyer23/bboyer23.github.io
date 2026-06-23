@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page not found · Ben Boyer</title>
+    <meta name="description" content="That page doesn't exist — but the rest of Ben Boyer's portfolio does.">
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#0A0E17">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+    <!-- Root-absolute paths so this page renders for ANY unknown URL depth -->
+    <link rel="stylesheet" href="/assets/css/style.css?v=20260622b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) { t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'; }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+
+    <header class="nav scrolled" id="nav">
+        <div class="container">
+            <a href="/" class="logo" aria-label="Ben Boyer — home">BEN BOYER<span class="dot">.</span></a>
+            <div class="nav-actions">
+                <a href="/" class="btn btn-ghost btn-sm">← Back to portfolio</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme" title="Toggle theme">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main style="min-height: 100vh; display: flex; align-items: center; padding: calc(var(--nav-h) + 2rem) 0 var(--space-lg);">
+        <div class="container" style="max-width: 760px; text-align: center;">
+            <p class="eyebrow" style="justify-content: center;">Error 404</p>
+            <h1 class="display" style="margin: 0.4rem 0 1rem;">
+                This page took a <span class="gradient-text">wrong turn.</span>
+            </h1>
+            <p class="lead" style="margin: 0 auto 2rem; max-width: 52ch;">
+                The link is broken or the page moved — but everything else is one tap away.
+                Here's the system telling you the same thing:
+            </p>
+
+            <div class="terminal" style="text-align: left; max-width: 520px; margin: 0 auto 2.4rem;">
+                <div class="terminal-bar">
+                    <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                    <span class="title">ben@portfolio: ~/404</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="line"><span class="prompt">$</span> open <span class="val">the-page-you-wanted</span></div>
+                    <div class="line"><span class="val">bash: no such file or directory</span></div>
+                    <div class="line"><span class="prompt">$</span> suggest --next</div>
+                    <div class="line"><span class="val">→ pick a destination below ↓</span></div>
+                </div>
+            </div>
+
+            <div class="hero-cta" style="justify-content: center;">
+                <a href="/" class="btn btn-primary">Home</a>
+                <a href="/index.html#projects" class="btn btn-ghost">Projects</a>
+                <a href="/index.html#experience" class="btn btn-ghost">Experience</a>
+                <a href="/index.html#contact" class="btn btn-ghost">Contact</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <div class="footer-brand">BEN BOYER<span class="dot">.</span></div>
+                <div class="footer-tag">Technology, people &amp; process. Always learning.</div>
+            </div>
+            <nav class="footer-links" aria-label="Footer">
+                <a href="/index.html#about">About</a>
+                <a href="/index.html#projects">Projects</a>
+                <a href="/index.html#contact">Contact</a>
+                <a href="/">← Back to portfolio</a>
+            </nav>
+            <div class="footer-credit">© <span id="year">2026</span> Benjamin Boyer · Built from scratch with HTML, CSS &amp; vanilla JS.</div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var de = document.documentElement;
+            var btn = document.getElementById('themeToggle');
+            if (btn) btn.addEventListener('click', function () {
+                var n = de.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+                de.setAttribute('data-theme', n);
+                try { localStorage.setItem('theme', n); } catch (e) {}
+                var m = document.querySelector('meta[name="theme-color"]');
+                if (m) m.setAttribute('content', n === 'light' ? '#F6F8FC' : '#0A0E17');
+            });
+            var y = document.getElementById('year');
+            if (y) y.textContent = new Date().getFullYear();
+        })();
+    </script>
+</body>
+</html>

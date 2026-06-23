@@ -22,6 +22,17 @@
     var $  = function (sel, ctx) { return (ctx || document).querySelector(sel); };
     var $$ = function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
 
+    // Time until the TJX start date (Sept 14, 2026). Powers the live status
+    // touches and gracefully flips to "started" once the date passes — no edits
+    // needed after the fact.
+    function tjxCountdown() {
+        var start = new Date(2026, 8, 14); // months are 0-indexed → 8 = September
+        var diff = start - new Date();
+        if (diff <= 0) return { started: true };
+        var day = 24 * 60 * 60 * 1000;
+        return { started: false, days: Math.ceil(diff / day), weeks: Math.round(diff / (7 * day)) };
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
 
         /* ---------- 1. THEME TOGGLE ---------- */
@@ -120,6 +131,7 @@
                 'Agile & sprint coordination',
                 'cloud, identity & security',
                 'AI & automation',
+                'local AI & self-hosting',
                 'solutions engineering',
                 'process improvement'
             ];
@@ -143,7 +155,9 @@
         /* ---------- 6. TERMINAL STATUS LINE ---------- */
         var typed = $('.terminal-body .typed');
         if (typed) {
-            var msg = 'incoming @ TJX · Sept 2026 ✓';
+            var tjx = tjxCountdown();
+            var msg = tjx.started ? 'on the team @ TJX ✓'
+                                  : 'incoming @ TJX · Sep 14 · ~' + tjx.weeks + ' wks ✓';
             if (prefersReduced) {
                 typed.textContent = msg;
             } else {
@@ -197,6 +211,16 @@
         /* ---------- 11. MISC ---------- */
         var yearEl = $('#year');
         if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+        // Live countdown chip in the Now-Building status bar
+        var tjxEl = $('#tjxCountdown');
+        if (tjxEl) {
+            var nbTjx = tjxCountdown();
+            tjxEl.textContent = nbTjx.started
+                ? 'day one cleared · now at TJX'
+                : '~' + nbTjx.weeks + ' wks to day one @ TJX · Sep 14';
+            tjxEl.classList.add('is-on');
+        }
 
         // Pointer-tracking glow on project cards (skipped for reduced motion)
         if (!prefersReduced) {
@@ -269,66 +293,134 @@
         var closeBtn = document.getElementById('modalClose');
         var lastFocused = null;
 
+        // ----- Case-study diagrams (built inline so they inherit the site theme) -----
+        var FIG = {
+            chronobox: '<div class="arch"><div class="arch-layer"><span class="arch-ico">🔒</span><div class="arch-txt"><b>Private access</b><span>Only you, on your own LAN — nothing exposed to the public internet</span></div></div><div class="arch-layer"><span class="arch-ico">☁️</span><div class="arch-txt"><b>Nextcloud</b><span>Files, sync &amp; sharing — served by Nginx + PHP-FPM</span></div></div><div class="arch-layer"><span class="arch-ico">🗃️</span><div class="arch-txt"><b>Data services</b><span>PostgreSQL 17 · Redis cache — bound to localhost</span></div></div><div class="arch-layer"><span class="arch-ico">💽</span><div class="arch-txt"><b>Storage</b><span>NVMe boot · RAID-1 mirror, 1.8&nbsp;TB usable · SMART-monitored</span></div></div><div class="arch-layer"><span class="arch-ico">🐧</span><div class="arch-txt"><b>Debian 13 (Trixie)</b><span>Intel J4125 mini-NAS — low-power, always-on</span></div></div><div class="arch-rail"><span>🛡️ Hardened —</span> UFW default-deny · Fail2Ban · SSH keys-only · automatic security updates</div></div>',
+            claptrap: '<div class="systems-flow"><div class="flow-node"><div class="fn-icon">🎤</div><div class="fn-label">You speak</div><div class="fn-sub">mic capture</div></div><div class="flow-arrow">→</div><div class="flow-node"><div class="fn-icon">📝</div><div class="fn-label">Transcribe</div><div class="fn-sub">faster-whisper</div></div><div class="flow-arrow">→</div><div class="flow-node"><div class="fn-icon">🧠</div><div class="fn-label">Reason</div><div class="fn-sub">Ollama · Llama 3.2</div></div><div class="flow-arrow">→</div><div class="flow-node"><div class="fn-icon">🔊</div><div class="fn-label">Speak back</div><div class="fn-sub">Piper TTS</div></div></div><div class="arch-rail"><span>⚡ Action system —</span> open apps · URLs · web search · screenshot, allowlisted &amp; confirm-gated · 100% on-device</div>',
+            fedc: '<div class="systems-flow"><div class="flow-node"><div class="fn-icon">🧭</div><div class="fn-label">Foundations</div><div class="fn-sub">September</div></div><div class="flow-arrow">→</div><div class="flow-node"><div class="fn-icon">🎨</div><div class="fn-label">Design</div><div class="fn-sub">October</div></div><div class="flow-arrow">→</div><div class="flow-node"><div class="fn-icon">🛠️</div><div class="fn-label">Build</div><div class="fn-sub">Oct–Nov</div></div><div class="flow-arrow">→</div><div class="flow-node"><div class="fn-icon">🚀</div><div class="fn-label">Delivery</div><div class="fn-sub">December</div></div></div>',
+            worthit: '<svg viewBox="0 0 520 280" role="img" aria-label="Mockup of the Worth-It discovery screen with poppable opportunity bubbles" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="6" width="508" height="268" rx="26" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/><text x="34" y="46" font-family="Space Grotesk, sans-serif" font-size="24" font-weight="700" fill="#0f172a">Discovery</text><text x="35" y="64" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="2" fill="#94a3b8">POPPABLE OPPORTUNITIES</text><rect x="452" y="26" width="36" height="36" rx="11" fill="#0f172a"/><text x="470" y="50" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="15" font-weight="800" fill="#ffffff">7</text><rect x="34" y="80" width="44" height="22" rx="11" fill="#0f172a"/><text x="56" y="95" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="#ffffff">All</text><rect x="86" y="80" width="94" height="22" rx="11" fill="#eef2f7"/><text x="133" y="95" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="#64748b">Environment</text><rect x="188" y="80" width="78" height="22" rx="11" fill="#eef2f7"/><text x="227" y="95" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="#64748b">Education</text><rect x="274" y="80" width="74" height="22" rx="11" fill="#eef2f7"/><text x="311" y="95" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="#64748b">Community</text><g font-family="Space Grotesk, sans-serif" font-weight="800" fill="#ffffff" text-anchor="middle"><circle cx="105" cy="192" r="50" fill="#34d399"/><circle cx="105" cy="192" r="42" fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1.5"/><text x="105" y="196" font-size="13">Environment</text><circle cx="218" cy="168" r="37" fill="#60a5fa"/><circle cx="218" cy="168" r="31" fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1.5"/><text x="218" y="172" font-size="11">Education</text><circle cx="312" cy="198" r="31" fill="#f472b6"/><text x="312" y="202" font-size="9.5">Community</text><circle cx="398" cy="160" r="42" fill="#a78bfa"/><circle cx="398" cy="160" r="34" fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1.5"/><text x="398" y="164" font-size="12">Arts</text><circle cx="467" cy="220" r="26" fill="#fbbf24"/><text x="467" y="224" font-size="9">Animals</text><circle cx="300" cy="252" r="20" fill="#f87171" fill-opacity="0.55"/><text x="300" y="256" font-size="8">Health</text></g></svg><figcaption>A mockup of the Discovery screen — opportunities you match float larger; ones you’ve seen shrink and fade.</figcaption>'
+        };
+
         // ----- Project case-study content (edit here to update projects) -----
         var PROJECTS = {
             chronobox: {
-                role: 'Founder · Jun 2024 – Oct 2025',
-                title: 'ChronoBox — Local Private Cloud Appliance',
+                role: 'Founder · Cloud in a Box → ChronoBox · 2024–2025',
+                title: 'ChronoBox — Local Private-Cloud Appliance',
                 blocks: [
-                    { h: 'What it is', p: 'A privacy-first local private-cloud appliance: a self-hosted system that gives an individual or small team their own cloud storage and services on hardware they physically control.' },
-                    { h: 'Why it matters', p: 'As public-cloud breaches become routine and user data is increasingly used to train AI, ChronoBox explores giving people real data autonomy — without giving up the convenience of a modern cloud.' },
-                    { h: 'What I did', ul: [
-                        'Engineered the system on Nextcloud + Debian 13 with RAID-1 for redundancy and secure data autonomy.',
-                        'Developed a setup framework, documentation, and a cost analysis for an MVP deployment.',
-                        'Defined a Hybrid Product-as-a-Service (HPaaS) model with a 40% <em>projected</em> margin.'
+                    { spec: [
+                        { k: 'Problem', v: 'Public-cloud breaches are routine and personal data increasingly trains AI models — yet rolling your own private cloud is usually too clunky for everyday use.' },
+                        { k: 'What I built', v: 'A privacy-first local private-cloud appliance running <strong>Nextcloud on Debian 13</strong>, with an NVMe boot disk and a <strong>RAID-1 mirrored 1.8&nbsp;TB</strong> data array — plus a hardening roadmap, full documentation, and a costed MVP model. It started as the “Cloud in a Box” prototype and became ChronoBox.' },
+                        { k: 'Tools used', v: 'Debian 13 · Nextcloud · Nginx + PHP-FPM · PostgreSQL 17 · Redis · mdadm RAID-1 · UFW + Fail2Ban · Linux hardening' },
+                        { k: 'What it taught me', v: 'Hardware selection, RAID configuration and recovery, Linux security hardening, and how to turn a technical idea into a documented, costed product concept.' },
+                        { k: 'Impact', impact: true, v: 'A working MVP / framework with a defined Hybrid Product-as-a-Service model (<strong>~40% projected</strong> margin — projected, not realized revenue).' }
                     ] },
-                    { h: 'Tech', tags: ['Nextcloud', 'Debian 13', 'RAID-1', 'Linux', 'Self-Hosting'] },
-                    { h: 'Status', p: 'MVP / framework stage — a working concept with documentation and a costed model. The 40% margin is <b>projected, not realized revenue</b>; ChronoBox is a project and product concept, not a launched company.' },
-                    { h: 'What I learned', p: 'Hardware selection, RAID configuration, Linux security hardening, and how to turn a technical idea into a documented, costed product concept.' },
-                    { links: [{ label: 'Read the related research paper', href: 'assets/resources/Final-Research-BBoyer25.docx' }] },
-                    { note: 'TODO(ben): a system architecture diagram (CIAB-Diagram.png) was referenced on the old site but isn\'t in the repo. Drop it into assets/resources/ and a GitHub repo link, and I\'ll showcase them here.' }
+                    { h: 'Architecture', figure: FIG.chronobox },
+                    { h: 'The stack, in detail', ul: [
+                        'Debian 13 (Trixie) on a low-power Intel J4125 mini-NAS — a long support runway and a tiny idle footprint.',
+                        'NVMe system disk plus two HDDs in a <strong>RAID-1 mirror</strong> (mdadm) for the Nextcloud data array, with SMART health monitoring.',
+                        'Web &amp; data stack: Nginx + PHP-FPM serving Nextcloud, PostgreSQL 17, and Redis caching — bound to localhost.',
+                        'Security posture: a UFW default-deny firewall, Fail2Ban brute-force protection, SSH root-login disabled, and automatic security updates.'
+                    ] },
+                    { h: 'From prototype to MVP', p: 'A staged roadmap moved it forward: <strong>(1) Hardened build</strong> — key-only SSH, RAID failure/recovery drills, automated rsync/Borg backups, and a one-command rebuild script. <strong>(2) MVP appliance</strong> — ChronoBox-themed Nextcloud, a two-step setup wizard, a customer quick-start guide, and beta feedback. <strong>(3) Launch prep</strong> — bill-of-materials costing, a pitch deck, and demo-ready units.' },
+                    { h: 'Why it matters', p: 'As public-cloud breaches become routine and user data is increasingly used to train AI, ChronoBox explores giving people real data autonomy — without giving up the convenience of a modern cloud. It’s the infrastructure layer of a larger local-first idea that continues in <strong>Claptrap</strong>.' },
+                    { h: 'Honest status', p: 'MVP / framework stage — a working appliance with documentation and a costed model. The ~40% margin is <b>projected, not realized revenue</b>; ChronoBox is a project and product concept, not a launched company.' },
+                    { links: [{ label: 'Read the research paper behind it', href: 'assets/resources/Final-Research-BBoyer25.docx' }] }
+                ]
+            },
+            claptrap: {
+                role: 'Personal Project · 2026',
+                title: 'Claptrap — Local Voice AI Sidekick',
+                blocks: [
+                    { spec: [
+                        { k: 'Problem', v: 'Most voice assistants ship everything you say to the cloud. I wanted to see how capable a desktop assistant could be while running <strong>100% locally</strong> — no data leaving the machine.' },
+                        { k: 'What I built', v: 'A Python voice assistant that listens, thinks, talks back, and takes safe desktop actions — entirely offline. It’s the playful “interface” layer of the same local-first idea behind ChronoBox.' },
+                        { k: 'Tools used', v: 'Python · Ollama (Llama 3.2) · faster-whisper (speech-to-text) · Piper + pyttsx3 (text-to-speech) · sounddevice' },
+                        { k: 'What it taught me', v: 'Wiring a real local-AI pipeline — speech-to-text, a local LLM, and text-to-speech — and designing an action system that’s useful without being unsafe.' },
+                        { k: 'Impact', impact: true, v: 'A working voice loop: speak → transcribe → local LLM → spoken reply, with confirmation-gated actions. A genuine experiment, not a product.' }
+                    ] },
+                    { h: 'The voice loop', figure: FIG.claptrap },
+                    { h: 'How it works', ul: [
+                        '<strong>Hears you:</strong> records the mic and transcribes locally with faster-whisper.',
+                        '<strong>Thinks:</strong> sends the conversation to a local Ollama model (Llama 3.2), with a graceful fallback if the model is offline.',
+                        '<strong>Talks back:</strong> speaks replies with Piper (a neural voice) or pyttsx3.',
+                        '<strong>Acts — carefully:</strong> can open apps, open URLs, run a web search, or take a screenshot — but only from an <strong>allowlist</strong>, and by default only after you confirm.'
+                    ] },
+                    { h: 'The bigger idea', p: 'ChronoBox gives you private infrastructure; Claptrap is the local, voice-driven <em>interface</em> to it. Together they sketch a personal “edge” ecosystem — your data and your AI, on hardware you control.' },
+                    { h: 'Honest scope', p: 'Claptrap is a personal experiment built to learn the local-AI stack — funny on purpose, genuinely useful, and clearly not a shipped product.' }
                 ]
             },
             fedc: {
-                role: 'Team Lead · Capstone · Sept 2025 – Present',
+                role: 'Team Lead · Capstone · Sept – Dec 2025',
                 title: 'Framingham EDC Website',
                 blocks: [
-                    { h: 'What it is', p: 'A capstone client project: designing and launching a Squarespace website for the Framingham Economic Development Corporation (EDC).' },
-                    { h: 'My role', p: 'I lead a 6-person team, owning client relations, UI/UX direction, and SEO, and managing deliverables through to handoff.' },
-                    { h: 'What I did', ul: [
-                        'Led a 6-person team to design and launch the site on Squarespace.',
-                        'Translated client needs into clear requirements and managed milestones to a real deadline.',
-                        'Oversaw UI/UX and SEO with the goal of presenting the EDC professionally to enterprise investors.',
-                        'Managed key deliverables and prepared a clean handoff for continuous-improvement work.'
+                    { spec: [
+                        { k: 'Problem', v: 'The Framingham Economic Development Corporation needed a polished, visual-first web presence to present itself credibly to enterprise investors and highlight the city’s life-sciences and emerging-tech base.' },
+                        { k: 'What I led', v: 'As <strong>team lead of “BlackGroup” — a capstone team that grew from four to six</strong> — I owned project coordination, the plan and timeline, client communication, and final delivery, guiding the team from requirements through a built Squarespace site.' },
+                        { k: 'Tools used', v: 'Squarespace · UX / visual design · SEO &amp; analytics · stakeholder management · Agile-style status tracking' },
+                        { k: 'What it taught me', v: 'How to run stakeholder communication, keep a team aligned to real milestones, manage scope and risk, and ship something real for an external client.' },
+                        { k: 'Impact', impact: true, v: 'Delivered on schedule with a clean handoff package (design decisions, technical setup, content log) so non-technical FEDC staff could maintain it.' }
                     ] },
-                    { h: 'Skills', tags: ['Squarespace', 'UI / UX', 'SEO', 'Stakeholder Mgmt', 'Team Leadership'] },
-                    { h: 'Status', p: 'In progress.' },
-                    { h: 'What I learned', p: 'How to run stakeholder communication, keep a team aligned, and ship something real for an external client.' },
-                    { note: 'TODO(ben): add the live site URL and a few screenshots (FEDC-1/2/3.png) to assets/resources/ and I\'ll feature them here.' }
+                    { h: 'Timeline', figure: FIG.fedc },
+                    { h: 'How we built it', ul: [
+                        'Anchored the design on a clean, “Ritz-Carlton-style” visual-first aesthetic agreed with the client.',
+                        'Structured the site around eight sections — Home, About, Programs/Services, Life in Framingham, News &amp; Events, Business Resources, Board of Advisors, and Contact.',
+                        'Planned SEO &amp; analytics from day one: clean URLs, alt text, Open Graph tags, SSL, and Google Search Console / Analytics.',
+                        'Ran weekly client check-ins and a documented risk matrix to keep scope and delivery under control.'
+                    ] },
+                    { h: 'Outcome & handoff', p: 'We delivered the capstone build to the client in December 2025. The client wanted to keep iterating after the academic deadline, so I handed the site off to a teammate who continues to maintain it — it now lives under their ownership. Leading it end-to-end and transitioning it cleanly was the real win.' },
+                    { h: 'Site structure', tags: ['Home', 'About', 'Programs', 'Life in Framingham', 'News &amp; Events', 'Business Resources', 'Board of Advisors', 'Contact'] },
+                    { links: [{ label: 'View the project plan', href: 'assets/resources/FEDC-Project-Plan.pdf' }, { label: 'Technical setup plan', href: 'assets/resources/FEDC-Technical-Setup.pdf' }] }
+                ]
+            },
+            worthit: {
+                role: 'Personal Project · React PWA',
+                title: 'Worth-It — Volunteer Discovery PWA',
+                blocks: [
+                    { spec: [
+                        { k: 'Problem', v: 'Finding volunteer work is usually a dull list of postings. I wanted discovery to feel playful — something you’d actually want to browse.' },
+                        { k: 'What I built', v: 'A mobile-first <strong>progressive web app</strong> where volunteer opportunities float as <strong>poppable bubbles</strong> — tap one to “pop” it open. It’s a two-sided marketplace connecting volunteers and organizations.' },
+                        { k: 'Tools used', v: 'React 19 · TypeScript · Vite · D3 (force simulation) · React Router · PWA (service worker + manifest)' },
+                        { k: 'What it taught me', v: 'Building a real React app end-to-end — physics-driven UI with D3, role-based routing and auth, and shipping it as an installable PWA.' },
+                        { k: 'Impact', impact: true, v: 'A working prototype with separate volunteer and organization experiences, onboarding, and in-app messaging between the two sides.' }
+                    ] },
+                    { h: 'A look at the app', figure: FIG.worthit },
+                    { h: 'What makes it fun', ul: [
+                        'A <strong>D3 force-directed “bubble” canvas</strong> — opportunities you match better float bigger; ones you’ve already seen shrink and fade.',
+                        'Tap to pop a bubble open into its details, then message the organization in one tap.',
+                        'Two roles, two flows: <strong>volunteers</strong> discover and reach out; <strong>organizations</strong> post opportunities and manage interest.',
+                        'Installable and mobile-first — built as a PWA with offline-friendly scaffolding.'
+                    ] },
+                    { h: 'Honest scope', p: 'A working prototype / learning project — the discovery UX and the two-sided flows are real and interactive; it runs on sample data, not a live community yet.' }
                 ]
             },
             research: {
-                role: 'Senior Research',
+                role: 'Senior Research · Framingham State University',
                 title: 'A New Era of Cloud Computing',
                 blocks: [
-                    { h: 'Overview', p: 'Research analyzing why trust in public-cloud storage is eroding, and proposing a hybrid “local centralized private cloud” model for sensitive use cases — the conceptual foundation behind ChronoBox.' },
+                    { h: 'Overview', p: 'A research paper — “A New Era of Cloud Computing: The Local Centralized Private Cloud Model” — arguing that over-reliance on public-cloud storage is risky in an era of data scraping and AI training, and proposing a locally-centralized private-cloud model for sensitive data. It’s the conceptual foundation behind ChronoBox.' },
                     { h: 'Methodology', ul: [
-                        'Quantitative analysis of major cloud breaches (2020–2024) by vector and scale.',
-                        'Qualitative survey of sentiment around AI training on user data vs. privacy expectations.',
-                        'An architectural proposal specified as a Debian / Nextcloud implementation (ChronoBox).'
+                        'A <strong>mixed-methods</strong> design, grounded in the NIST definition of cloud computing and the public / private / hybrid models.',
+                        'Quantitative analysis of security-breach trends across <strong>~200 companies</strong> to surface where public-cloud risk concentrates.',
+                        'A qualitative <strong>Likert-scale survey</strong> gauging trust in and perceptions of cloud security.',
+                        'An architectural argument for a local centralized private cloud — later realized as the Debian / Nextcloud ChronoBox build.'
                     ] },
-                    { h: 'What I learned', p: 'How to structure a research argument, combine quantitative and qualitative evidence, and connect a technical proposal to a real-world problem.' },
-                    { links: [{ label: 'Download the full paper (.docx)', href: 'assets/resources/Final-Research-BBoyer25.docx' }] },
-                    { note: 'TODO(ben): the old site mentioned a UMass research-poster presentation (Spring 2025). I left it off to stay strictly verifiable — tell me if you\'d like it added back.' }
+                    { h: 'What I learned', p: 'How to structure a research argument, combine quantitative and qualitative evidence, and connect a technical proposal to a real-world privacy problem.' },
+                    { links: [{ label: 'Download the full paper (.docx)', href: 'assets/resources/Final-Research-BBoyer25.docx' }] }
                 ]
             },
             network: {
-                role: 'Coursework',
+                role: 'Coursework · Network Design',
                 title: 'Enterprise Network Design Proposal',
                 blocks: [
-                    { h: 'Overview', p: 'A formal written proposal designing an enterprise network — covering topology, addressing, segmentation, and security considerations — delivered as a professional design document.' },
-                    { links: [{ label: 'Download the proposal (.docx)', href: 'assets/resources/Boyer-NetworkDesignProposal.docx' }] },
-                    { note: 'TODO(ben): confirm the specifics (scope, tools used) and I\'ll expand this summary — kept intentionally modest for accuracy.' }
+                    { h: 'Overview', p: 'A full written network-design proposal for a fictional 20-person electronics manufacturer (“Boyer Technologies”) — a professional design document covering requirements, component selection, physical layout, and cost.' },
+                    { h: 'What it covers', ul: [
+                        'Requirements framed around <strong>scalability, security, performance, and redundancy</strong>.',
+                        'Vendor-comparison component selection — router, firewall, managed switch, Wi-Fi 6 access points, CAT6 cabling, server, VoIP phones, and a UPS — each chosen from a pros/cons table.',
+                        'Security &amp; segmentation via <strong>VLANs, a stateful firewall, and IDS/IPS</strong>; resilience via <strong>UPS battery backup and RAID</strong> on servers.',
+                        'Floor-plan layout, LAN/WAN cabling (including PoE for phones and access points), and a full cost breakdown.'
+                    ] },
+                    { h: 'What I learned', p: 'How to translate business requirements into a concrete, costed network design — and how to justify technology choices against real product options.' },
+                    { links: [{ label: 'Download the proposal (.docx)', href: 'assets/resources/Boyer-NetworkDesignProposal.docx' }] }
                 ]
             }
         };
@@ -337,6 +429,14 @@
             return blocks.map(function (b) {
                 var html = '';
                 if (b.h) html += '<h4>' + b.h + '</h4>';
+                if (b.figure) html += '<figure class="pc-figure">' + b.figure + '</figure>';
+                // Power-card spec: the five-part case-study framing
+                if (b.spec) html += '<div class="pc-spec">' + b.spec.map(function (r) {
+                    return '<div class="pc-row' + (r.impact ? ' is-impact' : '') + '">' +
+                               '<div class="pc-k">' + r.k + '</div>' +
+                               '<div class="pc-v">' + r.v + '</div>' +
+                           '</div>';
+                }).join('') + '</div>';
                 if (b.p) html += '<p>' + b.p + '</p>';
                 if (b.ul) html += '<ul>' + b.ul.map(function (li) { return '<li>' + li + '</li>'; }).join('') + '</ul>';
                 if (b.tags) html += '<div class="tag-row">' + b.tags.map(function (t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>';
